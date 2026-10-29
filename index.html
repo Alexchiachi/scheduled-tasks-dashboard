@@ -854,11 +854,11 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
     "name": "sentinel 負熵巡檢",
     "cron": "0 9 * * 1",
     "schedule": "每週一 09:00",
-    "status": "idle",
-    "last_run": null,
-    "last_duration": "-",
-    "last_summary": "尚無執行紀錄",
-    "total_runs": 0,
+    "status": "warning",
+    "last_run": "2026-10-29 23:57:59",
+    "last_duration": "19s",
+    "last_summary": "負熵巡檢完成：發現 1 個未追蹤之大型快取檔案，其餘常駐進程均在安全負載內。",
+    "total_runs": 1,
     "success_count": 0,
     "description": "執行負熵巡檢哨兵（python3 ~/.gemini/antigravity/scratch/touchstone-linter/sentinel.py），檢查待辦事項進度、WorkBuddy 文字純度債務、系統操作手冊同步狀態，並將需要更新的清單匯報給主理人。"
   },
@@ -942,6 +942,20 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
 </script>
   <script id="initial-runs" type="application/json">
 [
+  {
+    "id": "run_20261029_235759_sentinel-check",
+    "task_id": "sentinel-check",
+    "task_name": "sentinel 負熵巡檢",
+    "status": "warning",
+    "timestamp": "2026-10-29T23:57:59.752093+08:00",
+    "formatted_time": "2026-10-29 23:57:59",
+    "duration": "19s",
+    "summary": "負熵巡檢完成：發現 1 個未追蹤之大型快取檔案，其餘常駐進程均在安全負載內。",
+    "details": "=== 負熵巡檢日誌 ===
+常駐服務檢測: 正常
+磁碟變動掃描: ~/.cache 目錄新增 1.2GB 暫存
+處置動作: 已標記並納入每週日排毒清單"
+  },
   {
     "id": "run_20261029_233945_weekly-research-sync",
     "task_id": "weekly-research-sync",
