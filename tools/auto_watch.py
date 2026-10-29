@@ -21,7 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 PROCESSED_FILE = BASE_DIR / "data" / ".processed_conversations"
 
 
-def run_cmd(cmd, cwd=None):
+def log(msg):
+    print(msg, flush=True)
     env = os.environ.copy()
     env["GIT_TERMINAL_PROMPT"] = "0"
     res = subprocess.run(
@@ -246,14 +247,14 @@ def scan_and_record(push: bool = True):
 
 
 def daemon_loop(interval: int = 30, push: bool = True):
-    print(f"👁️ 大道至簡 · 排程監測守護進程已啟動 (檢測間隔: {interval} 秒)")
-    print("   全天候自動捕獲完成任務，免指令、自動寫入、自動推送。")
+    print(f"👁️ 大道至簡 · 排程監測守護進程已啟動 (檢測間隔: {interval} 秒)", flush=True)
+    print("   全天候自動捕獲完成任務，免指令、自動寫入、自動推送。", flush=True)
     try:
         while True:
             scan_and_record(push=push)
             time.sleep(interval)
     except KeyboardInterrupt:
-        print("\n🛑 守護進程已停止。")
+        print("\n🛑 守護進程已停止。", flush=True)
 
 
 def main():
