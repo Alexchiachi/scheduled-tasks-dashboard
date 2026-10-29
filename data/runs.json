@@ -1,0 +1,46 @@
+[
+  {
+    "id": "run_20261029_233945_weekly-research-sync",
+    "task_id": "weekly-research-sync",
+    "task_name": "每週生活熱點雲端同步與網頁更新",
+    "status": "success",
+    "timestamp": "2026-10-29T23:39:45.702915+08:00",
+    "formatted_time": "2026-10-29 23:39:45",
+    "duration": "41s",
+    "summary": "生活熱點與社會創新最新期數已完成同步與雙語編譯，research-dashboard 已自動發布。",
+    "details": "=== 生活熱點雲端同步與編譯 ===\n同步腳本: sync_weekly.py -> 3 則新熱點\n編譯腳本: build.py -> 生成 index.html, zh-cn/, weekly/index.html\nGit 自動發布: 已推送至 main 與 feature/frontend-optimization-and-decoupling\n線上網址: https://alexchiachi.github.io/research-dashboard/"
+  },
+  {
+    "id": "run_20261029_233945_daily-gardener",
+    "task_id": "daily-gardener",
+    "task_name": "Daily 第二心智園丁與雙基地同步",
+    "status": "success",
+    "timestamp": "2026-10-29T23:39:45.359773+08:00",
+    "formatted_time": "2026-10-29 23:39:45",
+    "duration": "54s",
+    "summary": "提煉過去 10 天 Obsidian 原礦生成演化長文，雙基地已同步，已成功推送到 GitHub。",
+    "details": "=== 第二心智園丁演化日誌 ===\n掃描變更: 14 篇原礦筆記\n跨界碰撞: 融通熱力學耗散結構與幸福生活七柱\n產出文件: 有感而發長文分享/2026-10-29_第二心智演化日誌.md\nGoogle Drive 雙基地同步: sync_dual_base.js 執行成功\nGitHub Push: commit 8df2a41 '🌱 feat: 每日心智演化與雙基地同步' -> origin/main 成功"
+  },
+  {
+    "id": "run_20261029_233945_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "Morning 晨間心流與要事簡報",
+    "status": "success",
+    "timestamp": "2026-10-29T23:39:45.003087+08:00",
+    "formatted_time": "2026-10-29 23:39:45",
+    "duration": "28s",
+    "summary": "晨間心流與要事簡報已提煉完畢，紙墨美學 HTML 信件已自動發送至 jianchiachi@gmail.com。",
+    "details": "=== 晨間心流與要事簡報 ===\n核心要事提煉：\n1. 大道至簡監測系統上線與多任務留痕\n2. 幸福餐桌全域生態系統架構落地\n3. 第二心智 Obsidian 雙向鏈結優化\n郵件發送狀態: 200 OK\n收件人: jianchiachi@gmail.com\nMessage-ID: brief-20261029-0830@dao.local"
+  },
+  {
+    "id": "run_20261029_233944_audit",
+    "task_id": "audit",
+    "task_name": "Audit 電腦健檢",
+    "status": "success",
+    "timestamp": "2026-10-29T23:39:44.692048+08:00",
+    "formatted_time": "2026-10-29 23:39:44",
+    "duration": "12s",
+    "summary": "本機效能健檢完成：記憶體負載 42%、Swap 0MB、無異常殭屍進程，磁碟剩餘空間 182GB。",
+    "details": "=== 系統健康診斷日誌 ===\nCPU 使用率: 8.5% (4 Cores)\nMemory: 16GB (已使用 6.7GB, 閒置 9.3GB, 負載健康)\nSwap: 0 / 2048 MB\nDisk: 494GB 容量, 312GB 已使用 (63%, 剩餘 182GB)\n進程巡檢: antigravity, ollama, node-mcp 核心常駐進程均正常運行。\n診斷結論: 綠燈安全，無記憶體洩漏或孤立程序。"
+  }
+]

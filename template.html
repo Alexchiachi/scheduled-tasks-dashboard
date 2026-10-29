@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>排程任務監測儀表板 · 執行日誌系統</title>
+  <meta name="description" content="Antigravity 2.0 排程任務全天候監控與執行成果紀錄系統，大道至簡紙墨美學，支援即時狀態追蹤、歷史回放與健康度分析。">
+  <meta name="theme-color" content="#FAF6EF">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="大道至簡 · 排程監測系統">
+  <meta property="og:title" content="排程任務監測儀表板 · 執行日誌系統">
+  <meta property="og:description" content="全天候自動化巡檢、結果留痕與健康度看板。">
+  
+  <style>
+    :root {
+      --paper: #FAF6EF;
+      --paper-deep: #F2EBDF;
+      --paper-card: #FFFFFF;
+      --ink: #2A2520;
+      --ink-soft: #4A423A;
+      --ink-muted: #8C8275;
+      --line: #D9D1C2;
+      --line-light: #ECE5D8;
+      
+      --tea: #82663F;
+      --tea-bg: #F5EFE6;
+      
+      --moss: #547050;
+      --moss-bg: #EEF4ED;
+      --moss-border: #9BB898;
+      
+      --seal: #A8543A;
+      --seal-bg: #FAECE8;
+      --seal-border: #DFA495;
+      
+      --warn: #B87820;
+      --warn-bg: #FAF3E6;
+      --warn-border: #E8C888;
+      
+      --font-serif: -apple-system, BlinkMacSystemFont, "Songti TC", "Noto Serif TC", serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-serif);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 標題平衡與防孤字排版 */
+    h1, h2, h3, h4 {
+      text-wrap: balance;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    p, li, blockquote {
+      text-wrap: pretty;
+    }
+
+    .ph {
+      display: inline-block;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+      font-family: var(--font-mono);
+    }
+
+    /* 容器佈局 */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 頂部導航與標題區 */
+    header {
+      border-bottom: 1px solid var(--line);
+      background-color: var(--paper);
+      padding: 24px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+      background-color: rgba(250, 246, 239, 0.94);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      background: var(--paper-deep);
+      border-radius: 0;
+    }
+
+    .brand-title h1 {
+      font-size: 1.35rem;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-title p {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+    }
+
+    .live-status {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--moss);
+      display: inline-block;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(84, 112, 80, 0.7);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(84, 112, 80, 0.7); }
+      70% { box-shadow: 0 0 0 6px rgba(84, 112, 80, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(84, 112, 80, 0); }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: var(--paper-deep);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      font-family: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .btn:hover {
+      background: #ECE5D8;
+      border-color: var(--ink-soft);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .btn-primary:hover {
+      background: var(--ink-soft);
+    }
+
+    /* 主要內容區 */
+    main {
+      flex: 1;
+      padding: 32px 0 64px 0;
+    }
+
+    /* 頂部 KPI 卡片區 */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .kpi-card {
+      background: var(--paper-card);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .kpi-label {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .kpi-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .kpi-meta {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+    }
+
+    /* 狀態 Badge（直角、線條與微底色） */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      font-size: 0.75rem;
+      border-radius: 0;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      white-space: nowrap;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+    }
+
+    .badge-success {
+      background-color: var(--moss-bg);
+      color: var(--moss);
+      border-color: var(--moss-border);
+    }
+
+    .badge-warning {
+      background-color: var(--warn-bg);
+      color: var(--warn);
+      border-color: var(--warn-border);
+    }
+
+    .badge-error {
+      background-color: var(--seal-bg);
+      color: var(--seal);
+      border-color: var(--seal-border);
+    }
+
+    .badge-idle {
+      background-color: var(--paper-deep);
+      color: var(--ink-muted);
+      border-color: var(--line);
+    }
+
+    /* 任務矩陣區塊 */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tasks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .task-card {
+      background: var(--paper-card);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 16px 18px;
+      cursor: pointer;
+      transition: border-color 0.15s, background-color 0.15s;
+      position: relative;
+    }
+
+    .task-card:hover {
+      border-color: var(--ink);
+      background-color: #FAF8F4;
+    }
+
+    .task-card.active-filter {
+      border-color: var(--tea);
+      outline: 2px solid var(--tea);
+      background-color: var(--tea-bg);
+    }
+
+    .task-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+
+    .task-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .task-cron {
+      font-size: 0.78rem;
+      color: var(--tea);
+      font-family: var(--font-mono);
+      margin-bottom: 8px;
+    }
+
+    .task-last-run {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px dashed var(--line-light);
+      padding-top: 8px;
+    }
+
+    /* 工具與篩選列 */
+    .filter-bar {
+      background: var(--paper-card);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: var(--ink-soft);
+      font-family: inherit;
+    }
+
+    .filter-tab.active {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+      font-weight: 600;
+    }
+
+    .filter-tab:hover:not(.active) {
+      background: var(--paper-deep);
+    }
+
+    .filter-search {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex: 1;
+      max-width: 360px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: var(--paper);
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: var(--ink);
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--ink);
+      background: #FFFFFF;
+    }
+
+    /* 歷史執行記錄列表 */
+    .runs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .run-card {
+      background: var(--paper-card);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 18px 22px;
+      transition: border-color 0.15s;
+    }
+
+    .run-card:hover {
+      border-color: var(--ink-soft);
+    }
+
+    .run-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .run-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .run-task-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .run-time {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      font-family: var(--font-mono);
+    }
+
+    .run-summary {
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      margin-bottom: 8px;
+      background: #FAF8F5;
+      padding: 10px 14px;
+      border-left: 3px solid var(--line);
+    }
+
+    .run-details {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      display: none;
+    }
+
+    .run-details.open {
+      display: block;
+    }
+
+    .details-pre {
+      background: #1F1C18;
+      color: #E6E1D8;
+      padding: 14px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+      border-radius: 0;
+      margin-top: 8px;
+    }
+
+    .details-toggle {
+      background: none;
+      border: none;
+      color: var(--tea);
+      font-size: 0.82rem;
+      cursor: pointer;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 0;
+      text-decoration: underline;
+    }
+
+    /* 空狀態提示 */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--paper-card);
+      border: 1px dashed var(--line);
+      color: var(--ink-muted);
+    }
+
+    /* 整合指南區塊 */
+    .integration-box {
+      margin-top: 48px;
+      background: var(--paper-deep);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 24px;
+    }
+
+    .integration-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+
+    .code-snippet {
+      background: #1F1C18;
+      color: #F5EFE6;
+      padding: 14px 18px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      border-radius: 0;
+      position: relative;
+      margin-top: 10px;
+    }
+
+    /* 頁尾與朱印 */
+    footer {
+      border-top: 1px solid var(--line);
+      background-color: var(--paper);
+      padding: 48px 0 36px 0;
+      margin-top: auto;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .seal-mark {
+      width: 88px;
+      height: 88px;
+      border: 2px solid var(--seal);
+      color: var(--seal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.15rem;
+      line-height: 1.25;
+      letter-spacing: 0.15em;
+      border-radius: 0;
+      background: rgba(168, 84, 58, 0.04);
+      user-select: none;
+      box-shadow: inset 0 0 0 1px var(--seal);
+    }
+
+    .footer-text {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      line-height: 1.8;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      font-size: 0.82rem;
+    }
+
+    .footer-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .footer-links a:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .filter-search {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導航列 -->
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark">常</div>
+        <div class="brand-title">
+          <h1>排程任務監測儀表板 <span class="badge badge-success">Live</span></h1>
+          <p>大道至簡 · 全天候自動化巡檢、結果留痕與健康度看板</p>
+        </div>
+      </div>
+      <div class="live-status">
+        <span><i class="pulse-dot"></i> 常態監測中</span>
+        <span class="tabular" id="last-updated-text">載入中...</span>
+        <button class="btn" onclick="refreshData()" title="重新載入最新資料">🔄 重新整理</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主內容區 -->
+  <main>
+    <div class="container">
+
+      <!-- KPI 狀態指標 -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">納管排程任務數</div>
+          <div class="kpi-value tabular" id="kpi-total-tasks">0</div>
+          <div class="kpi-meta">常態掛載於 Antigravity 2.0</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">24 小時內執行次數</div>
+          <div class="kpi-value tabular" id="kpi-runs-24h">0</div>
+          <div class="kpi-meta">累計自動執行任務</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">系統總體健康度</div>
+          <div class="kpi-value tabular" id="kpi-health-rate">100%</div>
+          <div class="kpi-meta" id="kpi-health-meta">近 7 日成功率穩定</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">最新執行紀錄</div>
+          <div class="kpi-value tabular" id="kpi-latest-time" style="font-size: 1.4rem; padding-top: 8px;">-</div>
+          <div class="kpi-meta" id="kpi-latest-name">無最近紀錄</div>
+        </div>
+      </div>
+
+      <!-- 任務矩陣區塊 -->
+      <div class="section-header">
+        <h2 class="section-title">
+          <span>📋 納管排程矩陣</span>
+          <span class="badge badge-idle" id="active-tasks-count">12 個任務</span>
+        </h2>
+        <div style="font-size: 0.85rem; color: var(--ink-muted);">
+          點擊任一任務卡片可快速篩選專屬執行紀錄
+        </div>
+      </div>
+
+      <div class="tasks-grid" id="tasks-container">
+        <!-- 任務卡片由 JS 動態渲染 -->
+      </div>
+
+      <!-- 歷史執行成果與說明列表 -->
+      <div class="section-header">
+        <h2 class="section-title">
+          <span>📝 執行成果與說明日誌</span>
+          <span class="badge badge-idle" id="filtered-runs-count">0 筆紀錄</span>
+        </h2>
+        <a href="#integration-guide" class="btn" style="font-size: 0.8rem;">⚡ 任務回報整合指令</a>
+      </div>
+
+      <!-- 篩選列 -->
+      <div class="filter-bar">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all" onclick="setFilter('all', this)">全部</button>
+          <button class="filter-tab" data-filter="success" onclick="setFilter('success', this)">成功</button>
+          <button class="filter-tab" data-filter="warning" onclick="setFilter('warning', this)">警訊</button>
+          <button class="filter-tab" data-filter="error" onclick="setFilter('error', this)">失敗</button>
+        </div>
+
+        <div class="filter-search">
+          <input type="text" id="search-input" class="search-input" placeholder="🔍 搜尋任務名稱、說明關鍵字..." oninput="handleSearch()">
+          <button class="btn" onclick="clearFilters()" title="清除篩選條件">重設</button>
+        </div>
+      </div>
+
+      <!-- 執行日誌容器 -->
+      <div class="runs-list" id="runs-container">
+        <!-- 執行日誌卡片由 JS 動態渲染 -->
+      </div>
+
+      <!-- 回報整合說明區 -->
+      <div class="integration-box" id="integration-guide">
+        <h3>⚡ 如何在排程任務完成時自動寫入此儀表板？</h3>
+        <p style="color: var(--ink-soft); font-size: 0.9rem; margin-bottom: 8px;">
+          在任何排程任務的 Prompt 步驟結尾，或 Python 批次腳本的最後一行，加上以下回報指令即可自動將「執行結果與說明」寫入儀表板並 Push 上線：
+        </p>
+        <div class="code-snippet">
+python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/record_task.py \
+  --task "daily-gardener" \
+  --status "success" \
+  --summary "第二心智演化日誌撰寫完畢，雙基地已同步，Obsidian已成功推送到GitHub。" \
+  --duration "42s" \
+  --push
+        </div>
+        <p style="color: var(--ink-muted); font-size: 0.82rem; margin-top: 10px;">
+          參數說明：<code>--task</code> (任務ID)、<code>--status</code> (success|warning|error)、<code>--summary</code> (一句話結果摘要)、<code>--details</code> (詳細日誌)、<code>--push</code> (自動提交並推送 GitHub Pages)
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 頁尾與 88px 朱印 -->
+  <footer>
+    <div class="container footer-content">
+      <div class="seal-mark" title="大道至簡 · 任務常安">
+        任務<br>常安
+      </div>
+      <div class="footer-text">
+        <p><strong>大道至簡 · 排程任務監測儀表板</strong></p>
+        <p>遵循 Zen Web Standards 中央規範 · 米白紙底墨色直角美學 · 零外部追蹤 Cookie 合規</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Alexchiachi/scheduled-tasks-dashboard" target="_blank" rel="noopener">GitHub 倉庫</a>
+        <a href="javascript:void(0)" onclick="copyRecordSnippet()">複製回報指令</a>
+        <a href="javascript:void(0)" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">回到頁首</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 預先內嵌 JSON 資料 (離線/本地直接打開時兜底) -->
+  <script id="initial-tasks" type="application/json">
+[]
+  </script>
+  <script id="initial-runs" type="application/json">
+[]
+  </script>
+
+  <!-- 核心邏輯腳本 -->
+  <script>
+    let TASKS = [];
+    let RUNS = [];
+    let currentStatusFilter = 'all';
+    let currentTaskFilter = null;
+    let currentSearchQuery = '';
+
+    // 初始化載入
+    document.addEventListener('DOMContentLoaded', () => {
+      loadInitialData();
+      tryFetchFreshData();
+    });
+
+    function loadInitialData() {
+      try {
+        const tasksEl = document.getElementById('initial-tasks');
+        if (tasksEl && tasksEl.textContent.trim()) {
+          TASKS = JSON.parse(tasksEl.textContent.trim());
+        }
+      } catch (e) {
+        console.warn('解析內嵌 tasks 出錯', e);
+      }
+
+      try {
+        const runsEl = document.getElementById('initial-runs');
+        if (runsEl && runsEl.textContent.trim()) {
+          RUNS = JSON.parse(runsEl.textContent.trim());
+        }
+      } catch (e) {
+        console.warn('解析內嵌 runs 出錯', e);
+      }
+
+      renderAll();
+    }
+
+    // 嘗試向同源 data/ 取得最新 JSON
+    async function tryFetchFreshData() {
+      try {
+        const [tasksRes, runsRes] = await Promise.all([
+          fetch('data/tasks.json?t=' + Date.now()),
+          fetch('data/runs.json?t=' + Date.now())
+        ]);
+
+        if (tasksRes.ok) TASKS = await tasksRes.json();
+        if (runsRes.ok) RUNS = await runsRes.json();
+        renderAll();
+      } catch (e) {
+        // 在 file:// 協議下瀏覽器可能阻擋 fetch，使用內嵌資料即可
+        console.log('使用內嵌資料渲染');
+      }
+    }
+
+    function refreshData() {
+      tryFetchFreshData();
+      const updatedText = document.getElementById('last-updated-text');
+      const now = new Date();
+      updatedText.textContent = '更新於 ' + now.toLocaleTimeString();
+    }
+
+    function renderAll() {
+      updateKPIs();
+      renderTasksGrid();
+      renderRunsList();
+      
+      const updatedText = document.getElementById('last-updated-text');
+      if (updatedText && updatedText.textContent === '載入中...') {
+        updatedText.textContent = '同步時間 ' + new Date().toLocaleTimeString();
+      }
+    }
+
+    function updateKPIs() {
+      document.getElementById('kpi-total-tasks').textContent = TASKS.length;
+      document.getElementById('active-tasks-count').textContent = TASKS.length + ' 個任務';
+
+      // 24小時內執行次數
+      const oneDayAgo = Date.now() - (24 * 60 * 60 * 1000);
+      const runs24h = RUNS.filter(r => {
+        const t = new Date(r.timestamp).getTime();
+        return t >= oneDayAgo;
+      });
+      document.getElementById('kpi-runs-24h').textContent = runs24h.length;
+
+      // 系統健康度 (近 7 日或總體成功率)
+      if (RUNS.length === 0) {
+        document.getElementById('kpi-health-rate').textContent = '100%';
+        document.getElementById('kpi-health-meta').textContent = '尚無執行紀錄';
+      } else {
+        const successRuns = RUNS.filter(r => r.status === 'success');
+        const rate = Math.round((successRuns.length / RUNS.length) * 100);
+        document.getElementById('kpi-health-rate').textContent = rate + '%';
+        document.getElementById('kpi-health-meta').textContent = `成功 ${successRuns.length} / 總計 ${RUNS.length} 次`;
+      }
+
+      // 最新執行記錄
+      if (RUNS.length > 0) {
+        const latest = RUNS[0];
+        document.getElementById('kpi-latest-time').textContent = latest.formatted_time ? latest.formatted_time.split(' ')[1] : '-';
+        document.getElementById('kpi-latest-name').textContent = `${latest.task_name} (${latest.status === 'success' ? '正常' : '異常'})`;
+      } else {
+        document.getElementById('kpi-latest-time').textContent = '待命中';
+        document.getElementById('kpi-latest-name').textContent = '尚無紀錄';
+      }
+    }
+
+    function renderTasksGrid() {
+      const container = document.getElementById('tasks-container');
+      if (!container) return;
+
+      if (TASKS.length === 0) {
+        container.innerHTML = '<div class="empty-state">尚無納管排程任務</div>';
+        return;
+      }
+
+      let html = '';
+      TASKS.forEach(t => {
+        const isSelected = currentTaskFilter === t.id;
+        const statusClass = t.status === 'success' ? 'badge-success' : (t.status === 'error' ? 'badge-error' : (t.status === 'warning' ? 'badge-warning' : 'badge-idle'));
+        const statusLabel = t.status === 'success' ? '正常' : (t.status === 'error' ? '失敗' : (t.status === 'warning' ? '警訊' : '待命'));
+
+        html += `
+          <div class="task-card ${isSelected ? 'active-filter' : ''}" onclick="toggleTaskFilter('${t.id}')">
+            <div class="task-card-head">
+              <div class="task-name">${escapeHtml(t.name)}</div>
+              <span class="badge ${statusClass}">${statusLabel}</span>
+            </div>
+            <div class="task-cron">週期: ${escapeHtml(t.schedule || t.cron)}</div>
+            <div style="font-size: 0.82rem; color: var(--ink-soft); line-height: 1.4; margin-bottom: 8px;">
+              ${escapeHtml(t.last_summary || '待命排程中')}
+            </div>
+            <div class="task-last-run">
+              <span>最後執行:</span>
+              <span class="tabular">${t.last_run ? t.last_run.split(' ')[0] : '無'}</span>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function renderRunsList() {
+      const container = document.getElementById('runs-container');
+      const countEl = document.getElementById('filtered-runs-count');
+      if (!container) return;
+
+      // 進行過濾
+      let filtered = RUNS.filter(r => {
+        // 狀態過濾
+        if (currentStatusFilter !== 'all' && r.status !== currentStatusFilter) {
+          return false;
+        }
+        // 任務過濾
+        if (currentTaskFilter && r.task_id !== currentTaskFilter) {
+          return false;
+        }
+        // 關鍵字搜尋
+        if (currentSearchQuery) {
+          const q = currentSearchQuery.toLowerCase();
+          const target = (r.task_name + ' ' + r.summary + ' ' + (r.details || '')).toLowerCase();
+          if (!target.includes(q)) return false;
+        }
+        return true;
+      });
+
+      countEl.textContent = `${filtered.length} 筆紀錄`;
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <p>沒有符合條件的執行紀錄。</p>
+            <p style="margin-top: 8px; font-size: 0.85rem;">可點擊「重設」清除篩選條件，或使用 record_task.py 寫入最新成果。</p>
+          </div>
+        `;
+        return;
+      }
+
+      let html = '';
+      filtered.forEach((r, idx) => {
+        const statusClass = r.status === 'success' ? 'badge-success' : (r.status === 'error' ? 'badge-error' : 'badge-warning');
+        const statusLabel = r.status === 'success' ? '執行成功' : (r.status === 'error' ? '執行失敗' : '需留意');
+
+        html += `
+          <div class="run-card">
+            <div class="run-header">
+              <div class="run-title-group">
+                <span class="badge ${statusClass}">${statusLabel}</span>
+                <span class="run-task-name">${escapeHtml(r.task_name)}</span>
+                <span class="badge badge-idle tabular">${escapeHtml(r.duration || '-')}</span>
+              </div>
+              <div class="run-time tabular">${escapeHtml(r.formatted_time || r.timestamp)}</div>
+            </div>
+
+            <div class="run-summary">
+              ${escapeHtml(r.summary)}
+            </div>
+
+            ${r.details ? `
+              <div>
+                <button class="details-toggle" onclick="toggleDetails('details-${idx}')">
+                  🔍 檢視完整執行說明與輸出日誌
+                </button>
+                <div id="details-${idx}" class="run-details">
+                  <pre class="details-pre">${escapeHtml(r.details)}</pre>
+                </div>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.toggle('open');
+      }
+    }
+
+    function setFilter(status, btn) {
+      currentStatusFilter = status;
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderRunsList();
+    }
+
+    function toggleTaskFilter(taskId) {
+      if (currentTaskFilter === taskId) {
+        currentTaskFilter = null;
+      } else {
+        currentTaskFilter = taskId;
+      }
+      renderTasksGrid();
+      renderRunsList();
+    }
+
+    function handleSearch() {
+      const input = document.getElementById('search-input');
+      currentSearchQuery = input ? input.value.trim() : '';
+      renderRunsList();
+    }
+
+    function clearFilters() {
+      currentStatusFilter = 'all';
+      currentTaskFilter = null;
+      currentSearchQuery = '';
+      const input = document.getElementById('search-input');
+      if (input) input.value = '';
+      document.querySelectorAll('.filter-tab').forEach(t => {
+        if (t.dataset.filter === 'all') t.classList.add('active');
+        else t.classList.remove('active');
+      });
+      renderTasksGrid();
+      renderRunsList();
+    }
+
+    function copyRecordSnippet() {
+      const snippet = `python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/record_task.py --task "daily-gardener" --status "success" --summary "任務完成" --push`;
+      navigator.clipboard.writeText(snippet).then(() => {
+        alert('✅ 已複製回報指令至剪貼簿！');
+      }).catch(() => {
+        prompt('請手動複製以下指令：', snippet);
+      });
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+  </script>
+</body>
+</html>
