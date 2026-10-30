@@ -520,6 +520,49 @@
       text-decoration: underline;
     }
 
+    .run-task-name-link {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--line);
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .run-task-name-link:hover {
+      color: var(--tea);
+      border-bottom: 1px solid var(--tea);
+    }
+
+    .run-actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--line-light);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-detail {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+      font-weight: 500;
+      font-size: 0.82rem;
+      padding: 6px 12px;
+    }
+
+    .btn-detail:hover {
+      background: var(--ink-soft);
+      color: #FFFFFF;
+    }
+
+    .run-id-pill {
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      font-family: var(--font-mono);
+    }
+
     /* 空狀態提示 */
     .empty-state {
       text-align: center;
@@ -1465,7 +1508,11 @@ Disk: 494GB 容量, 312GB 已使用 (63%, 剩餘 182GB)
             <div class="run-header">
               <div class="run-title-group">
                 <span class="badge ${statusClass}">${statusLabel}</span>
-                <span class="run-task-name">${escapeHtml(r.task_name)}</span>
+                <span class="run-task-name">
+                  <a href="runs/${r.id}.html" target="_blank" class="run-task-name-link" title="開啟專屬獨立報告分頁">
+                    ${escapeHtml(r.task_name)} ↗
+                  </a>
+                </span>
                 <span class="badge badge-idle tabular">${escapeHtml(r.duration || '-')}</span>
               </div>
               <div class="run-time tabular">${escapeHtml(r.formatted_time || r.timestamp)}</div>
@@ -1475,14 +1522,23 @@ Disk: 494GB 容量, 312GB 已使用 (63%, 剩餘 182GB)
               ${escapeHtml(r.summary)}
             </div>
 
+            <div class="run-actions-bar">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <a href="runs/${r.id}.html" target="_blank" class="btn btn-detail" title="在新分頁開啟完整執行報告">
+                  📄 查看獨立分頁報告 ↗
+                </a>
+                ${r.details ? `
+                  <button class="details-toggle" onclick="toggleDetails('details-${idx}')">
+                    🔍 頁內快速展開日誌
+                  </button>
+                ` : ''}
+              </div>
+              <span class="run-id-pill tabular">${escapeHtml(r.id)}</span>
+            </div>
+
             ${r.details ? `
-              <div>
-                <button class="details-toggle" onclick="toggleDetails('details-${idx}')">
-                  🔍 檢視完整執行說明與輸出日誌
-                </button>
-                <div id="details-${idx}" class="run-details">
-                  <pre class="details-pre">${escapeHtml(r.details)}</pre>
-                </div>
+              <div id="details-${idx}" class="run-details">
+                <pre class="details-pre">${escapeHtml(r.details)}</pre>
               </div>
             ` : ''}
           </div>

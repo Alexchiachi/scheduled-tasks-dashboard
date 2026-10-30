@@ -232,7 +232,7 @@ def scan_and_record(push: bool = True):
 
         if push:
             print("🚀 [自動推送] 正在同步到遠端 GitHub Pages...")
-            run_cmd(["git", "add", "data/", "index.html"])
+            run_cmd(["git", "add", "data/", "index.html", "runs/"])
             run_cmd(["git", "commit", "-m", f"chore(auto-monitor): 自動同步 {new_records} 筆最新排程成果"])
             push_res = run_cmd(["git", "push", "origin", "main"])
             if push_res.returncode == 0:

@@ -147,7 +147,7 @@ def record_task(
         print("🚀 [自動推送] 正在推送到 GitHub 遠端倉庫...")
         commit_msg = f"chore(monitor): 記錄 [{task_entry.get('name')}] 執行成果 ({status})"
         
-        run_cmd(["git", "add", "data/", "index.html"])
+        run_cmd(["git", "add", "data/", "index.html", "runs/"])
         commit_res = run_cmd(["git", "commit", "-m", commit_msg])
         if commit_res.returncode == 0:
             print(f"✅ Git 提交完成: {commit_msg}")
