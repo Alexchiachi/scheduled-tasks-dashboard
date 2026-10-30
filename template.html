@@ -741,7 +741,10 @@
           <span>📝 執行成果與說明日誌</span>
           <span class="badge badge-idle" id="filtered-runs-count">0 筆紀錄</span>
         </h2>
-        <a href="#integration-guide" class="btn" style="font-size: 0.8rem;">⚡ 任務回報整合指令</a>
+        <div>
+          <button class="btn" onclick="exportFullArchiveMarkdown()" style="font-size: 0.8rem;">📥 匯出全域累積報告</button>
+          <a href="#integration-guide" class="btn" style="font-size: 0.8rem;">⚡ 任務回報整合指令</a>
+        </div>
       </div>
 
       <!-- 篩選列 -->
@@ -943,8 +946,10 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
               ${escapeHtml(t.last_summary || '待命排程中')}
             </div>
             <div class="task-last-run">
-              <span>最後執行:</span>
-              <span class="tabular">${t.last_run ? t.last_run.split(' ')[0] : '無'}</span>
+              <span>累計成果: <strong class="tabular" style="color: var(--ink);">${t.total_runs || 0}</strong> 期</span>
+              <a href="tasks/${t.id}.html" class="btn" style="padding: 2px 7px; font-size: 0.72rem; background: var(--tea-bg); color: var(--tea); border-color: var(--line);" onclick="event.stopPropagation();" title="檢視此任務全部歷次累積報告">
+                📜 累積歷程 ↗
+              </a>
             </div>
           </div>
         `;
@@ -1090,6 +1095,39 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
       }).catch(() => {
         prompt('請手動複製以下指令：', snippet);
       });
+    }
+
+    function exportFullArchiveMarkdown() {
+      if (RUNS.length === 0) {
+        alert('尚無累積紀錄可匯出');
+        return;
+      }
+      let md = `# 大道至簡 · 排程任務全域累積成果報告\n\n`;
+      md += `- **匯出時間**: ${new Date().toLocaleString()}\n`;
+      md += `- **累計排程成果總數**: ${RUNS.length} 筆\n`;
+      md += `- **納管排程任務數**: ${TASKS.length} 個\n\n`;
+      md += `---\n\n`;
+
+      RUNS.forEach((r, idx) => {
+        md += `### [${r.status === 'success' ? '成功' : '警訊'}] ${r.task_name} · 第 ${RUNS.length - idx} 筆 (${r.formatted_time})\n`;
+        md += `- **任務 ID**: \`${r.task_id}\`\n`;
+        md += `- **耗時**: ${r.duration || '-'}\n`;
+        md += `- **成果摘要**:\n  ${(r.summary || '').replace(/\n/g, '\n  ')}\n\n`;
+        if (r.details) {
+          md += `<details><summary>展開詳細日誌</summary>\n\n\`\`\`\n${r.details}\n\`\`\`\n</details>\n\n`;
+        }
+        md += `---\n\n`;
+      });
+
+      const blob = new Blob([md], { type: 'text/markdown;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `tasks_cumulative_archive_${Date.now()}.md`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
     }
 
     function escapeHtml(str) {

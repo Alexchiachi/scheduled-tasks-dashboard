@@ -125,11 +125,8 @@ def record_task(
         "details": details.strip()
     }
 
-    # 最新執行放在最前面
+    # 最新執行放在最前面（永久增量累積保留所有歷史）
     runs.insert(0, new_run)
-    # 限制歷史總量最多保留 1000 筆，避免無限制膨脹
-    if len(runs) > 1000:
-        runs = runs[:1000]
 
     with open(runs_file, "w", encoding="utf-8") as f:
         json.dump(runs, f, ensure_ascii=False, indent=2)
@@ -147,7 +144,7 @@ def record_task(
         print("🚀 [自動推送] 正在推送到 GitHub 遠端倉庫...")
         commit_msg = f"chore(monitor): 記錄 [{task_entry.get('name')}] 執行成果 ({status})"
         
-        run_cmd(["git", "add", "data/", "index.html", "runs/"])
+        run_cmd(["git", "add", "data/", "index.html", "runs/", "tasks/"])
         commit_res = run_cmd(["git", "commit", "-m", commit_msg])
         if commit_res.returncode == 0:
             print(f"✅ Git 提交完成: {commit_msg}")
