@@ -1,5 +1,16 @@
 [
   {
+    "id": "run_20261106_084522_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "Morning 晨間心流與要事簡報",
+    "status": "warning",
+    "timestamp": "2026-11-06T08:45:22.803921+08:00",
+    "formatted_time": "2026-11-06 08:45:22",
+    "duration": "5m 54s",
+    "summary": "🌿 晨間心流與要事簡報 · 收工回報 主理人晨安。晨間工匠已為您完成今日 Google 日曆巡檢、Obsidian 脈絡沉澱與紙墨美學晨報派送： 📊 晨間巡檢與提煉摘要 1. **Google 日曆時空**： 今日（2026-11-06 週五）**：全日行事曆**澄澈留白，零外部會議**。宇宙贈予您最奢華的大片心流淨土。 近期節奏遠望**：11/08 (日) 《俗人對話錄》生成、11/11 (三) 雲南大學幸福餐桌分享、11/13 (五) 幸福小聚。 2. **Obsidia...",
+    "details": "### 🌿 晨間心流與要事簡報 · 收工回報\n\n主理人晨安。晨間工匠已為您完成今日 Google 日曆巡檢、Obsidian 脈絡沉澱與紙墨美學晨報派送：\n\n---\n\n#### 📊 晨間巡檢與提煉摘要\n1. **Google 日曆時空**：\n   - **今日（2026-11-06 週五）**：全日行事曆**澄澈留白，零外部會議**。宇宙贈予您最奢華的大片心流淨土。\n   - **近期節奏遠望**：11/08 (日) 《俗人對話錄》生成、11/11 (三) 雲南大學幸福餐桌分享、11/13 (五) 幸福小聚。\n2. **Obsidian 知識演化**：\n   - 已讀取昨日 [[02_日常心流與演化日誌/每日對話評估/2026-11-05_每日對話深度評估.md|2026-11-05 每日對話深度評估]]，並於知識庫為您種下今日日記 [[Daily Notes/2026-11-06.md]]。\n3. **今日唯一核心要事**：\n   - **打磨一項具體可見的核心作品，刺穿「優化系統」的假性忙碌**。\n   - 不調工具、不改管線，上午專注推進入定（如專書《流動的藝術》關鍵章節或官網英文宣言），**「完成即退場」**，午後把空間完整還給呼吸、茶香與生活感知。\n\n---\n\n#### 📬 郵件派送紀錄\n- **收件地址**：`jianchiachi@gmail.com`\n- **郵件主旨**：`🌿 晨間心流與要事簡報 ｜ 2026-11-06 ｜ 大道至簡`\n- **排版規格**：大道至簡・紙墨美學響應式 HTML（米白底色 `#FCFBF9`、墨黑 `#1E201E`、草木綠 `#3E5A44`、圓角卡片陰影）\n- **發送狀態**：**成功寄達**（Message ID: `1a1ae50c7381aa7d`）\n\n---\n\n> **工匠溫和提醒**：  \n> 請確認後槽牙是否分離、雙肩是否順應重力沉下。頭腦關機，讓身體接管。晨間工匠已安靜退場，祝您今日心流澄明、清涼自在。\n\n=== 執行過程異常日誌 ===\nCreated At: 2026-11-06T08:41:22+08:00\nCompleted At: 2026-11-06T08:41:22+08:00\nEncountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: Tasks\",\"details\":{\"path\":\"Tasks\"}}\nCreated At: 2026-11-06T08:44:10+08:00\nCompleted At: 2026-11-06T08:44:22+08:00\nEncountered error in step execution: ❌ 執行 send_email 時發生提示：\nrequest to https://gmail.googleapis.com/gmail/v1/users/me/messages/send failed, reason: socket hang up"
+  },
+  {
     "id": "run_20261104_085052_morning-brief",
     "task_id": "morning-brief",
     "task_name": "Morning 晨間心流與要事簡報",
