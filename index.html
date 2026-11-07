@@ -932,16 +932,17 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
   },
   {
     "id": "weekly-backup",
-    "name": "Backup 週五資產歸檔與雙保險同步",
+    "name": "第二大腦冷備份與資產歸檔",
     "cron": "0 17 * * 5",
     "schedule": "每週五 17:00",
-    "status": "idle",
-    "last_run": null,
-    "last_duration": "-",
-    "last_summary": "尚無執行紀錄",
-    "total_runs": 0,
+    "status": "error",
+    "last_run": "2026-11-07 14:36:54",
+    "last_duration": "354s",
+    "last_summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "total_runs": 1,
     "success_count": 0,
-    "description": "執行週五雙保險自動備份：1. 執行 NODE_PATH=/Users/chienchiachi/.config/google-drive-mcp/node_modules node /Users/chienchiachi/.config/google-drive-mcp/sync_dual_base.js 將 Obsidian 與 WorkBuddy 自動打包備份至 Google Drive；2...."
+    "description": "執行週五雙保險自動備份：1. 執行 NODE_PATH=/Users/chienchiachi/.config/google-drive-mcp/node_modules node /Users/chienchiachi/.config/google-drive-mcp/sync_dual_base.js 將 Obsidian 與 WorkBuddy 自動打包備份至 Google Drive；2....",
+    "last_status": "error"
   },
   {
     "id": "weekly-dialogue-distillation",
@@ -996,6 +997,175 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
 </script>
   <script id="initial-runs" type="application/json">
 [
+  {
+    "id": "run_20261107_143654_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "第二大腦冷備份與資產歸檔",
+    "status": "error",
+    "timestamp": "2026-11-07T14:36:54.287267+08:00",
+    "formatted_time": "2026-11-07 14:36:54",
+    "duration": "354s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Sat Nov  7 06:30:59 UTC 2026] 啟動排程任務: 第二大腦冷備份與資產歸檔 (weekly-backup) ===
+📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
+  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
+From github.com:Alexchiachi/second-brain-vault
+ * branch            main       -> FETCH_HEAD
+  [EXEC] git reset --hard origin/main (cwd=/opt/second-brain-vault)
+Updating files:   4% (115/2771)
+Updating files:   5% (139/2771)
+Updating files:   5% (144/2771)
+Updating files:   6% (167/2771)
+Updating files:   7% (194/2771)
+Updating files:   8% (222/2771)
+Updating files:   9% (250/2771)
+Updating files:  10% (278/2771)
+Updating files:  11% (305/2771)
+Updating files:  12% (333/2771)
+Updating files:  13% (361/2771)
+Updating files:  14% (388/2771)
+Updating files:  15% (416/2771)
+Updating files:  16% (444/2771)
+Updating files:  17% (472/2771)
+Updating files:  18% (499/2771)
+Updating files:  19% (527/2771)
+Updating files:  20% (555/2771)
+Updating files:  21% (582/2771)
+Updating files:  22% (610/2771)
+Updating files:  22% (614/2771)
+Updating files:  23% (638/2771)
+Updating files:  24% (666/2771)
+Updating files:  25% (693/2771)
+Updating files:  26% (721/2771)
+Updating files:  27% (749/2771)
+Updating files:  28% (776/2771)
+Updating files:  29% (804/2771)
+Updating files:  30% (832/2771)
+Updating files:  30% (840/2771)
+Updating files:  31% (860/2771)
+Updating files:  32% (887/2771)
+Updating files:  33% (915/2771)
+Updating files:  34% (943/2771)
+Updating files:  35% (970/2771)
+Updating files:  36% (998/2771)
+Updating files:  37% (1026/2771)
+Updating files:  38% (1053/2771)
+Updating files:  38% (1069/2771)
+Updating files:  39% (1081/2771)
+Updating files:  40% (1109/2771)
+Updating files:  40% (1115/2771)
+Updating files:  40% (1116/2771)
+Updating files:  41% (1137/2771)
+Updating files:  41% (1145/2771)
+Updating files:  42% (1164/2771)
+Updating files:  42% (1175/2771)
+Updating files:  43% (1192/2771)
+Updating files:  43% (1217/2771)
+Updating files:  44% (1220/2771)
+Updating files:  44% (1225/2771)
+Updating files:  45% (1247/2771)
+Updating files:  45% (1248/2771)
+Updating files:  46% (1275/2771)
+Updating files:  47% (1303/2771)
+Updating files:  47% (1307/2771)
+Updating files:  48% (1331/2771)
+Updating files:  49% (1358/2771)
+Updating files:  50% (1386/2771)
+Updating files:  51% (1414/2771)
+Updating files:  52% (1441/2771)
+Updating files:  53% (1469/2771)
+Updating files:  54% (1497/2771)
+Updating files:  55% (1525/2771)
+Updating files:  56% (1552/2771)
+Updating files:  57% (1580/2771)
+Updating files:  58% (1608/2771)
+Updating files:  58% (1615/2771)
+Updating files:  59% (1635/2771)
+Updating files:  60% (1663/2771)
+Updating files:  61% (1691/2771)
+Updating files:  62% (1719/2771)
+Updating files:  63% (1746/2771)
+Updating files:  64% (1774/2771)
+Updating files:  65% (1802/2771)
+Updating files:  66% (1829/2771)
+Updating files:  67% (1857/2771)
+Updating files:  68% (1885/2771)
+Updating files:  69% (1912/2771)
+Updating files:  70% (1940/2771)
+Updating files:  71% (1968/2771)
+Updating files:  72% (1996/2771)
+Updating files:  73% (2023/2771)
+Updating files:  74% (2051/2771)
+Updating files:  75% (2079/2771)
+Updating files:  76% (2106/2771)
+Updating files:  77% (2134/2771)
+Updating files:  78% (2162/2771)
+Updating files:  79% (2190/2771)
+Updating files:  80% (2217/2771)
+Updating files:  81% (2245/2771)
+Updating files:  82% (2273/2771)
+Updating files:  83% (2300/2771)
+Updating files:  84% (2328/2771)
+Updating files:  84% (2331/2771)
+Updating files:  84% (2348/2771)
+Updating files:  85% (2356/2771)
+Updating files:  86% (2384/2771)
+Updating files:  86% (2393/2771)
+Updating files:  87% (2411/2771)
+Updating files:  88% (2439/2771)
+Updating files:  89% (2467/2771)
+Updating files:  90% (2494/2771)
+Updating files:  91% (2522/2771)
+Updating files:  91% (2543/2771)
+Updating files:  92% (2550/2771)
+Updating files:  92% (2573/2771)
+Updating files:  93% (2578/2771)
+Updating files:  94% (2605/2771)
+Updating files:  95% (2633/2771)
+Updating files:  96% (2661/2771)
+Updating files:  97% (2688/2771)
+Updating files:  98% (2716/2771)
+Updating files:  99% (2744/2771)
+Updating files: 100% (2771/2771)
+Updating files: 100% (2771/2771), done.
+HEAD is now at 2697280 🌱 feat: 2026-11-06 每日對話分類沉澱與簡家旗視角深度評估
+📦 [2/4] 打包為時間戳壓縮檔: Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-07.tar.gz...
+  [EXEC] tar -czf /tmp/Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-07.tar.gz --exclude=.git --exclude=.DS_Store --exclude=.trash -C /opt/second-brain-vault . (cwd=None)
+  ✓ 打包完成，檔案大小: 763.29 MB
+🌐 [3/4] 準備上傳至 Google Drive (資料夾: 1C50SkVd2BUC2gWmjUMb2GJ3QW4HNWU4s)...
+Traceback (most recent call last):
+  File \"/opt/backup_vault.py\", line 125, in <module>
+    main()
+  File \"/opt/backup_vault.py\", line 102, in main
+    res = service.files().list(q=q, fields=\"files(id, name)\").execute()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 205, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 242, in before_request
+    self._blocking_refresh(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 205, in _blocking_refresh
+    self.refresh(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Sat Nov  7 06:36:53 UTC 2026] 任務結束，狀態: error (耗時: 354s) ==="
+  },
   {
     "id": "run_20261107_084304_morning-brief",
     "task_id": "morning-brief",
