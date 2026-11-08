@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>晨間心流與要事簡報 · 執行報告詳情 - 排程任務監測儀表板</title>
+  <meta name="description" content="Antigravity 2.0 排程任務 晨間心流與要事簡報 於 2026-11-08 08:30:10 之完整執行成果、說明日誌與健康診斷報告。">
+  <meta name="theme-color" content="#FAF6EF">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="大道至簡 · 排程監測系統">
+  <meta property="og:title" content="晨間心流與要事簡報 · 執行報告詳情">
+  <meta property="og:description" content="任務執行失敗 (Exit Code: 1)，請檢視日誌。">
+
+  <style>
+    :root {
+      --paper: #FAF6EF;
+      --paper-deep: #F2EBDF;
+      --paper-card: #FFFFFF;
+      --ink: #2A2520;
+      --ink-soft: #4A423A;
+      --ink-muted: #8C8275;
+      --line: #D9D1C2;
+      --line-light: #ECE5D8;
+
+      --tea: #82663F;
+      --tea-bg: #F5EFE6;
+
+      --moss: #547050;
+      --moss-bg: #EEF4ED;
+      --moss-border: #9BB898;
+
+      --seal: #A8543A;
+      --seal-bg: #FAECE8;
+      --seal-border: #DFA495;
+
+      --warn: #B87820;
+      --warn-bg: #FAF3E6;
+      --warn-border: #E8C888;
+
+      --font-serif: -apple-system, BlinkMacSystemFont, "Songti TC", "Noto Serif TC", serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-serif);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      text-wrap: balance;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    p, li, blockquote {
+      text-wrap: pretty;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+      font-family: var(--font-mono);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 頂部導航列 */
+    header {
+      border-bottom: 1px solid var(--line);
+      background-color: rgba(250, 246, 239, 0.94);
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+    }
+
+    .nav-breadcrumbs a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .nav-breadcrumbs a:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--paper-deep);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      font-family: inherit;
+      font-size: 0.82rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .btn:hover {
+      background: #ECE5D8;
+      border-color: var(--ink-soft);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    /* 主內容區 */
+    main {
+      flex: 1;
+      padding: 40px 0 64px 0;
+    }
+
+    /* 標題與狀態 Hero */
+    .hero-box {
+      background: var(--paper-card);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 32px 36px;
+      margin-bottom: 28px;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      font-size: 1.8rem;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--line);
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-item strong {
+      color: var(--ink-soft);
+    }
+
+    /* 狀態 Badge（直角、邊框、微色相） */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      font-size: 0.75rem;
+      border-radius: 0;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      white-space: nowrap;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+    }
+
+    .badge-success {
+      background-color: var(--moss-bg);
+      color: var(--moss);
+      border-color: var(--moss-border);
+    }
+
+    .badge-warning {
+      background-color: var(--warn-bg);
+      color: var(--warn);
+      border-color: var(--warn-border);
+    }
+
+    .badge-error {
+      background-color: var(--seal-bg);
+      color: var(--seal);
+      border-color: var(--seal-border);
+    }
+
+    .badge-idle {
+      background-color: var(--paper-deep);
+      color: var(--ink-muted);
+      border-color: var(--line);
+    }
+
+    /* 成果說明摘要區塊 (Executive Summary) */
+    .summary-card {
+      background: var(--paper-card);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--tea);
+      border-radius: 0;
+      padding: 24px 28px;
+      margin-bottom: 28px;
+    }
+
+    .summary-card h3 {
+      font-size: 1rem;
+      color: var(--tea);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .summary-body {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+
+    /* 完整執行日誌與詳細說明 */
+    .section-card {
+      background: var(--paper-card);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+    }
+
+    .section-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-card-title {
+      font-size: 1.15rem;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .log-box {
+      background: #1C1916;
+      color: #EDE8DE;
+      padding: 20px 24px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+      border-radius: 0;
+      border: 1px solid #332C24;
+    }
+
+    /* 任務排程規格卡片 */
+    .sidecar-box {
+      background: var(--paper-deep);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 20px 24px;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    .sidecar-box h4 {
+      font-size: 0.95rem;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    /* 頁尾與朱印 */
+    footer {
+      border-top: 1px solid var(--line);
+      background-color: var(--paper);
+      padding: 48px 0 36px 0;
+      margin-top: auto;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .seal-mark {
+      width: 88px;
+      height: 88px;
+      border: 2px solid var(--seal);
+      color: var(--seal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.15rem;
+      line-height: 1.25;
+      letter-spacing: 0.15em;
+      border-radius: 0;
+      background: rgba(168, 84, 58, 0.04);
+      user-select: none;
+      box-shadow: inset 0 0 0 1px var(--seal);
+    }
+
+    .footer-text {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .hero-box {
+        padding: 22px 20px;
+      }
+      .hero-title {
+        font-size: 1.4rem;
+      }
+      .section-card {
+        padding: 20px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導航列 -->
+  <header>
+    <div class="container header-inner">
+      <div class="nav-breadcrumbs">
+        <a href="../index.html">← 返回排程總覽儀表板</a>
+        <span>/</span>
+        <span>執行紀錄</span>
+        <span>/</span>
+        <span style="color: var(--ink);">晨間心流與要事簡報</span>
+      </div>
+      <div class="nav-actions">
+        <button class="btn" onclick="copyLogContent()">📋 複製日誌</button>
+        <button class="btn" onclick="downloadMarkdown()">📥 匯出 Markdown</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主內容區 -->
+  <main>
+    <div class="container">
+
+      <!-- 標題與狀態 Hero -->
+      <div class="hero-box">
+        <div class="hero-meta">
+          <span class="badge badge-error">執行失敗</span>
+          <span class="badge badge-idle tabular">7s</span>
+          <span class="badge badge-idle tabular">morning-brief</span>
+          <a href="../tasks/morning-brief.html" class="btn" style="padding: 2px 8px; font-size: 0.75rem; background: var(--tea-bg); color: var(--tea); border-color: var(--line);">
+            📜 查看本任務累積歷史檔案庫 (10 期) ↗
+          </a>
+        </div>
+        <h1 class="hero-title">晨間心流與要事簡報</h1>
+        <div class="meta-row">
+          <div class="meta-item">
+            <span>執行時間：</span>
+            <strong class="tabular">2026-11-08 08:30:10</strong>
+          </div>
+          <div class="meta-item">
+            <span>排程週期：</span>
+            <strong>每日 08:30</strong>
+          </div>
+          <div class="meta-item">
+            <span>紀錄 ID：</span>
+            <span class="tabular">run_20261108_083010_morning-brief</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 成果說明摘要 -->
+      <div class="summary-card">
+        <h3>💡 本次執行成果說明摘要</h3>
+        <div class="summary-body">
+          任務執行失敗 (Exit Code: 1)，請檢視日誌。
+        </div>
+      </div>
+
+      <!-- 完整執行日誌與產出報告 -->
+      <div class="section-card">
+        <div class="section-card-header">
+          <h2 class="section-card-title">
+            <span>📝 完整執行說明日誌與交付成果</span>
+          </h2>
+          <span class="badge badge-idle tabular">3438 字元</span>
+        </div>
+        <pre class="log-box" id="log-text">=== [Sun Nov  8 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-08 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1794097808354,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: &#x27;POST&#x27;,
+    url: &#x27;https://oauth2.googleapis.com/token&#x27;,
+    data: &#x27;&lt;&lt;REDACTED&gt; - See `errorRedactor` option in `gaxios` for configuration&gt;.&#x27;,
+    headers: {
+      &#x27;Content-Type&#x27;: &#x27;application/x-www-form-urlencoded&#x27;,
+      &#x27;User-Agent&#x27;: &#x27;google-api-nodejs-client/9.15.1&#x27;,
+      &#x27;x-goog-api-client&#x27;: &#x27;gl-node/18.19.1&#x27;
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: &#x27;&lt;&lt;REDACTED&gt; - See `errorRedactor` option in `gaxios` for configuration&gt;.&#x27;,
+    validateStatus: [Function: validateStatus],
+    responseType: &#x27;unknown&#x27;,
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: &#x27;POST&#x27;,
+      url: &#x27;https://oauth2.googleapis.com/token&#x27;,
+      data: &#x27;&lt;&lt;REDACTED&gt; - See `errorRedactor` option in `gaxios` for configuration&gt;.&#x27;,
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: &#x27;&lt;&lt;REDACTED&gt; - See `errorRedactor` option in `gaxios` for configuration&gt;.&#x27;,
+      validateStatus: [Function: validateStatus],
+      responseType: &#x27;unknown&#x27;,
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: &#x27;invalid_grant&#x27;,
+      error_description: &#x27;Token has been expired or revoked.&#x27;
+    },
+    headers: {
+      &#x27;cache-control&#x27;: &#x27;no-cache, no-store, max-age=0, must-revalidate&#x27;,
+      connection: &#x27;close&#x27;,
+      &#x27;content-encoding&#x27;: &#x27;gzip&#x27;,
+      &#x27;content-type&#x27;: &#x27;application/json; charset=utf-8&#x27;,
+      date: &#x27;Sun, 08 Nov 2026 00:30:08 GMT&#x27;,
+      expires: &#x27;Mon, 01 Jan 1990 00:00:00 GMT&#x27;,
+      pragma: &#x27;no-cache&#x27;,
+      server: &#x27;scaffolding on HTTPServer2&#x27;,
+      &#x27;transfer-encoding&#x27;: &#x27;chunked&#x27;,
+      vary: &#x27;Origin, X-Origin, Referer&#x27;,
+      &#x27;x-content-type-options&#x27;: &#x27;nosniff&#x27;,
+      &#x27;x-frame-options&#x27;: &#x27;SAMEORIGIN&#x27;,
+      &#x27;x-xss-protection&#x27;: &#x27;0&#x27;
+    },
+    status: 400,
+    statusText: &#x27;Bad Request&#x27;,
+    request: { responseURL: &#x27;https://oauth2.googleapis.com/token&#x27; }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: &#x27;6.7.1&#x27;
+}
+=== [Sun Nov  8 00:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ===</pre>
+      </div>
+
+      <!-- 任務排程規格與上下文資訊 -->
+      <div class="sidecar-box">
+        <h4>⚙️ 任務所屬排程規格 (Sidecar Context)</h4>
+        <p><strong>任務名稱：</strong>晨間心流與要事簡報 (<code>morning-brief</code>)</p>
+        <p><strong>Cron 表達式：</strong><code class="tabular">30 8 * * *</code>（每日 08:30）</p>
+        <p><strong>原始排程目標：</strong>你是簡家旗第二心智的晨間工匠。請執行每日晨間心流與要事簡報任務：
+1. 查詢今日 Google 日曆活動（調用 google-drive 之 list_calendar_events）與 Obsidian 知識庫（讀取當日日常日記與近期對話評估）。
+2. 以「大道至簡」溫和專注的語調，提煉出「今天唯一最核心的一件事」與關鍵提醒，過濾多餘資訊噪音，守護主理人的心理平靜與清晰心流。
+3. 將提煉產出排...</p>
+        <p style="margin-top: 8px; font-size: 0.8rem; color: var(--ink-muted);">
+          本報告由 Antigravity 2.0 自動化監測守護引擎於任務完成時捕獲生成，並自動同步至 GitHub Pages。
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 頁尾與 88px 朱印 -->
+  <footer>
+    <div class="container footer-content">
+      <div class="seal-mark" title="大道至簡 · 任務常安">
+        任務<br>常安
+      </div>
+      <div class="footer-text">
+        <p><strong>大道至簡 · 排程任務監測儀表板</strong></p>
+        <p>遵循 Zen Web Standards 中央規範 · 米白紙底墨色直角美學 · 零 Cookie 個資合規</p>
+      </div>
+      <div style="font-size: 0.82rem; margin-top: 8px;">
+        <a href="../index.html" style="color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line);">← 返回排程總覽儀表板</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function copyLogContent() {
+      const log = document.getElementById('log-text').innerText;
+      navigator.clipboard.writeText(log).then(() => {
+        alert('✅ 已複製完整執行日誌至剪貼簿！');
+      }).catch(err => {
+        console.error('複製失敗', err);
+      });
+    }
+
+    function downloadMarkdown() {
+      const taskName = "晨間心流與要事簡報";
+      const timeStr = "2026-11-08 08:30:10";
+      const status = "執行失敗";
+      const summary = `任務執行失敗 (Exit Code: 1)，請檢視日誌。`;
+      const details = document.getElementById('log-text').innerText;
+
+      const mdContent = `# 排程任務執行報告: ${taskName}
+
+- **執行狀態**: ${status}
+- **執行時間**: ${timeStr}
+- **任務標識**: morning-brief
+- **排程週期**: 每日 08:30
+- **紀錄 ID**: run_20261108_083010_morning-brief
+
+## 成果說明摘要
+${summary}
+
+## 完整日誌與交付報告
+\`\`\`
+${details}
+\`\`\`
+
+---
+*報告產出時間: ${new Date().toLocaleString()} · 大道至簡排程監測系統*
+`;
+
+      const blob = new Blob([mdContent], { type: 'text/markdown;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `report_${taskName}_${timeStr.replace(/[: ]/g, '_')}.md`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>

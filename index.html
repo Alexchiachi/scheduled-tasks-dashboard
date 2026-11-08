@@ -885,20 +885,20 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
   },
   {
     "id": "morning-brief",
-    "name": "Morning 晨間心流與要事簡報",
+    "name": "晨間心流與要事簡報",
     "cron": "30 8 * * *",
     "schedule": "每日 08:30",
-    "status": "warning",
-    "last_run": "2026-11-07 08:43:04",
-    "last_duration": "12m 0s",
-    "last_summary": "🌿 晨間心流與要事簡報 · 巡檢已安心交付 主理人早安，第二心智晨間工匠已為您完成今日的時空巡檢、知識庫對齊與心流提煉，並已將紙墨美學 HTML 簡報寄達您的電子信箱。 📬 執行成果總覽 1. **Google 日曆巡檢**： 今日（`2026-11-07`，週六）**整日行事曆全面留白**，無任何會議或外部行程干擾。 近期行程預覽：明日（11/08）18:30 俗人對話錄生成提醒、11/11（週三）雲南大學-幸福餐桌分享。 2. **Obsidian 知識庫對齊**： 已讀...",
-    "total_runs": 9,
+    "status": "error",
+    "last_run": "2026-11-08 08:30:10",
+    "last_duration": "7s",
+    "last_summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "total_runs": 10,
     "success_count": 4,
     "description": "你是簡家旗第二心智的晨間工匠。請執行每日晨間心流與要事簡報任務：
 1. 查詢今日 Google 日曆活動（調用 google-drive 之 list_calendar_events）與 Obsidian 知識庫（讀取當日日常日記與近期對話評估）。
 2. 以「大道至簡」溫和專注的語調，提煉出「今天唯一最核心的一件事」與關鍵提醒，過濾多餘資訊噪音，守護主理人的心理平靜與清晰心流。
 3. 將提煉產出排...",
-    "last_status": "warning"
+    "last_status": "error"
   },
   {
     "id": "sentinel-check",
@@ -997,6 +997,99 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
 </script>
   <script id="initial-runs" type="application/json">
 [
+  {
+    "id": "run_20261108_083010_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-08T08:30:10.230572+08:00",
+    "formatted_time": "2026-11-08 08:30:10",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Sun Nov  8 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-08 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1794097808354,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Sun, 08 Nov 2026 00:30:08 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Sun Nov  8 00:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
+  },
   {
     "id": "run_20261107_143654_weekly-backup",
     "task_id": "weekly-backup",
