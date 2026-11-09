@@ -9,7 +9,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="大道至簡 · 排程監測系統">
   <meta property="og:title" content="晨間心流與要事簡報 · 任務歷史累積成果檔案庫">
-  <meta property="og:description" content="累計執行 10 次，包含完整執行成果說明與歷史演化紀錄。">
+  <meta property="og:description" content="累計執行 11 次，包含完整執行成果說明與歷史演化紀錄。">
 
   <style>
     :root {
@@ -456,15 +456,15 @@
         <div class="stats-grid">
           <div class="stat-item">
             <div class="stat-label">累計執行成果</div>
-            <div class="stat-value tabular">10 <span style="font-size: 0.9rem; font-weight: normal;">期/次</span></div>
+            <div class="stat-value tabular">11 <span style="font-size: 0.9rem; font-weight: normal;">期/次</span></div>
           </div>
           <div class="stat-item">
             <div class="stat-label">累計成功率</div>
-            <div class="stat-value tabular">40%</div>
+            <div class="stat-value tabular">36%</div>
           </div>
           <div class="stat-item">
             <div class="stat-label">最近執行時間</div>
-            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">2026-11-08 08:30:10</div>
+            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">2026-11-09 08:30:09</div>
           </div>
           <div class="stat-item">
             <div class="stat-label">Cron 表達式</div>
@@ -477,7 +477,7 @@
       <div class="section-header">
         <h2 class="section-title">
           <span>📜 歷次成果說明累積時間軸</span>
-          <span class="badge badge-idle tabular">10 筆歷史紀錄</span>
+          <span class="badge badge-idle tabular">11 筆歷史紀錄</span>
         </h2>
         <div style="font-size: 0.85rem; color: var(--ink-muted);">
           按執行時間倒序排列 · 永久增量留痕
@@ -486,6 +486,116 @@
 
       <div class="timeline-list">
         
+          <div class="timeline-card">
+            <div class="timeline-head">
+              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <span class="run-counter-badge">第 11 期</span>
+                <span class="badge badge-error">執行失敗</span>
+                <span class="timeline-time tabular" style="font-size: 0.85rem; color: var(--ink-soft); font-weight: 600;">2026-11-09 08:30:09</span>
+                <span class="badge badge-idle tabular timeline-duration">6s</span>
+              </div>
+              <span class="tabular" style="font-size: 0.75rem; color: var(--ink-muted);">run_20261109_083009_morning-brief</span>
+            </div>
+
+            <div class="run-summary-box">
+              任務執行失敗 (Exit Code: 1)，請檢視日誌。
+            </div>
+
+            <div class="run-actions">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <a href="../runs/run_20261109_083009_morning-brief.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
+                  📄 檢視此期獨立報告 ↗
+                </a>
+                <button class="btn" onclick="toggleDetails('t-details-0')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+              </div>
+            </div>
+
+            <div id="t-details-0" class="details-box"><pre class="details-pre">=== [Mon Nov  9 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-09 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1794184207758,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: &#x27;POST&#x27;,
+    url: &#x27;https://oauth2.googleapis.com/token&#x27;,
+    data: &#x27;&lt;&lt;REDACTED&gt; - See `errorRedactor` option in `gaxios` for configuration&gt;.&#x27;,
+    headers: {
+      &#x27;Content-Type&#x27;: &#x27;application/x-www-form-urlencoded&#x27;,
+      &#x27;User-Agent&#x27;: &#x27;google-api-nodejs-client/9.15.1&#x27;,
+      &#x27;x-goog-api-client&#x27;: &#x27;gl-node/18.19.1&#x27;
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: &#x27;&lt;&lt;REDACTED&gt; - See `errorRedactor` option in `gaxios` for configuration&gt;.&#x27;,
+    validateStatus: [Function: validateStatus],
+    responseType: &#x27;unknown&#x27;,
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: &#x27;POST&#x27;,
+      url: &#x27;https://oauth2.googleapis.com/token&#x27;,
+      data: &#x27;&lt;&lt;REDACTED&gt; - See `errorRedactor` option in `gaxios` for configuration&gt;.&#x27;,
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: &#x27;&lt;&lt;REDACTED&gt; - See `errorRedactor` option in `gaxios` for configuration&gt;.&#x27;,
+      validateStatus: [Function: validateStatus],
+      responseType: &#x27;unknown&#x27;,
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: &#x27;invalid_grant&#x27;,
+      error_description: &#x27;Token has been expired or revoked.&#x27;
+    },
+    headers: {
+      &#x27;cache-control&#x27;: &#x27;no-cache, no-store, max-age=0, must-revalidate&#x27;,
+      connection: &#x27;close&#x27;,
+      &#x27;content-encoding&#x27;: &#x27;gzip&#x27;,
+      &#x27;content-type&#x27;: &#x27;application/json; charset=utf-8&#x27;,
+      date: &#x27;Mon, 09 Nov 2026 00:30:07 GMT&#x27;,
+      expires: &#x27;Mon, 01 Jan 1990 00:00:00 GMT&#x27;,
+      pragma: &#x27;no-cache&#x27;,
+      server: &#x27;scaffolding on HTTPServer2&#x27;,
+      &#x27;transfer-encoding&#x27;: &#x27;chunked&#x27;,
+      vary: &#x27;Origin, X-Origin, Referer&#x27;,
+      &#x27;x-content-type-options&#x27;: &#x27;nosniff&#x27;,
+      &#x27;x-frame-options&#x27;: &#x27;SAMEORIGIN&#x27;,
+      &#x27;x-xss-protection&#x27;: &#x27;0&#x27;
+    },
+    status: 400,
+    statusText: &#x27;Bad Request&#x27;,
+    request: { responseURL: &#x27;https://oauth2.googleapis.com/token&#x27; }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: &#x27;6.7.1&#x27;
+}
+=== [Mon Nov  9 00:30:07 UTC 2026] 任務結束，狀態: error (耗時: 6s) ===</pre></div>
+          </div>
+                    
+
           <div class="timeline-card">
             <div class="timeline-head">
               <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
@@ -506,11 +616,11 @@
                 <a href="../runs/run_20261108_083010_morning-brief.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
                   📄 檢視此期獨立報告 ↗
                 </a>
-                <button class="btn" onclick="toggleDetails('t-details-0')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+                <button class="btn" onclick="toggleDetails('t-details-1')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
               </div>
             </div>
 
-            <div id="t-details-0" class="details-box"><pre class="details-pre">=== [Sun Nov  8 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+            <div id="t-details-1" class="details-box"><pre class="details-pre">=== [Sun Nov  8 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
 🌿 [Morning Brief Cloud Worker] 啟動執行...
 📅 正在查詢 2026-11-08 日曆活動...
 ⚠️ 取得日曆事件失敗: invalid_grant
@@ -616,11 +726,11 @@
                 <a href="../runs/run_20261107_084304_morning-brief.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
                   📄 檢視此期獨立報告 ↗
                 </a>
-                <button class="btn" onclick="toggleDetails('t-details-1')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+                <button class="btn" onclick="toggleDetails('t-details-2')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
               </div>
             </div>
 
-            <div id="t-details-1" class="details-box"><pre class="details-pre">### 🌿 晨間心流與要事簡報 · 巡檢已安心交付
+            <div id="t-details-2" class="details-box"><pre class="details-pre">### 🌿 晨間心流與要事簡報 · 巡檢已安心交付
 
 主理人早安，第二心智晨間工匠已為您完成今日的時空巡檢、知識庫對齊與心流提煉，並已將紙墨美學 HTML 簡報寄達您的電子信箱。
 
@@ -677,11 +787,11 @@ Encountered error in step execution: {&quot;error&quot;:&quot;NOTE_NOT_FOUND&quo
                 <a href="../runs/run_20261106_084522_morning-brief.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
                   📄 檢視此期獨立報告 ↗
                 </a>
-                <button class="btn" onclick="toggleDetails('t-details-2')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+                <button class="btn" onclick="toggleDetails('t-details-3')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
               </div>
             </div>
 
-            <div id="t-details-2" class="details-box"><pre class="details-pre">### 🌿 晨間心流與要事簡報 · 收工回報
+            <div id="t-details-3" class="details-box"><pre class="details-pre">### 🌿 晨間心流與要事簡報 · 收工回報
 
 主理人晨安。晨間工匠已為您完成今日 Google 日曆巡檢、Obsidian 脈絡沉澱與紙墨美學晨報派送：
 
@@ -741,11 +851,11 @@ request to https://gmail.googleapis.com/gmail/v1/users/me/messages/send failed, 
                 <a href="../runs/run_20261104_085052_morning-brief.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
                   📄 檢視此期獨立報告 ↗
                 </a>
-                <button class="btn" onclick="toggleDetails('t-details-3')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+                <button class="btn" onclick="toggleDetails('t-details-4')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
               </div>
             </div>
 
-            <div id="t-details-3" class="details-box"><pre class="details-pre">### 🌿 晨間心流與要事簡報 · 收工通知
+            <div id="t-details-4" class="details-box"><pre class="details-pre">### 🌿 晨間心流與要事簡報 · 收工通知
 
 主理人早安，第二心智晨間工匠已為您完成今日的資訊過濾與心流定錨，並將簡報透過 Gmail 遞送至您的電子信箱：
 
@@ -797,11 +907,11 @@ Encountered error in step execution: {&quot;error&quot;:&quot;NOTE_NOT_FOUND&quo
                 <a href="../runs/run_20261101_083253_morning-brief.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
                   📄 檢視此期獨立報告 ↗
                 </a>
-                <button class="btn" onclick="toggleDetails('t-details-4')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+                <button class="btn" onclick="toggleDetails('t-details-5')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
               </div>
             </div>
 
-            <div id="t-details-4" class="details-box"><pre class="details-pre">晨間工匠已順利完成今日晨間心流與要事簡報任務，紙墨美學 HTML 郵件已送達您的信箱。
+            <div id="t-details-5" class="details-box"><pre class="details-pre">晨間工匠已順利完成今日晨間心流與要事簡報任務，紙墨美學 HTML 郵件已送達您的信箱。
 
 ---
 
@@ -851,11 +961,11 @@ Encountered error in step execution: {&quot;error&quot;:&quot;NOTE_NOT_FOUND&quo
                 <a href="../runs/run_20261030_083545_morning-brief.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
                   📄 檢視此期獨立報告 ↗
                 </a>
-                <button class="btn" onclick="toggleDetails('t-details-5')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+                <button class="btn" onclick="toggleDetails('t-details-6')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
               </div>
             </div>
 
-            <div id="t-details-5" class="details-box"><pre class="details-pre">### 🌿 晨間心流與要事簡報已送達
+            <div id="t-details-6" class="details-box"><pre class="details-pre">### 🌿 晨間心流與要事簡報已送達
 
 主理人早安，晨間工匠已為您完成今日的資訊過濾與心流定錨，並將紙墨美學 HTML 簡報送抵您的信箱。
 
@@ -903,11 +1013,11 @@ Encountered error in step execution: {&quot;error&quot;:&quot;NOTE_NOT_FOUND&quo
                 <a href="../runs/run_20261030_001646_morning-brief.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
                   📄 檢視此期獨立報告 ↗
                 </a>
-                <button class="btn" onclick="toggleDetails('t-details-6')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+                <button class="btn" onclick="toggleDetails('t-details-7')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
               </div>
             </div>
 
-            <div id="t-details-6" class="details-box"><pre class="details-pre">### 🌿 晨間心流與要事簡報 · 安心收工通知
+            <div id="t-details-7" class="details-box"><pre class="details-pre">### 🌿 晨間心流與要事簡報 · 安心收工通知
 
 家旗兄，晨安。第二心智晨間工匠已為您完成今日的資訊過濾與心流定錨，並將紙墨美學簡報專函送達您的信箱。
 
@@ -957,11 +1067,11 @@ Encountered error in step execution: {&quot;error&quot;:&quot;NOTE_NOT_FOUND&quo
                 <a href="../runs/run_20261030_001645_morning-brief.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
                   📄 檢視此期獨立報告 ↗
                 </a>
-                <button class="btn" onclick="toggleDetails('t-details-7')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+                <button class="btn" onclick="toggleDetails('t-details-8')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
               </div>
             </div>
 
-            <div id="t-details-7" class="details-box"><pre class="details-pre">### 🌿 晨間心流與要事簡報已寄出 ｜ 晨間工匠安心收工
+            <div id="t-details-8" class="details-box"><pre class="details-pre">### 🌿 晨間心流與要事簡報已寄出 ｜ 晨間工匠安心收工
 
 主理人早安，第二心智晨間工匠已為您完成今日的時空檢核、知識庫提煉與心流定錨，並將簡報透過高質感紙墨美學 HTML 排版發送至您的信箱：
 
@@ -1009,11 +1119,11 @@ Encountered error in step execution: {&quot;error&quot;:&quot;NOTE_NOT_FOUND&quo
                 <a href="../runs/run_20261030_001644_morning-brief.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
                   📄 檢視此期獨立報告 ↗
                 </a>
-                <button class="btn" onclick="toggleDetails('t-details-8')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+                <button class="btn" onclick="toggleDetails('t-details-9')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
               </div>
             </div>
 
-            <div id="t-details-8" class="details-box"><pre class="details-pre">### 🌿 晨間工匠 · 心流定錨與收工通知
+            <div id="t-details-9" class="details-box"><pre class="details-pre">### 🌿 晨間工匠 · 心流定錨與收工通知
 
 早安，家旗。晨光初照，第二心智已為您排空雜訊，晨間簡報已全自動提煉完畢並送達您的信箱。
 
@@ -1087,11 +1197,11 @@ request to https://gmail.googleapis.com/gmail/v1/users/me/messages/send failed, 
                 <a href="../runs/run_20261029_233945_morning-brief.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
                   📄 檢視此期獨立報告 ↗
                 </a>
-                <button class="btn" onclick="toggleDetails('t-details-9')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+                <button class="btn" onclick="toggleDetails('t-details-10')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
               </div>
             </div>
 
-            <div id="t-details-9" class="details-box"><pre class="details-pre">=== 晨間心流與要事簡報 ===
+            <div id="t-details-10" class="details-box"><pre class="details-pre">=== 晨間心流與要事簡報 ===
 核心要事提煉：
 1. 大道至簡監測系統上線與多任務留痕
 2. 幸福餐桌全域生態系統架構落地
@@ -1130,7 +1240,7 @@ Message-ID: brief-20261029-0830@dao.local</pre></div>
 
     function exportCumulativeMarkdown() {
       const taskName = "晨間心流與要事簡報";
-      const totalRuns = "10";
+      const totalRuns = "11";
       const taskId = "morning-brief";
       const cron = "30 8 * * *";
       const schedule = "每日 08:30";
