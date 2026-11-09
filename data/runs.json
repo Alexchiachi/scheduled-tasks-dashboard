@@ -1,5 +1,16 @@
 [
   {
+    "id": "run_20261109_135841_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "第二大腦每週五免開機全量冷備份",
+    "status": "error",
+    "timestamp": "2026-11-09T13:58:41.224672+08:00",
+    "formatted_time": "2026-11-09 13:58:41",
+    "duration": "5s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Mon Nov  9 05:58:33 UTC 2026] 啟動排程任務: 第二大腦每週五免開機全量冷備份 (weekly-backup) ===\n📦 [1/4] 開始檢出 / 更新第二大腦倉庫...\n  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)\nHost key verification failed.\nfatal: Could not read from remote repository.\n\nPlease make sure you have the correct access rights\nand the repository exists.\nTraceback (most recent call last):\n  File \"/opt/backup_vault.py\", line 125, in <module>\n    main()\n  File \"/opt/backup_vault.py\", line 66, in main\n    run_cmd([\"git\", \"fetch\", \"--depth\", \"1\", \"origin\", \"main\"], cwd=WORK_DIR)\n  File \"/opt/backup_vault.py\", line 35, in run_cmd\n    raise RuntimeError(f\"Command failed with exit code {res.returncode}: {' '.join(cmd)}\")\nRuntimeError: Command failed with exit code 128: git fetch --depth 1 origin main\n=== [Mon Nov  9 05:58:39 UTC 2026] 任務結束，狀態: error (耗時: 5s) ==="
+  },
+  {
     "id": "run_20261109_083009_morning-brief",
     "task_id": "morning-brief",
     "task_name": "晨間心流與要事簡報",

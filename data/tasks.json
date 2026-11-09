@@ -105,14 +105,14 @@
   },
   {
     "id": "weekly-backup",
-    "name": "第二大腦冷備份與資產歸檔",
+    "name": "第二大腦每週五免開機全量冷備份",
     "cron": "0 17 * * 5",
     "schedule": "每週五 17:00",
     "status": "error",
-    "last_run": "2026-11-07 14:36:54",
-    "last_duration": "354s",
+    "last_run": "2026-11-09 13:58:41",
+    "last_duration": "5s",
     "last_summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
-    "total_runs": 1,
+    "total_runs": 2,
     "success_count": 0,
     "description": "執行週五雙保險自動備份：1. 執行 NODE_PATH=/Users/chienchiachi/.config/google-drive-mcp/node_modules node /Users/chienchiachi/.config/google-drive-mcp/sync_dual_base.js 將 Obsidian 與 WorkBuddy 自動打包備份至 Google Drive；2...."
   },
