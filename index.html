@@ -936,10 +936,10 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
     "cron": "0 17 * * 5",
     "schedule": "每週五 17:00",
     "status": "error",
-    "last_run": "2026-11-09 13:58:41",
-    "last_duration": "5s",
+    "last_run": "2026-11-09 13:58:54",
+    "last_duration": "0s",
     "last_summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
-    "total_runs": 2,
+    "total_runs": 3,
     "success_count": 0,
     "description": "執行週五雙保險自動備份：1. 執行 NODE_PATH=/Users/chienchiachi/.config/google-drive-mcp/node_modules node /Users/chienchiachi/.config/google-drive-mcp/sync_dual_base.js 將 Obsidian 與 WorkBuddy 自動打包備份至 Google Drive；2....",
     "last_status": "error"
@@ -997,6 +997,33 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
 </script>
   <script id="initial-runs" type="application/json">
 [
+  {
+    "id": "run_20261109_135854_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "第二大腦每週五免開機全量冷備份",
+    "status": "error",
+    "timestamp": "2026-11-09T13:58:54.704547+08:00",
+    "formatted_time": "2026-11-09 13:58:54",
+    "duration": "0s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Mon Nov  9 05:58:53 UTC 2026] 啟動排程任務: 第二大腦每週五免開機全量冷備份 (weekly-backup) ===
+📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
+  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Traceback (most recent call last):
+  File \"/opt/backup_vault.py\", line 125, in <module>
+    main()
+  File \"/opt/backup_vault.py\", line 66, in main
+    run_cmd([\"git\", \"fetch\", \"--depth\", \"1\", \"origin\", \"main\"], cwd=WORK_DIR)
+  File \"/opt/backup_vault.py\", line 35, in run_cmd
+    raise RuntimeError(f\"Command failed with exit code {res.returncode}: {' '.join(cmd)}\")
+RuntimeError: Command failed with exit code 128: git fetch --depth 1 origin main
+=== [Mon Nov  9 05:58:53 UTC 2026] 任務結束，狀態: error (耗時: 0s) ==="
+  },
   {
     "id": "run_20261109_135841_weekly-backup",
     "task_id": "weekly-backup",
