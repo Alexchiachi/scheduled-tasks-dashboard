@@ -9,7 +9,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="大道至簡 · 排程監測系統">
   <meta property="og:title" content="第二大腦每週五免開機全量冷備份 · 任務歷史累積成果檔案庫">
-  <meta property="og:description" content="累計執行 3 次，包含完整執行成果說明與歷史演化紀錄。">
+  <meta property="og:description" content="累計執行 4 次，包含完整執行成果說明與歷史演化紀錄。">
 
   <style>
     :root {
@@ -440,7 +440,7 @@
       <!-- 任務總覽 Hero 卡片 -->
       <div class="hero-card">
         <div class="hero-meta-top">
-          <span class="badge badge-error">異常</span>
+          <span class="badge badge-success">正常運行中</span>
           <span class="badge badge-idle tabular">ID: weekly-backup</span>
           <span class="badge badge-idle tabular">週期: 每週五 17:00</span>
         </div>
@@ -453,15 +453,15 @@
         <div class="stats-grid">
           <div class="stat-item">
             <div class="stat-label">累計執行成果</div>
-            <div class="stat-value tabular">3 <span style="font-size: 0.9rem; font-weight: normal;">期/次</span></div>
+            <div class="stat-value tabular">4 <span style="font-size: 0.9rem; font-weight: normal;">期/次</span></div>
           </div>
           <div class="stat-item">
             <div class="stat-label">累計成功率</div>
-            <div class="stat-value tabular">0%</div>
+            <div class="stat-value tabular">25%</div>
           </div>
           <div class="stat-item">
             <div class="stat-label">最近執行時間</div>
-            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">2026-11-09 13:58:54</div>
+            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">2026-11-09 14:09:40</div>
           </div>
           <div class="stat-item">
             <div class="stat-label">Cron 表達式</div>
@@ -474,7 +474,7 @@
       <div class="section-header">
         <h2 class="section-title">
           <span>📜 歷次成果說明累積時間軸</span>
-          <span class="badge badge-idle tabular">3 筆歷史紀錄</span>
+          <span class="badge badge-idle tabular">4 筆歷史紀錄</span>
         </h2>
         <div style="font-size: 0.85rem; color: var(--ink-muted);">
           按執行時間倒序排列 · 永久增量留痕
@@ -483,6 +483,48 @@
 
       <div class="timeline-list">
         
+          <div class="timeline-card">
+            <div class="timeline-head">
+              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <span class="run-counter-badge">第 4 期</span>
+                <span class="badge badge-success">執行成功</span>
+                <span class="timeline-time tabular" style="font-size: 0.85rem; color: var(--ink-soft); font-weight: 600;">2026-11-09 14:09:40</span>
+                <span class="badge badge-idle tabular timeline-duration">157s</span>
+              </div>
+              <span class="tabular" style="font-size: 0.75rem; color: var(--ink-muted);">run_20261109_140940_weekly-backup</span>
+            </div>
+
+            <div class="run-summary-box">
+              第二大腦全量冷備份打包並成功上傳至 Google Drive 雙保險備份 (758.97 MB)
+            </div>
+
+            <div class="run-actions">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <a href="../runs/run_20261109_140940_weekly-backup.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
+                  📄 檢視此期獨立報告 ↗
+                </a>
+                <button class="btn" onclick="toggleDetails('t-details-0')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+              </div>
+            </div>
+
+            <div id="t-details-0" class="details-box"><pre class="details-pre">=== [Mon Nov  9 06:01:20 UTC 2026] 啟動排程任務: 第二大腦每週五免開機全量冷備份 (weekly-backup) ===
+📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
+  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
+From github.com:Alexchiachi/second-brain-vault
+ * branch            main       -&gt; FETCH_HEAD
+  [EXEC] git reset --hard origin/main (cwd=/opt/second-brain-vault)
+HEAD is now at 879689c 🌱 feat(distill): 2026-W45 每週對話主題蒸餾存檔 (4 份專題)
+📦 [2/4] 打包為時間戳壓縮檔: Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-09.tar.gz...
+  [EXEC] tar -czf /tmp/Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-09.tar.gz --exclude=.git --exclude=.DS_Store --exclude=.trash -C /opt/second-brain-vault . (cwd=None)
+  ✓ 打包完成，檔案大小: 758.97 MB
+🌐 [3/4] 準備上傳至 Google Drive (資料夾: 1C50SkVd2BUC2gWmjUMb2GJ3QW4HNWU4s)...
+  ✓ 上傳成功！Google Drive File ID: 10P428kjvVg8xNfBDU2Rrc4Sp0QZf5cMy
+  ✓ 本地暫存檔已清除
+✅ [4/4] 第二大腦冷備份完成！(2026-11-09, 758.97 MB)
+=== [Mon Nov  9 06:03:57 UTC 2026] 任務結束，狀態: success (耗時: 157s) ===</pre></div>
+          </div>
+                    
+
           <div class="timeline-card">
             <div class="timeline-head">
               <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
@@ -503,11 +545,11 @@
                 <a href="../runs/run_20261109_135854_weekly-backup.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
                   📄 檢視此期獨立報告 ↗
                 </a>
-                <button class="btn" onclick="toggleDetails('t-details-0')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+                <button class="btn" onclick="toggleDetails('t-details-1')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
               </div>
             </div>
 
-            <div id="t-details-0" class="details-box"><pre class="details-pre">=== [Mon Nov  9 05:58:53 UTC 2026] 啟動排程任務: 第二大腦每週五免開機全量冷備份 (weekly-backup) ===
+            <div id="t-details-1" class="details-box"><pre class="details-pre">=== [Mon Nov  9 05:58:53 UTC 2026] 啟動排程任務: 第二大腦每週五免開機全量冷備份 (weekly-backup) ===
 📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
   [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
 Host key verification failed.
@@ -547,11 +589,11 @@ RuntimeError: Command failed with exit code 128: git fetch --depth 1 origin main
                 <a href="../runs/run_20261109_135841_weekly-backup.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
                   📄 檢視此期獨立報告 ↗
                 </a>
-                <button class="btn" onclick="toggleDetails('t-details-1')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+                <button class="btn" onclick="toggleDetails('t-details-2')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
               </div>
             </div>
 
-            <div id="t-details-1" class="details-box"><pre class="details-pre">=== [Mon Nov  9 05:58:33 UTC 2026] 啟動排程任務: 第二大腦每週五免開機全量冷備份 (weekly-backup) ===
+            <div id="t-details-2" class="details-box"><pre class="details-pre">=== [Mon Nov  9 05:58:33 UTC 2026] 啟動排程任務: 第二大腦每週五免開機全量冷備份 (weekly-backup) ===
 📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
   [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
 Host key verification failed.
@@ -591,11 +633,11 @@ RuntimeError: Command failed with exit code 128: git fetch --depth 1 origin main
                 <a href="../runs/run_20261107_143654_weekly-backup.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
                   📄 檢視此期獨立報告 ↗
                 </a>
-                <button class="btn" onclick="toggleDetails('t-details-2')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
+                <button class="btn" onclick="toggleDetails('t-details-3')" style="font-size: 0.78rem;">🔍 頁內展開日誌</button>
               </div>
             </div>
 
-            <div id="t-details-2" class="details-box"><pre class="details-pre">=== [Sat Nov  7 06:30:59 UTC 2026] 啟動排程任務: 第二大腦冷備份與資產歸檔 (weekly-backup) ===
+            <div id="t-details-3" class="details-box"><pre class="details-pre">=== [Sat Nov  7 06:30:59 UTC 2026] 啟動排程任務: 第二大腦冷備份與資產歸檔 (weekly-backup) ===
 📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
   [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
 From github.com:Alexchiachi/second-brain-vault
@@ -785,7 +827,7 @@ google.auth.exceptions.RefreshError: (&#x27;invalid_grant: Token has been expire
 
     function exportCumulativeMarkdown() {
       const taskName = "第二大腦每週五免開機全量冷備份";
-      const totalRuns = "3";
+      const totalRuns = "4";
       const taskId = "weekly-backup";
       const cron = "0 17 * * 5";
       const schedule = "每週五 17:00";

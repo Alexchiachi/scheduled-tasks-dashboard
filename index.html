@@ -935,14 +935,14 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
     "name": "第二大腦每週五免開機全量冷備份",
     "cron": "0 17 * * 5",
     "schedule": "每週五 17:00",
-    "status": "error",
-    "last_run": "2026-11-09 13:58:54",
-    "last_duration": "0s",
-    "last_summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
-    "total_runs": 3,
-    "success_count": 0,
+    "status": "success",
+    "last_run": "2026-11-09 14:09:40",
+    "last_duration": "157s",
+    "last_summary": "第二大腦全量冷備份打包並成功上傳至 Google Drive 雙保險備份 (758.97 MB)",
+    "total_runs": 4,
+    "success_count": 1,
     "description": "執行週五雙保險自動備份：1. 執行 NODE_PATH=/Users/chienchiachi/.config/google-drive-mcp/node_modules node /Users/chienchiachi/.config/google-drive-mcp/sync_dual_base.js 將 Obsidian 與 WorkBuddy 自動打包備份至 Google Drive；2....",
-    "last_status": "error"
+    "last_status": "success"
   },
   {
     "id": "weekly-dialogue-distillation",
@@ -997,6 +997,31 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
 </script>
   <script id="initial-runs" type="application/json">
 [
+  {
+    "id": "run_20261109_140940_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "第二大腦每週五免開機全量冷備份",
+    "status": "success",
+    "timestamp": "2026-11-09T14:09:40.363732+08:00",
+    "formatted_time": "2026-11-09 14:09:40",
+    "duration": "157s",
+    "summary": "第二大腦全量冷備份打包並成功上傳至 Google Drive 雙保險備份 (758.97 MB)",
+    "details": "=== [Mon Nov  9 06:01:20 UTC 2026] 啟動排程任務: 第二大腦每週五免開機全量冷備份 (weekly-backup) ===
+📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
+  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
+From github.com:Alexchiachi/second-brain-vault
+ * branch            main       -> FETCH_HEAD
+  [EXEC] git reset --hard origin/main (cwd=/opt/second-brain-vault)
+HEAD is now at 879689c 🌱 feat(distill): 2026-W45 每週對話主題蒸餾存檔 (4 份專題)
+📦 [2/4] 打包為時間戳壓縮檔: Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-09.tar.gz...
+  [EXEC] tar -czf /tmp/Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-09.tar.gz --exclude=.git --exclude=.DS_Store --exclude=.trash -C /opt/second-brain-vault . (cwd=None)
+  ✓ 打包完成，檔案大小: 758.97 MB
+🌐 [3/4] 準備上傳至 Google Drive (資料夾: 1C50SkVd2BUC2gWmjUMb2GJ3QW4HNWU4s)...
+  ✓ 上傳成功！Google Drive File ID: 10P428kjvVg8xNfBDU2Rrc4Sp0QZf5cMy
+  ✓ 本地暫存檔已清除
+✅ [4/4] 第二大腦冷備份完成！(2026-11-09, 758.97 MB)
+=== [Mon Nov  9 06:03:57 UTC 2026] 任務結束，狀態: success (耗時: 157s) ==="
+  },
   {
     "id": "run_20261109_135854_weekly-backup",
     "task_id": "weekly-backup",

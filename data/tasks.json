@@ -108,12 +108,12 @@
     "name": "第二大腦每週五免開機全量冷備份",
     "cron": "0 17 * * 5",
     "schedule": "每週五 17:00",
-    "status": "error",
-    "last_run": "2026-11-09 13:58:54",
-    "last_duration": "0s",
-    "last_summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
-    "total_runs": 3,
-    "success_count": 0,
+    "status": "success",
+    "last_run": "2026-11-09 14:09:40",
+    "last_duration": "157s",
+    "last_summary": "第二大腦全量冷備份打包並成功上傳至 Google Drive 雙保險備份 (758.97 MB)",
+    "total_runs": 4,
+    "success_count": 1,
     "description": "執行週五雙保險自動備份：1. 執行 NODE_PATH=/Users/chienchiachi/.config/google-drive-mcp/node_modules node /Users/chienchiachi/.config/google-drive-mcp/sync_dual_base.js 將 Obsidian 與 WorkBuddy 自動打包備份至 Google Drive；2...."
   },
   {
