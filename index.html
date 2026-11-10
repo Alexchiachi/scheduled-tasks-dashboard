@@ -888,17 +888,17 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
     "name": "晨間心流與要事簡報",
     "cron": "30 8 * * *",
     "schedule": "每日 08:30",
-    "status": "error",
-    "last_run": "2026-11-09 08:30:09",
-    "last_duration": "6s",
-    "last_summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
-    "total_runs": 11,
-    "success_count": 4,
+    "status": "success",
+    "last_run": "2026-11-10 08:30:09",
+    "last_duration": "7s",
+    "last_summary": "晨間要事與日曆活動已梳理完畢，美學簡報已成功發送至信箱。",
+    "total_runs": 12,
+    "success_count": 5,
     "description": "你是簡家旗第二心智的晨間工匠。請執行每日晨間心流與要事簡報任務：
 1. 查詢今日 Google 日曆活動（調用 google-drive 之 list_calendar_events）與 Obsidian 知識庫（讀取當日日常日記與近期對話評估）。
 2. 以「大道至簡」溫和專注的語調，提煉出「今天唯一最核心的一件事」與關鍵提醒，過濾多餘資訊噪音，守護主理人的心理平靜與清晰心流。
 3. 將提煉產出排...",
-    "last_status": "error"
+    "last_status": "success"
   },
   {
     "id": "sentinel-check",
@@ -1011,6 +1011,22 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
 </script>
   <script id="initial-runs" type="application/json">
 [
+  {
+    "id": "run_20261110_083009_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "success",
+    "timestamp": "2026-11-10T08:30:09.215530+08:00",
+    "formatted_time": "2026-11-10 08:30:09",
+    "duration": "7s",
+    "summary": "晨間要事與日曆活動已梳理完畢，美學簡報已成功發送至信箱。",
+    "details": "=== [Tue Nov 10 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-10 日曆活動...
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+✅ 晨間簡報已成功寄出！Message ID: 1a1c2dcbb0d0ac9a
+=== [Tue Nov 10 00:30:08 UTC 2026] 任務結束，狀態: success (耗時: 7s) ==="
+  },
   {
     "id": "run_20261109_233006_daily-gdrive-organizer",
     "task_id": "daily-gdrive-organizer",
