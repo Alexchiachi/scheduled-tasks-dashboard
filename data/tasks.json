@@ -161,11 +161,11 @@
     "cron": "-",
     "schedule": "手動或自訂排程",
     "status": "success",
-    "last_run": "2026-11-11 23:30:07",
-    "last_duration": "4s",
+    "last_run": "2026-11-12 23:30:09",
+    "last_duration": "6s",
     "last_summary": "Google 雲端硬碟根目錄散落檔案已完成智慧掃描、分類與無損歸檔。",
-    "total_runs": 5,
-    "success_count": 5,
+    "total_runs": 6,
+    "success_count": 6,
     "description": "Google 雲端硬碟根目錄散落檔案已完成智慧掃描、分類與無損歸檔。"
   }
 ]
