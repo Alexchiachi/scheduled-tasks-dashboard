@@ -1,5 +1,16 @@
 [
   {
+    "id": "run_20261113_170243_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "第二大腦冷備份與資產歸檔",
+    "status": "success",
+    "timestamp": "2026-11-13T17:02:43.810194+08:00",
+    "formatted_time": "2026-11-13 17:02:43",
+    "duration": "161s",
+    "summary": "第二大腦 GitHub 倉庫已完成全量打包，並上傳至 Google 雲端硬碟「一人公司雙保險備份」資料夾。",
+    "details": "=== [Fri Nov 13 09:00:01 UTC 2026] 啟動排程任務: 第二大腦冷備份與資產歸檔 (weekly-backup) ===\n📦 [1/4] 開始檢出 / 更新第二大腦倉庫...\n  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)\nFrom github.com:Alexchiachi/second-brain-vault\n * branch            main       -> FETCH_HEAD\n + 879689c...2969721 main       -> origin/main  (forced update)\n  [EXEC] git reset --hard origin/main (cwd=/opt/second-brain-vault)\nHEAD is now at 2969721 docs(sync): 新增全球六大市場暢銷書趨勢與簡家旗電子書發行戰略全景研報\n📦 [2/4] 打包為時間戳壓縮檔: Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-13.tar.gz...\n  [EXEC] tar -czf /tmp/Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-13.tar.gz --exclude=.git --exclude=.DS_Store --exclude=.trash -C /opt/second-brain-vault . (cwd=None)\n  ✓ 打包完成，檔案大小: 765.77 MB\n🌐 [3/4] 準備上傳至 Google Drive (資料夾: 1C50SkVd2BUC2gWmjUMb2GJ3QW4HNWU4s)...\n  ✓ 上傳成功！Google Drive File ID: 16D1Fi_WKdS-q5pMxK52CvLyY_b1VIJqL\n  ✓ 本地暫存檔已清除\n✅ [4/4] 第二大腦冷備份完成！(2026-11-13, 765.77 MB)\n=== [Fri Nov 13 09:02:42 UTC 2026] 任務結束，狀態: success (耗時: 161s) ==="
+  },
+  {
     "id": "run_20261113_083010_morning-brief",
     "task_id": "morning-brief",
     "task_name": "晨間心流與要事簡報",
