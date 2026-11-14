@@ -70,11 +70,11 @@
     "cron": "30 8 * * *",
     "schedule": "每日 08:30",
     "status": "success",
-    "last_run": "2026-11-13 08:30:10",
-    "last_duration": "8s",
+    "last_run": "2026-11-14 08:30:11",
+    "last_duration": "7s",
     "last_summary": "晨間要事與日曆活動已梳理完畢，美學簡報已成功發送至信箱。",
-    "total_runs": 15,
-    "success_count": 8,
+    "total_runs": 16,
+    "success_count": 9,
     "description": "你是簡家旗第二心智的晨間工匠。請執行每日晨間心流與要事簡報任務：\n1. 查詢今日 Google 日曆活動（調用 google-drive 之 list_calendar_events）與 Obsidian 知識庫（讀取當日日常日記與近期對話評估）。\n2. 以「大道至簡」溫和專注的語調，提煉出「今天唯一最核心的一件事」與關鍵提醒，過濾多餘資訊噪音，守護主理人的心理平靜與清晰心流。\n3. 將提煉產出排..."
   },
   {

@@ -1,5 +1,16 @@
 [
   {
+    "id": "run_20261114_083011_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "success",
+    "timestamp": "2026-11-14T08:30:11.120424+08:00",
+    "formatted_time": "2026-11-14 08:30:11",
+    "duration": "7s",
+    "summary": "晨間要事與日曆活動已梳理完畢，美學簡報已成功發送至信箱。",
+    "details": "=== [Sat Nov 14 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===\n🌿 [Morning Brief Cloud Worker] 啟動執行...\n📅 正在查詢 2026-11-14 日曆活動...\n✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...\n✅ 晨間簡報已成功寄出！Message ID: 1a1d7762a2e0e4df\n=== [Sat Nov 14 00:30:08 UTC 2026] 任務結束，狀態: success (耗時: 7s) ==="
+  },
+  {
     "id": "run_20261113_233011_daily-gdrive-organizer",
     "task_id": "daily-gdrive-organizer",
     "task_name": "每日 Google 雲端硬碟自動分類整理",
