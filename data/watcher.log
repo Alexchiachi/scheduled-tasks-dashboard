@@ -148,3 +148,16 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
    說明: 排程任務執行完成，無額外輸出。
 ✨ 本次自動捕獲並記錄了 3 筆排程任務！
 🚀 [自動推送] 正在同步到遠端 GitHub Pages...
+ℹ️ 遠端推送回傳: To github.com:Alexchiachi/scheduled-tasks-dashboard.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:Alexchiachi/scheduled-tasks-dashboard.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+🤖 [自動捕獲] 偵測到排程完成: [Daily 第二心智園丁與雙基地同步] (ID: 299bf17b)
+📝 [紀錄成功] 任務: Daily 第二心智園丁與雙基地同步 | 狀態: success | 時間: 2026-11-15 16:43:31
+   說明: 排程任務執行完成，無額外輸出。
+✨ 本次自動捕獲並記錄了 1 筆排程任務！
+🚀 [自動推送] 正在同步到遠端 GitHub Pages...
