@@ -1,5 +1,38 @@
 [
   {
+    "id": "run_20261115_162309_weekly-skill-evolution",
+    "task_id": "weekly-skill-evolution",
+    "task_name": "Weekly 園丁底層 DNA 大演化",
+    "status": "success",
+    "timestamp": "2026-11-15T16:23:09.030367+08:00",
+    "formatted_time": "2026-11-15 16:23:09",
+    "duration": "343m 11s",
+    "summary": "排程任務執行完成，無額外輸出。",
+    "details": ""
+  },
+  {
+    "id": "run_20261115_162308_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "Morning 晨間心流與要事簡報",
+    "status": "success",
+    "timestamp": "2026-11-15T16:23:08.906103+08:00",
+    "formatted_time": "2026-11-15 16:23:08",
+    "duration": "343m 17s",
+    "summary": "排程任務執行完成，無額外輸出。",
+    "details": ""
+  },
+  {
+    "id": "run_20261115_162307_audit",
+    "task_id": "audit",
+    "task_name": "Audit 電腦健檢",
+    "status": "success",
+    "timestamp": "2026-11-15T16:23:07.756685+08:00",
+    "formatted_time": "2026-11-15 16:23:07",
+    "duration": "343m 15s",
+    "summary": "排程任務執行完成，無額外輸出。",
+    "details": ""
+  },
+  {
     "id": "run_20261113_170352_weekly-backup",
     "task_id": "weekly-backup",
     "task_name": "Backup 週五資產歸檔與雙保險同步",
