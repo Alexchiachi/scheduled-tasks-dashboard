@@ -122,11 +122,11 @@
     "cron": "0 22 * * 0",
     "schedule": "每週日 22:00",
     "status": "success",
-    "last_run": "2026-11-08 22:11:42",
-    "last_duration": "11m 8s",
-    "last_summary": "已啟動蒸餾引擎，正在背景執行 GitHub 推送與 Google Drive 雲端同步，稍後自動呈報完整結果。",
-    "total_runs": 2,
-    "success_count": 1,
+    "last_run": "2026-11-15 22:04:14",
+    "last_duration": "3m 11s",
+    "last_summary": "🌿 2026-W46 每週對話深度主題蒸餾與雙存檔 · 安心收工報告 依據「簡家旗判斷標準」（源頭標準 v1.1、十三條底層規律、大道至簡試金石、宇宙尺度試金石、防斷線協議）與冷酷校對員原則，已全自動完成過去 7 天（2026-11-08 ～ 2026-11-15）共 **52 條對話**的深度降熵提煉。 所有專題均已完成 **Obsidian 本機知識庫儲存**、**GitHub 雙保險版本留痕**，並轉為排版優雅的 **Google Docs 同步至雲端專屬資料夾**。 ...",
+    "total_runs": 3,
+    "success_count": 2,
     "description": "你是簡家旗第二心智的沉靜工匠與冷酷校對員。請嚴格執行每週對話深度主題蒸餾與雲端本機雙存檔任務：\n1. 執行每週專屬蒸餾引擎：`python3 /Users/chienchiachi/.gemini/antigravity/scratch/weekly-dialogue-distillation/distill_weekly_dialogues.py --days 7`\n2. 系統將自動掃描過去 7..."
   },
   {
