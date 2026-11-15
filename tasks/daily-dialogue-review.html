@@ -9,7 +9,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="大道至簡 · 排程監測系統">
   <meta property="og:title" content="Daily 當日對話深度評估與雲端雙基地同步 · 任務歷史累積成果檔案庫">
-  <meta property="og:description" content="累計執行 2 次，包含完整執行成果說明與歷史演化紀錄。">
+  <meta property="og:description" content="累計執行 3 次，包含完整執行成果說明與歷史演化紀錄。">
 
   <style>
     :root {
@@ -455,7 +455,7 @@
         <div class="stats-grid">
           <div class="stat-item">
             <div class="stat-label">累計執行成果</div>
-            <div class="stat-value tabular">2 <span style="font-size: 0.9rem; font-weight: normal;">期/次</span></div>
+            <div class="stat-value tabular">3 <span style="font-size: 0.9rem; font-weight: normal;">期/次</span></div>
           </div>
           <div class="stat-item">
             <div class="stat-label">累計成功率</div>
@@ -463,7 +463,7 @@
           </div>
           <div class="stat-item">
             <div class="stat-label">最近執行時間</div>
-            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">2026-11-08 23:51:45</div>
+            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">2026-11-15 17:18:48</div>
           </div>
           <div class="stat-item">
             <div class="stat-label">Cron 表達式</div>
@@ -476,7 +476,7 @@
       <div class="section-header">
         <h2 class="section-title">
           <span>📜 歷次成果說明累積時間軸</span>
-          <span class="badge badge-idle tabular">2 筆歷史紀錄</span>
+          <span class="badge badge-idle tabular">3 筆歷史紀錄</span>
         </h2>
         <div style="font-size: 0.85rem; color: var(--ink-muted);">
           按執行時間倒序排列 · 永久增量留痕
@@ -485,6 +485,34 @@
 
       <div class="timeline-list">
         
+          <div class="timeline-card">
+            <div class="timeline-head">
+              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <span class="run-counter-badge">第 3 期</span>
+                <span class="badge badge-success">執行成功</span>
+                <span class="timeline-time tabular" style="font-size: 0.85rem; color: var(--ink-soft); font-weight: 600;">2026-11-15 17:18:48</span>
+                <span class="badge badge-idle tabular timeline-duration">1115m 3s</span>
+              </div>
+              <span class="tabular" style="font-size: 0.75rem; color: var(--ink-muted);">run_20261115_171848_daily-dialogue-review</span>
+            </div>
+
+            <div class="run-summary-box">
+              排程任務執行完成，無額外輸出。
+            </div>
+
+            <div class="run-actions">
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <a href="../runs/run_20261115_171848_daily-dialogue-review.html" target="_blank" class="btn btn-primary" style="font-size: 0.78rem;" title="在新分頁檢視此期完整獨立說明">
+                  📄 檢視此期獨立報告 ↗
+                </a>
+                
+              </div>
+            </div>
+
+            
+          </div>
+                    
+
           <div class="timeline-card">
             <div class="timeline-head">
               <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
@@ -569,7 +597,7 @@
 
     function exportCumulativeMarkdown() {
       const taskName = "Daily 當日對話深度評估與雲端雙基地同步";
-      const totalRuns = "2";
+      const totalRuns = "3";
       const taskId = "daily-dialogue-review";
       const cron = "0 21 * * *";
       const schedule = "每日 21:00";
