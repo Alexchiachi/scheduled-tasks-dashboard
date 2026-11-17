@@ -161,10 +161,10 @@
     "cron": "-",
     "schedule": "手動或自訂排程",
     "status": "error",
-    "last_run": "2026-11-16 23:30:09",
-    "last_duration": "6s",
+    "last_run": "2026-11-17 23:30:10",
+    "last_duration": "7s",
     "last_summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
-    "total_runs": 10,
+    "total_runs": 11,
     "success_count": 8,
     "description": "Google 雲端硬碟根目錄散落檔案已完成智慧掃描、分類與無損歸檔。"
   }
