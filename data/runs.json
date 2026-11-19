@@ -1,5 +1,16 @@
 [
   {
+    "id": "run_20261119_083635_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "Morning 晨間心流與要事簡報",
+    "status": "warning",
+    "timestamp": "2026-11-19T08:36:35.428597+08:00",
+    "formatted_time": "2026-11-19 08:36:35",
+    "duration": "2m 8s",
+    "summary": "🌿 **晨間心流與要事簡報已完成寄送，安心收工。** 收件人**：`jianchiachi@gmail.com` 郵件主旨**：`🌿 晨間心流與要事簡報 ｜ 2026-11-19 ｜ 大道至簡` 郵件 ID**：`1a1f1383d318e184` 資訊盤點摘要**： Google 日曆**：今日唯一一場會談為 **08:30 – 09:00「與大熊溝通合作－小不的幸福事」**（已將 Google Meet 連結直接置於簡報按鈕中），09:00 之後全天留白。 Obsidia...",
+    "details": "🌿 **晨間心流與要事簡報已完成寄送，安心收工。**\n\n- **收件人**：`jianchiachi@gmail.com`\n- **郵件主旨**：`🌿 晨間心流與要事簡報 ｜ 2026-11-19 ｜ 大道至簡`\n- **郵件 ID**：`1a1f1383d318e184`\n- **資訊盤點摘要**：\n  - **Google 日曆**：今日唯一一場會談為 **08:30 – 09:00「與大熊溝通合作－小不的幸福事」**（已將 Google Meet 連結直接置於簡報按鈕中），09:00 之後全天留白。\n  - **Obsidian 知識庫**：`Daily Notes/2026-11-19.md` 尚未建立；已結合昨日《每日對話深度評估》（27 條對話）與今日清晨剛沉澱的《第二心智演化日誌》完成降熵萃取。\n- **今日唯一核心焦點**：專注完成 08:30 與大熊的合作對焦（只給骨架），會後立即執行「防斷線協議」，今日不修還沒壞的系統，把時間還給身體與真實呼吸。\n\n願你今天清涼自在，08:30 對談順流。\n\n=== 執行過程異常日誌 ===\nCreated At: 2026-11-19T08:30:48+08:00\nCompleted At: 2026-11-19T08:30:56+08:00\nEncountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: Tasks\",\"details\":{\"path\":\"Tasks\"}}\nCreated At: 2026-11-19T08:31:18+08:00\nCompleted At: 2026-11-19T08:31:20+08:00\nEncountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: 有感而發長文分享\",\"details\":{\"path\":\"有感而發長文分享\"}}"
+  },
+  {
     "id": "run_20261118_083720_morning-brief",
     "task_id": "morning-brief",
     "task_name": "Morning 晨間心流與要事簡報",
