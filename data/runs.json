@@ -1,5 +1,16 @@
 [
   {
+    "id": "run_20261120_170640_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "Backup 週五資產歸檔與雙保險同步",
+    "status": "warning",
+    "timestamp": "2026-11-20T17:06:40.482898+08:00",
+    "formatted_time": "2026-11-20 17:06:40",
+    "duration": "1m 48s",
+    "summary": "✅ **Google Drive 雙保險備份**：執行 [sync_dual_base.js](file:///Users/chienchiachi/.config/google-drive-mcp/sync_dual_base.js) 完成檢查，今日備份 `Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-20.zip` 與 `WorkBuddy_Backup_2026-11-20.tar.gz` 均已就緒。 ✅ **happy 繁簡同步與資產檢查**：執行 ...",
+    "details": "- ✅ **Google Drive 雙保險備份**：執行 [sync_dual_base.js](file:///Users/chienchiachi/.config/google-drive-mcp/sync_dual_base.js) 完成檢查，今日備份 `Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-20.zip` 與 `WorkBuddy_Backup_2026-11-20.tar.gz` 均已就緒。\n- ✅ **happy 繁簡同步與資產檢查**：執行 [build_zhcn.py](file:///Users/chienchiachi/Documents/GitHub.nosync/happy/tools/build_zhcn.py)（繁簡各 42 頁、16 項商品與 sitemap/robots）與 [bump_assets.py](file:///Users/chienchiachi/Documents/GitHub.nosync/happy/tools/bump_assets.py) 均一致且工作區無未提交變更。\n- ✅ **GitHub 遠端同步完成**：[happy](file:///Users/chienchiachi/Documents/GitHub.nosync/happy) `main` 分支已與 `origin/main`（`519bd32`）完全同步（`Everything up-to-date`），可安心收工！\n\n=== 執行過程異常日誌 ===\nCreated At: 2026-11-20T17:01:30+08:00\nCompleted At: 2026-11-20T17:01:32+08:00\nEncountered error in step execution: cannot kill task \"09e91cbe-77d7-4770-99a5-ff5223a71d91/task-5\": task is not running (status: DONE)"
+  },
+  {
     "id": "run_20261120_105331_morning-brief",
     "task_id": "morning-brief",
     "task_name": "Morning 晨間心流與要事簡報",
