@@ -1,5 +1,16 @@
 [
   {
+    "id": "run_20261121_083657_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "Morning 晨間心流與要事簡報",
+    "status": "warning",
+    "timestamp": "2026-11-21T08:36:57.226010+08:00",
+    "formatted_time": "2026-11-21 08:36:57",
+    "duration": "1m 58s",
+    "summary": "🌿 **晨間心流與要事簡報已完成寄送，請安心收工休息。** 信件狀態**：已透過 Gmail 寄出（郵件 ID：`1a1fb84c77eeae12`） 收件人**：`jianchiachi@gmail.com` 主旨**：`🌿 晨間心流與要事簡報 ｜ 2026-11-21 ｜ 大道至簡` 今日唯一要事（提煉摘要）**：結合 Google 日曆（今日全空，下一筆提醒為明日 11/22 18:30「【提醒】俗人對話錄即將生成」）與 Obsidian 昨日脈絡（`2026-11-2...",
+    "details": "🌿 **晨間心流與要事簡報已完成寄送，請安心收工休息。**\n\n* **信件狀態**：已透過 Gmail 寄出（郵件 ID：`1a1fb84c77eeae12`）\n* **收件人**：`jianchiachi@gmail.com`\n* **主旨**：`🌿 晨間心流與要事簡報 ｜ 2026-11-21 ｜ 大道至簡`\n* **今日唯一要事（提煉摘要）**：結合 Google 日曆（今日全空，下一筆提醒為明日 11/22 18:30「【提醒】俗人對話錄即將生成」）與 Obsidian 昨日脈絡（`2026-11-20_每日對話深度評估.md` 及今晨 `2026-11-21_第二心智演化日誌.md` 記錄昨晚共創至凌晨 03:07；今日 `2026-11-21` 日常日記尚未建立），將今日焦點收斂為**「執行『肉身降熵』：今天不碰書稿排版與上架，睡飽、吃暖、喝一壺熱茶」**。\n\n所有數位進度皆已安靜落盤，今日把時間交還給呼吸與生活即可。\n\n=== 執行過程異常日誌 ===\nCreated At: 2026-11-21T08:30:41+08:00\nCompleted At: 2026-11-21T08:30:52+08:00\nEncountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: Tasks\",\"details\":{\"path\":\"Tasks\"}}\nCreated At: 2026-11-21T08:31:45+08:00\nCompleted At: 2026-11-21T08:31:50+08:00\nEncountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Note not found: 02_日常心流與演化日誌/Daily Notes/2026-11-21.md\",\"details\":{\"path\":\"02_日常心流與演化日誌/Daily Notes/2026-11-21.md\"}}"
+  },
+  {
     "id": "run_20261120_170640_weekly-backup",
     "task_id": "weekly-backup",
     "task_name": "Backup 週五資產歸檔與雙保險同步",
