@@ -319,3 +319,16 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
    說明: 已完成 **2026-W47（2026-11-15 ~ 2026-11-22）每週對話深度主題蒸餾與雲端本機雙存檔**，系統運行正常並已收工歸位。 📋 本週蒸餾概況 掃描範圍**：共檢視 **156** 條對話（主理人深度共創 `134` 條、系統負熵巡檢 `22` 條），採集 `26` 條原礦語句。 本機雙保險留痕**：已寫入 Obsidian Vault（`04_知識資產與原礦庫/幸福知識庫/每週對話蒸餾/2026-W47/`，並同步更新 [00_大道至簡_全景導航儀表板...
 ✨ 本次自動捕獲並記錄了 1 筆排程任務！
 🚀 [自動推送] 正在同步到遠端 GitHub Pages...
+ℹ️ 遠端推送回傳: To github.com:Alexchiachi/scheduled-tasks-dashboard.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:Alexchiachi/scheduled-tasks-dashboard.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+🤖 [自動捕獲] 偵測到排程完成: [Renamer 對話名稱每週巡檢] (ID: e6004c72)
+📝 [紀錄成功] 任務: Renamer 對話名稱每週巡檢 | 狀態: success | 時間: 2026-11-22 23:38:01
+   說明: 已完成本週（2026-11-16 至 2026-11-22）歷史對話自動巡檢與標題重命名作業，結果彙報如下： 一、 巡檢與同步摘要 掃描總數**：調用 [rename_conversations.py](file:///Users/chienchiachi/.gemini/antigravity/scratch/conversation-renamer/rename_conversations.py) `--scan` 共掃描 **414** 筆對話紀錄（其中 2026-11...
+✨ 本次自動捕獲並記錄了 1 筆排程任務！
+🚀 [自動推送] 正在同步到遠端 GitHub Pages...

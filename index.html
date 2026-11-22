@@ -830,11 +830,11 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
     "cron": "30 23 * * 0",
     "schedule": "每週日 23:30",
     "status": "success",
-    "last_run": "2026-10-30 00:16:46",
-    "last_duration": "32m 1s",
-    "last_summary": "📋 每週歷史對話自動巡檢與重命名・執行匯報（2026-W43） 主理人好，本週歷史對話全盤巡檢、結尾核心交付提煉與標題同步更新已全自動執行完畢。 一、 巡檢執行概況與多層同步確認 1. **掃描母體**：全域歷史對話共 **135 條**。 2. **基線檢查**： 歷史對話（2026-10-18 前）**：共 83 條，先前已全數完成清洗與標準化，本次複查 100% 符合 10–25 字規範，無截斷或異常。 當週動態對話（2026-10-18 ～ 2026-10-25）**...",
-    "total_runs": 1,
-    "success_count": 1,
+    "last_run": "2026-11-22 23:38:01",
+    "last_duration": "3m 51s",
+    "last_summary": "已完成本週（2026-11-16 至 2026-11-22）歷史對話自動巡檢與標題重命名作業，結果彙報如下： 一、 巡檢與同步摘要 掃描總數**：調用 [rename_conversations.py](file:///Users/chienchiachi/.gemini/antigravity/scratch/conversation-renamer/rename_conversations.py) `--scan` 共掃描 **414** 筆對話紀錄（其中 2026-11...",
+    "total_runs": 2,
+    "success_count": 2,
     "description": "每週歷史對話自動巡檢與重命名：1. 執行 python3 /Users/chienchiachi/.gemini/antigravity/scratch/conversation-renamer/rename_conversations.py --scan 掃描所有歷史對話與當週新增對話；2. 依據各對話「最終結束時之核心任務與實際交付成果」，若有新進展或為暫定名稱，依「大道至簡、精準反映最終交付...",
     "last_status": "success"
   },
@@ -1013,6 +1013,54 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
 </script>
   <script id="initial-runs" type="application/json">
 [
+  {
+    "id": "run_20261122_233801_conversation-renamer",
+    "task_id": "conversation-renamer",
+    "task_name": "Renamer 對話名稱每週巡檢",
+    "status": "success",
+    "timestamp": "2026-11-22T23:38:01.801957+08:00",
+    "formatted_time": "2026-11-22 23:38:01",
+    "duration": "3m 51s",
+    "summary": "已完成本週（2026-11-16 至 2026-11-22）歷史對話自動巡檢與標題重命名作業，結果彙報如下： 一、 巡檢與同步摘要 掃描總數**：調用 [rename_conversations.py](file:///Users/chienchiachi/.gemini/antigravity/scratch/conversation-renamer/rename_conversations.py) `--scan` 共掃描 **414** 筆對話紀錄（其中 2026-11...",
+    "details": "已完成本週（2026-11-16 至 2026-11-22）歷史對話自動巡檢與標題重命名作業，結果彙報如下：
+
+---
+
+### 一、 巡檢與同步摘要
+
+* **掃描總數**：調用 [rename_conversations.py](file:///Users/chienchiachi/.gemini/antigravity/scratch/conversation-renamer/rename_conversations.py) `--scan` 共掃描 **414** 筆對話紀錄（其中 2026-11-16 16:00 UTC 後之頂層對話共 **67** 筆，其餘未命名項目為圖片生成／瀏覽器／排程子代理與空白對話，依例不予干擾）。
+* **更新筆數**：針對英文預設名稱、錯別字／暫定名稱、或後續發展超出原題意之 **29** 筆對話，依「大道至簡、精準反映最終交付重點（10–25 字）」提煉並更新標題。
+* **多層同步狀態**：
+  * **已寫入持久化三層**：已透過 `--update` 完成 [conversation_summaries.db](file:///Users/chienchiachi/.gemini/antigravity/conversation_summaries.db)、[agyhub_summaries_proto.pb](file:///Users/chienchiachi/.gemini/antigravity/agyhub_summaries_proto.pb) 與 `annotations/*.pbtxt` 同步，並額外為原缺 `title:` 欄位的 [b99229d4-01f9-4ade-8e4c-0fff1043ea7a.pbtxt](file:///Users/chienchiachi/.gemini/antigravity/annotations/b99229d4-01f9-4ade-8e4c-0fff1043ea7a.pbtxt) 補齊 `title` 欄位；最後重跑 `--scan` 確認 **29/29** 皆已生效。
+  * **Connect-RPC 說明**：本次 `--update` 顯示 `Updated 0 conversations: {}`，經查為目前執行的 Antigravity 2.34.0 `language_server` 已改用 `--read_host_bridge_token_from_stdin`，命令列不再帶 `--csrf_token`，故 `get_language_server_info()` 無法自動探測埠號與 Token；若左側邊欄活體快取尚未即時刷新，重啟 Antigravity 即可直接載入已更新的本地三層資料庫。
+
+---
+
+### 二、 本週對話名稱對照清單（共 29 筆）
+
+| # | 對話 ID（前 8 碼） | 原標題 | 更新後標題（最終交付重點） | 字數 |
+| :-: | :--- | :--- | :--- | :-: |
+| 1 | `45ad6510` | Mac Download Folder Cleanup And Scan | 下載資料夾
+<truncated 1543 bytes>
+w And Backup | 每日對話沉澱與雙向鏈結雙端備份歸檔 | 17 |
+| 15 | `235856d4` | AI 新物種章節目錄設計 | AI新物種I非器全書精修與雙語出版四端同步 | 21 |
+| 16 | `d416226b` | Second Brain Daily Evolution Sync | 第二大腦每日演化日誌與雙基地同步 | 16 |
+| 17 | `37485760` | Create Muse Ai US Account | GCP美國代理建置Muse雙帳號與整合策略 | 21 |
+| 18 | `42871a1e` | GCP Proxy Muse.ai Business Strategy | Telegram個人AI助理美國市場變現策略 | 22 |
+| 19 | `217c65fa` | 會議記錄編輯器使用指南 | 建立會議記錄自動化整理與編輯器技能 | 17 |
+| 20 | `246e0082` | 每週雲端錄音自動化巡檢與轉檔報告 | 開發即時會議記錄編輯器與工作區綁定教學 | 19 |
+| 21 | `4fcbcb2e` | Local Computer Performance Health Check | 本機電腦效能全面健檢與雙重資源瓶頸報告 | 19 |
+| 22 | `6302a250` | Advanced Layout And Visual Design | 雲端硬碟未美化簡報全域掃描與視覺美化 | 18 |
+| 23 | `8faf3918` | 雲端錄音自動化巡檢與轉檔 | 雲端錄音巡檢暨353件母帶標準化重命名 | 19 |
+| 24 | `cec101bd` | Second Brain Evolution Log | 第二大腦每日演化日誌與雙基地同步 | 16 |
+| 25 | `8c562e54` | Daily Dialogue Review Automation | 每日對話沉澱與五大象限深度覆盤 | 15 |
+| 26 | `d4f53bcc` | YouTube 頻道全自動運營與影片簡介重塑 | YouTubeShorts飛輪運營與第六集主動提醒 | 25 |
+| 27 | `a9a91f1f` | Missing Chat History Recovery | Antigravity封存對話尋回教學與資料庫排查 | 25 |
+| 28 | `ea04f2b5` | 執行所有未執行的排程任務 | 補跑未執行排程暨修復Google授權補寄簡報 | 22 |
+| 29 | `b99229d4` | 繼續 | 每日對話沉澱深度評估與雙端備份歸檔 | 17 |
+
+*(註：其餘 38 筆本週對話原有標題如 `Obsidian 資料夾合併方法與建議`、`每週對話深度主題蒸餾`、`大道至簡金融一百零八講專書編譯` 等皆已精準對應其最終交付成果，故維持原名不變。)*"
+  },
   {
     "id": "run_20261122_220254_weekly-dialogue-distillation",
     "task_id": "weekly-dialogue-distillation",
