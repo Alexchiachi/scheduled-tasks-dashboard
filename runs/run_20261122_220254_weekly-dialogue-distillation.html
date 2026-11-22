@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly 對話主題蒸餾（簡家旗標準・雲端本機雙存檔） · 執行報告詳情 - 排程任務監測儀表板</title>
+  <meta name="description" content="Antigravity 2.0 排程任務 Weekly 對話主題蒸餾（簡家旗標準・雲端本機雙存檔） 於 2026-11-22 22:02:54 之完整執行成果、說明日誌與健康診斷報告。">
+  <meta name="theme-color" content="#FAF6EF">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="大道至簡 · 排程監測系統">
+  <meta property="og:title" content="Weekly 對話主題蒸餾（簡家旗標準・雲端本機雙存檔） · 執行報告詳情">
+  <meta property="og:description" content="已完成 **2026-W47（2026-11-15 ~ 2026-11-22）每週對話深度主題蒸餾與雲端本機雙存檔**，系統運行正常並已收工歸位。 📋 本週蒸餾概況 掃描範圍**：共檢視 **156** 條對話（主理人深度共創 `134` 條、系統負熵巡檢 `22` 條），採集 `26` 條原礦語句。 本機雙保險留痕**：已寫入 Obsidian Vault（`04_知識資產與原礦庫/幸福知識庫/每週對話蒸餾/2026-W47/`，並同步更新 [00_大道至簡_全景導航儀表板...">
+
+  <style>
+    :root {
+      --paper: #FAF6EF;
+      --paper-deep: #F2EBDF;
+      --paper-card: #FFFFFF;
+      --ink: #2A2520;
+      --ink-soft: #4A423A;
+      --ink-muted: #8C8275;
+      --line: #D9D1C2;
+      --line-light: #ECE5D8;
+
+      --tea: #82663F;
+      --tea-bg: #F5EFE6;
+
+      --moss: #547050;
+      --moss-bg: #EEF4ED;
+      --moss-border: #9BB898;
+
+      --seal: #A8543A;
+      --seal-bg: #FAECE8;
+      --seal-border: #DFA495;
+
+      --warn: #B87820;
+      --warn-bg: #FAF3E6;
+      --warn-border: #E8C888;
+
+      --font-serif: -apple-system, BlinkMacSystemFont, "Songti TC", "Noto Serif TC", serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-serif);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      text-wrap: balance;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    p, li, blockquote {
+      text-wrap: pretty;
+    }
+
+    .tabular {
+      font-variant-numeric: tabular-nums;
+      font-family: var(--font-mono);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 頂部導航列 */
+    header {
+      border-bottom: 1px solid var(--line);
+      background-color: rgba(250, 246, 239, 0.94);
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+    }
+
+    .nav-breadcrumbs a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .nav-breadcrumbs a:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--paper-deep);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      font-family: inherit;
+      font-size: 0.82rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .btn:hover {
+      background: #ECE5D8;
+      border-color: var(--ink-soft);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    /* 主內容區 */
+    main {
+      flex: 1;
+      padding: 40px 0 64px 0;
+    }
+
+    /* 標題與狀態 Hero */
+    .hero-box {
+      background: var(--paper-card);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 32px 36px;
+      margin-bottom: 28px;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      font-size: 1.8rem;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--line);
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .meta-item strong {
+      color: var(--ink-soft);
+    }
+
+    /* 狀態 Badge（直角、邊框、微色相） */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      font-size: 0.75rem;
+      border-radius: 0;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      white-space: nowrap;
+      text-transform: uppercase;
+      border: 1px solid var(--line);
+    }
+
+    .badge-success {
+      background-color: var(--moss-bg);
+      color: var(--moss);
+      border-color: var(--moss-border);
+    }
+
+    .badge-warning {
+      background-color: var(--warn-bg);
+      color: var(--warn);
+      border-color: var(--warn-border);
+    }
+
+    .badge-error {
+      background-color: var(--seal-bg);
+      color: var(--seal);
+      border-color: var(--seal-border);
+    }
+
+    .badge-idle {
+      background-color: var(--paper-deep);
+      color: var(--ink-muted);
+      border-color: var(--line);
+    }
+
+    /* 成果說明摘要區塊 (Executive Summary) */
+    .summary-card {
+      background: var(--paper-card);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--tea);
+      border-radius: 0;
+      padding: 24px 28px;
+      margin-bottom: 28px;
+    }
+
+    .summary-card h3 {
+      font-size: 1rem;
+      color: var(--tea);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .summary-body {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+
+    /* 完整執行日誌與詳細說明 */
+    .section-card {
+      background: var(--paper-card);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 28px 32px;
+      margin-bottom: 28px;
+    }
+
+    .section-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-card-title {
+      font-size: 1.15rem;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .log-box {
+      background: #1C1916;
+      color: #EDE8DE;
+      padding: 20px 24px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+      border-radius: 0;
+      border: 1px solid #332C24;
+    }
+
+    /* 任務排程規格卡片 */
+    .sidecar-box {
+      background: var(--paper-deep);
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 20px 24px;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    .sidecar-box h4 {
+      font-size: 0.95rem;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    /* 頁尾與朱印 */
+    footer {
+      border-top: 1px solid var(--line);
+      background-color: var(--paper);
+      padding: 48px 0 36px 0;
+      margin-top: auto;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .seal-mark {
+      width: 88px;
+      height: 88px;
+      border: 2px solid var(--seal);
+      color: var(--seal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.15rem;
+      line-height: 1.25;
+      letter-spacing: 0.15em;
+      border-radius: 0;
+      background: rgba(168, 84, 58, 0.04);
+      user-select: none;
+      box-shadow: inset 0 0 0 1px var(--seal);
+    }
+
+    .footer-text {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .hero-box {
+        padding: 22px 20px;
+      }
+      .hero-title {
+        font-size: 1.4rem;
+      }
+      .section-card {
+        padding: 20px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部導航列 -->
+  <header>
+    <div class="container header-inner">
+      <div class="nav-breadcrumbs">
+        <a href="../index.html">← 返回排程總覽儀表板</a>
+        <span>/</span>
+        <span>執行紀錄</span>
+        <span>/</span>
+        <span style="color: var(--ink);">Weekly 對話主題蒸餾（簡家旗標準・雲端本機雙存檔）</span>
+      </div>
+      <div class="nav-actions">
+        <button class="btn" onclick="copyLogContent()">📋 複製日誌</button>
+        <button class="btn" onclick="downloadMarkdown()">📥 匯出 Markdown</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主內容區 -->
+  <main>
+    <div class="container">
+
+      <!-- 標題與狀態 Hero -->
+      <div class="hero-box">
+        <div class="hero-meta">
+          <span class="badge badge-success">執行成功</span>
+          <span class="badge badge-idle tabular">43s</span>
+          <span class="badge badge-idle tabular">weekly-dialogue-distillation</span>
+          <a href="../tasks/weekly-dialogue-distillation.html" class="btn" style="padding: 2px 8px; font-size: 0.75rem; background: var(--tea-bg); color: var(--tea); border-color: var(--line);">
+            📜 查看本任務累積歷史檔案庫 (4 期) ↗
+          </a>
+        </div>
+        <h1 class="hero-title">Weekly 對話主題蒸餾（簡家旗標準・雲端本機雙存檔）</h1>
+        <div class="meta-row">
+          <div class="meta-item">
+            <span>執行時間：</span>
+            <strong class="tabular">2026-11-22 22:02:54</strong>
+          </div>
+          <div class="meta-item">
+            <span>排程週期：</span>
+            <strong>每週日 22:00</strong>
+          </div>
+          <div class="meta-item">
+            <span>紀錄 ID：</span>
+            <span class="tabular">run_20261122_220254_weekly-dialogue-distillation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 成果說明摘要 -->
+      <div class="summary-card">
+        <h3>💡 本次執行成果說明摘要</h3>
+        <div class="summary-body">
+          已完成 **2026-W47（2026-11-15 ~ 2026-11-22）每週對話深度主題蒸餾與雲端本機雙存檔**，系統運行正常並已收工歸位。 📋 本週蒸餾概況 掃描範圍**：共檢視 **156** 條對話（主理人深度共創 `134` 條、系統負熵巡檢 `22` 條），採集 `26` 條原礦語句。 本機雙保險留痕**：已寫入 Obsidian Vault（`04_知識資產與原礦庫/幸福知識庫/每週對話蒸餾/2026-W47/`，並同步更新 [00_大道至簡_全景導航儀表板...
+        </div>
+      </div>
+
+      <!-- 完整執行日誌與產出報告 -->
+      <div class="section-card">
+        <div class="section-card-header">
+          <h2 class="section-card-title">
+            <span>📝 完整執行說明日誌與交付成果</span>
+          </h2>
+          <span class="badge badge-idle tabular">2642 字元</span>
+        </div>
+        <pre class="log-box" id="log-text">已完成 **2026-W47（2026-11-15 ~ 2026-11-22）每週對話深度主題蒸餾與雲端本機雙存檔**，系統運行正常並已收工歸位。
+
+---
+
+### 📋 本週蒸餾概況
+* **掃描範圍**：共檢視 **156** 條對話（主理人深度共創 `134` 條、系統負熵巡檢 `22` 條），採集 `26` 條原礦語句。
+* **本機雙保險留痕**：已寫入 Obsidian Vault（`04_知識資產與原礦庫/幸福知識庫/每週對話蒸餾/2026-W47/`，並同步更新 [00_大道至簡_全景導航儀表板.md](file:///Users/chienchiachi/Library/Mobile%20Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家/00_大道至簡_全景導航儀表板.md)），同時完成 Git Commit（`84e45bb`）並推送至 `github.com:Alexchiachi/second-brain-vault.git`（`main` 分支）。
+* **雲端同步**：已全數建立對應 Google Docs 並取得檢閱連結。
+
+---
+
+### 📂 本週蒸餾主題、本機檔案與 Google Drive 雲端連結
+
+| 主題分類 | 涵蓋對話 | 本機 Markdown 檔案 | Google Docs 雲端檢閱連結 |
+| :--- | :---: | :--- | :--- |
+| **每週對話蒸餾總覽** | 156 條全景 | [2026-W47_每週對話蒸餾總覽.md](file:///Users/chienchiachi/Library/Mobile%20Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家/04_知識資產與原礦庫/幸福知識庫/每週對話蒸餾/2026-W47/2026-W47_每週對話蒸餾總覽.md) | [開啟總覽 Google Docs](https://docs.google.com/document/d/1HWdGwA6spX0Ogse1dyAmiWYiu4wz7nHbV0ZLPtR5VKU/edit?usp=drivesdk) |
+| **一人公司與商業閉環** | 25 條 | [2026-W47_一人公司與商業閉環_專題蒸餾.md](file:///Users/chienchiachi/Library/Mobile%20Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家/04_知識資產與原礦庫/幸福知識庫/每週對話蒸餾/2026-W47/2026-W47_一人公司與商業閉環_專題蒸餾.md) | [開啟商業閉環 Google Docs](https://docs.google.com/document/d/128LfQ7tYDcqQFfGOwsAlAQ-Xbinj8Bv5-zlvgxBRJi4/edit?usp=drivesdk) |
+| **生
+&lt;truncated 327 bytes&gt;
+_專題蒸餾.md) | [開啟生命哲學 Google Docs](https://docs.google.com/document/d/1t97Y8oRVpACpW5XK65X_t64M8CkDcSAhaIg62cC0U34/edit?usp=drivesdk) |
+| **大道至簡技術與數位工匠** | 35 條 | [2026-W47_大道至簡技術與數位工匠_專題蒸餾.md](file:///Users/chienchiachi/Library/Mobile%20Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家/04_知識資產與原礦庫/幸福知識庫/每週對話蒸餾/2026-W47/2026-W47_大道至簡技術與數位工匠_專題蒸餾.md) | [開啟數位工匠 Google Docs](https://docs.google.com/document/d/1Dvev9H2ECZc-EPXYpYtpEIQNlMyk4iIwW_MRQbF8Cgs/edit?usp=drivesdk) |
+| **身體感知與雙基地風土** | 12 條 | [2026-W47_身體感知與雙基地風土_專題蒸餾.md](file:///Users/chienchiachi/Library/Mobile%20Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家/04_知識資產與原礦庫/幸福知識庫/每週對話蒸餾/2026-W47/2026-W47_身體感知與雙基地風土_專題蒸餾.md) | [開啟身體感知 Google Docs](https://docs.google.com/document/d/1T-jA7IvaCnY52xNYIk34vJsaArwy2HkfyyzjVAlFOr8/edit?usp=drivesdk) |
+
+---
+
+### ⚖️ 冷酷校對員小記
+* 本週產出檔案與雙端備份均已落地，無須再做額外架構微調；請安心收工，將下週的注意力留給身體感知與真實生活現場。
+* 實話提醒：[2026-W47_每週對話蒸餾總覽.md](file:///Users/chienchiachi/Library/Mobile%20Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家/04_知識資產與原礦庫/幸福知識庫/每週對話蒸餾/2026-W47/2026-W47_每週對話蒸餾總覽.md) 的「原礦金句」區塊有幾條夾雜了排程提示詞與頻道播放清單編號（出自自動化任務指令），若未來想提升金句純度，可再微調 [distill_weekly_dialogues.py](file:///Users/chienchiachi/.gemini/antigravity/scratch/weekly-dialogue-distillation/distill_weekly_dialogues.py) 排除排程提示詞，但本週已足夠留痕，今晚不必動手改代碼。</pre>
+      </div>
+
+      <!-- 任務排程規格與上下文資訊 -->
+      <div class="sidecar-box">
+        <h4>⚙️ 任務所屬排程規格 (Sidecar Context)</h4>
+        <p><strong>任務名稱：</strong>Weekly 對話主題蒸餾（簡家旗標準・雲端本機雙存檔） (<code>weekly-dialogue-distillation</code>)</p>
+        <p><strong>Cron 表達式：</strong><code class="tabular">0 22 * * 0</code>（每週日 22:00）</p>
+        <p><strong>原始排程目標：</strong>你是簡家旗第二心智的沉靜工匠與冷酷校對員。請嚴格執行每週對話深度主題蒸餾與雲端本機雙存檔任務：
+1. 執行每週專屬蒸餾引擎：`python3 /Users/chienchiachi/.gemini/antigravity/scratch/weekly-dialogue-distillation/distill_weekly_dialogues.py --days 7`
+2. 系統將自動掃描過去 7...</p>
+        <p style="margin-top: 8px; font-size: 0.8rem; color: var(--ink-muted);">
+          本報告由 Antigravity 2.0 自動化監測守護引擎於任務完成時捕獲生成，並自動同步至 GitHub Pages。
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 頁尾與 88px 朱印 -->
+  <footer>
+    <div class="container footer-content">
+      <div class="seal-mark" title="大道至簡 · 任務常安">
+        任務<br>常安
+      </div>
+      <div class="footer-text">
+        <p><strong>大道至簡 · 排程任務監測儀表板</strong></p>
+        <p>遵循 Zen Web Standards 中央規範 · 米白紙底墨色直角美學 · 零 Cookie 個資合規</p>
+      </div>
+      <div style="font-size: 0.82rem; margin-top: 8px;">
+        <a href="../index.html" style="color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line);">← 返回排程總覽儀表板</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function copyLogContent() {
+      const log = document.getElementById('log-text').innerText;
+      navigator.clipboard.writeText(log).then(() => {
+        alert('✅ 已複製完整執行日誌至剪貼簿！');
+      }).catch(err => {
+        console.error('複製失敗', err);
+      });
+    }
+
+    function downloadMarkdown() {
+      const taskName = "Weekly 對話主題蒸餾（簡家旗標準・雲端本機雙存檔）";
+      const timeStr = "2026-11-22 22:02:54";
+      const status = "執行成功";
+      const summary = `已完成 **2026-W47（2026-11-15 ~ 2026-11-22）每週對話深度主題蒸餾與雲端本機雙存檔**，系統運行正常並已收工歸位。 📋 本週蒸餾概況 掃描範圍**：共檢視 **156** 條對話（主理人深度共創 `134` 條、系統負熵巡檢 `22` 條），採集 `26` 條原礦語句。 本機雙保險留痕**：已寫入 Obsidian Vault（`04_知識資產與原礦庫/幸福知識庫/每週對話蒸餾/2026-W47/`，並同步更新 [00_大道至簡_全景導航儀表板...`;
+      const details = document.getElementById('log-text').innerText;
+
+      const mdContent = `# 排程任務執行報告: ${taskName}
+
+- **執行狀態**: ${status}
+- **執行時間**: ${timeStr}
+- **任務標識**: weekly-dialogue-distillation
+- **排程週期**: 每週日 22:00
+- **紀錄 ID**: run_20261122_220254_weekly-dialogue-distillation
+
+## 成果說明摘要
+${summary}
+
+## 完整日誌與交付報告
+\`\`\`
+${details}
+\`\`\`
+
+---
+*報告產出時間: ${new Date().toLocaleString()} · 大道至簡排程監測系統*
+`;
+
+      const blob = new Blob([mdContent], { type: 'text/markdown;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `report_${taskName}_${timeStr.replace(/[: ]/g, '_')}.md`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
