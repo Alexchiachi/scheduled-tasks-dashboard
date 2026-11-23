@@ -1,9 +1,9 @@
 name: Deploy Scheduled Tasks Dashboard to GitHub Pages
 
+# 網站已由 GitHub Pages「從分支發布」（pages build and deployment）自動上線，
+# 這支 workflow 再發布一次是重複的，兩者同時搶部署會偶發失敗並寄出失敗通知信。
+# 因此只保留手動觸發；要改回自動發布，先到 Settings → Pages 把來源改成 GitHub Actions。
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
