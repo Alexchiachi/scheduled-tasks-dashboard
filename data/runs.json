@@ -1,5 +1,16 @@
 [
   {
+    "id": "run_20261123_083316_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "Morning 晨間心流與要事簡報",
+    "status": "warning",
+    "timestamp": "2026-11-23T08:33:16.032106+08:00",
+    "formatted_time": "2026-11-23 08:33:16",
+    "duration": "1m 47s",
+    "summary": "早安，家旗兄。今日晨間心流與要事簡報已梳理並寄出，安心收工： 收件信箱**：`jianchiachi@gmail.com` 郵件主旨**：`🌿 晨間心流與要事簡報 ｜ 2026-11-23 ｜ 大道至簡`（郵件 ID：`1a205d149e964746`） 今日脈絡摘要**： Google 日曆**：今日（2026-11-23）全天無排程會議（下一筆為 11/29 18:30「俗人對話錄即將生成」提醒）。 Obsidian 盤點**：今日日常日記（`2026-11-23.md...",
+    "details": "早安，家旗兄。今日晨間心流與要事簡報已梳理並寄出，安心收工：\n\n- **收件信箱**：`jianchiachi@gmail.com`\n- **郵件主旨**：`🌿 晨間心流與要事簡報 ｜ 2026-11-23 ｜ 大道至簡`（郵件 ID：`1a205d149e964746`）\n- **今日脈絡摘要**：\n  - **Google 日曆**：今日（2026-11-23）全天無排程會議（下一筆為 11/29 18:30「俗人對話錄即將生成」提醒）。\n  - **Obsidian 盤點**：今日日常日記（`2026-11-23.md`）尚未建立；已讀取昨日本週大演化報告（`2026-11-22_本週大腦DNA大演化.md`）、昨日對話深度評估（`2026-11-22_每日對話深度評估.md`）以及今晨演化日誌（`2026-11-23_第二心智演化日誌.md`）與《三部曲分類總表》。\n  - **今日唯一要事**：讓已上架的三本英文書安靜呼吸，自己空手離開螢幕，走進真實生活與菜飯煙火氣；守住「不開多平台新後台、60 分鐘下課、22:00 熄燈線」。\n\n願今天有溫熱的白水與清朗的呼吸。完成即退場。\n\n=== 執行過程異常日誌 ===\nCreated At: 2026-11-23T08:30:38+08:00\nCompleted At: 2026-11-23T08:30:43+08:00\nEncountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: Tasks\",\"details\":{\"path\":\"Tasks\"}}\nCreated At: 2026-11-23T08:31:05+08:00\nCompleted At: 2026-11-23T08:31:08+08:00\nEncountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Note not found: 02_日常心流與演化日誌/Daily Notes/2026-11-23.md\",\"details\":{\"path\":\"02_日常心流與演化日誌/Daily Notes/2026-11-23.md\"}}"
+  },
+  {
     "id": "run_20261122_233801_conversation-renamer",
     "task_id": "conversation-renamer",
     "task_name": "Renamer 對話名稱每週巡檢",
