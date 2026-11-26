@@ -1,5 +1,16 @@
 [
   {
+    "id": "run_20261126_083511_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "Morning 晨間心流與要事簡報",
+    "status": "warning",
+    "timestamp": "2026-11-26T08:35:11.942199+08:00",
+    "formatted_time": "2026-11-26 08:35:11",
+    "duration": "1m 27s",
+    "summary": "早安，家旗。今日（`2026-11-26`）的晨間心流與要事簡報已完成提煉並寄達信箱，可以安心開始這一天： 寄送紀錄**：已透過 Gmail 寄至 `jianchiachi@gmail.com`（郵件 ID：`1a21544145a78879`） 郵件主旨**：`🌿 晨間心流與要事簡報 ｜ 2026-11-26 ｜ 大道至簡` 今日情報盤點**： Google 日曆**：今日僅有 `10:00 – 10:30` 一場 **「【KDP A+ 追蹤】複查 CA 錯誤修正與 UK ...",
+    "details": "早安，家旗。今日（`2026-11-26`）的晨間心流與要事簡報已完成提煉並寄達信箱，可以安心開始這一天：\n\n* **寄送紀錄**：已透過 Gmail 寄至 `jianchiachi@gmail.com`（郵件 ID：`1a21544145a78879`）\n* **郵件主旨**：`🌿 晨間心流與要事簡報 ｜ 2026-11-26 ｜ 大道至簡`\n* **今日情報盤點**：\n  * **Google 日曆**：今日僅有 `10:00 – 10:30` 一場 **「【KDP A+ 追蹤】複查 CA 錯誤修正與 UK / AU 跨站同步」**（週日 `11/29 08:15` 平裝本送審亦已妥善排程，今日無需掛記）。\n  * **Obsidian 知識庫**：對齊昨日 `Daily Notes/2026-11-25.md`、`02_日常心流與演化日誌/每日對話評估/2026-11-25_每日對話深度評估.md` 與今晨 `02_日常心流與演化日誌/有感而發長文分享/2026-11-26_第二心智演化日誌.md`（今日日常日記 `Daily Notes/2026-11-26.md` 尚未建立）。\n* **今日唯一最核心的一件事**：趁早上 `10:00` 日曆視窗用 15 分鐘收完 KDP 舊帳（把 `B0H3VZ1JH2` 調回 `$9.99 USD` 並複查 CA / UK / AU 跨站 A+）與筆電清創（解掉 `tasks-dashboard-watcher` Git 衝突、關掉冗餘分頁並重開機釋放 8 GB RAM），再花 5 分鐘拍板《同住》封面方向即收手——不開第三輪正文精修，把剩下的白晝留給生活。\n\n晨間工匠收工退場，祝今日心流清朗、從容自在。\n\n=== 執行過程異常日誌 ===\nCreated At: 2026-11-26T08:30:39+08:00\nCompleted At: 2026-11-26T08:30:46+08:00\nEncountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: Tasks\",\"details\":{\"path\":\"Tasks\"}}\nCreated At: 2026-11-26T08:30:52+08:00\nCompleted At: 2026-11-26T08:30:55+08:00\nEncountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: 02_日常心流與演化日誌/每日進化簡報\",\"details\":{\"path\":\"02_日常心流與演化日誌/每日進化簡報\"}}\nCreated At: 2026-11-26T08:30:52+08:00\nCompleted At: 2026-11-26T08:30:56+08:00\nEncountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: 02_日常心流與演化日誌/晨間簡報與要事\",\"details\":{\"path\":\"02_日常心流與演化日誌/晨間簡報與要事\"}}"
+  },
+  {
     "id": "run_20261125_083647_morning-brief",
     "task_id": "morning-brief",
     "task_name": "Morning 晨間心流與要事簡報",
