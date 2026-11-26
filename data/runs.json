@@ -1,5 +1,16 @@
 [
   {
+    "id": "run_20261126_233011_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-26T23:30:11.425820+08:00",
+    "formatted_time": "2026-11-26 23:30:11",
+    "duration": "8s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Thu Nov 26 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===\n==================================================\n🚀 Google Drive 每日檔案自動分類歸檔引擎啟動\n模式: [EXECUTE 正式執行模式]\n時間: 2026-11-26 15:30:02\n==================================================\n\n步驟 1/3: 正在讀取雲端現有資料夾結構...\nTraceback (most recent call last):\n  File \"/opt/organize_gdrive.py\", line 402, in <module>\n    main()\n  File \"/opt/organize_gdrive.py\", line 288, in main\n    folder_map = fetch_existing_folders(service)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders\n    ).execute()\n      ^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper\n    return wrapped(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute\n    resp, content = _retry_request(\n                    ^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request\n    resp, content = http.request(uri, method, *args, **kwargs)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request\n    self.credentials.refresh(self._request)\n  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh\n    self._perform_refresh_token(request)\n  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token\n    ) = reauth.refresh_grant(\n        ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant\n    _client._handle_error_response(response_data, retryable_error)\n  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response\n    raise exceptions.RefreshError(\ngoogle.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})\n=== [Thu Nov 26 15:30:09 UTC 2026] 任務結束，狀態: error (耗時: 8s) ==="
+  },
+  {
     "id": "run_20261126_083010_morning-brief",
     "task_id": "morning-brief",
     "task_name": "晨間心流與要事簡報",
