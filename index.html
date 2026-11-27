@@ -936,10 +936,10 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
     "cron": "0 17 * * 5",
     "schedule": "每週五 17:00",
     "status": "error",
-    "last_run": "2026-11-20 17:02:11",
-    "last_duration": "129s",
+    "last_run": "2026-11-27 17:03:00",
+    "last_duration": "177s",
     "last_summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
-    "total_runs": 6,
+    "total_runs": 7,
     "success_count": 2,
     "description": "執行週五雙保險自動備份：1. 執行 NODE_PATH=/Users/chienchiachi/.config/google-drive-mcp/node_modules node /Users/chienchiachi/.config/google-drive-mcp/sync_dual_base.js 將 Obsidian 與 WorkBuddy 自動打包備份至 Google Drive；2....",
     "last_status": "error"
@@ -1011,6 +1011,60 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
 </script>
   <script id="initial-runs" type="application/json">
 [
+  {
+    "id": "run_20261127_170300_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "第二大腦冷備份與資產歸檔",
+    "status": "error",
+    "timestamp": "2026-11-27T17:03:00.214733+08:00",
+    "formatted_time": "2026-11-27 17:03:00",
+    "duration": "177s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Fri Nov 27 09:00:01 UTC 2026] 啟動排程任務: 第二大腦冷備份與資產歸檔 (weekly-backup) ===
+📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
+  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
+From github.com:Alexchiachi/second-brain-vault
+ * branch            main       -> FETCH_HEAD
+ + 1d4ee9d...83911e6 main       -> origin/main  (forced update)
+  [EXEC] git reset --hard origin/main (cwd=/opt/second-brain-vault)
+HEAD is now at 83911e6 🌱 feat: 每日心智演化與雙基地同步
+📦 [2/4] 打包為時間戳壓縮檔: Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-27.tar.gz...
+  [EXEC] tar -czf /tmp/Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-27.tar.gz --exclude=.git --exclude=.DS_Store --exclude=.trash -C /opt/second-brain-vault . (cwd=None)
+  ✓ 打包完成，檔案大小: 834.82 MB
+🌐 [3/4] 準備上傳至 Google Drive (資料夾: 1C50SkVd2BUC2gWmjUMb2GJ3QW4HNWU4s)...
+Traceback (most recent call last):
+  File \"/opt/backup_vault.py\", line 125, in <module>
+    main()
+  File \"/opt/backup_vault.py\", line 102, in main
+    res = service.files().list(q=q, fields=\"files(id, name)\").execute()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 205, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 242, in before_request
+    self._blocking_refresh(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 205, in _blocking_refresh
+    self.refresh(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+=== [Fri Nov 27 09:02:58 UTC 2026] 任務結束，狀態: error (耗時: 177s) ==="
+  },
   {
     "id": "run_20261127_083010_morning-brief",
     "task_id": "morning-brief",
