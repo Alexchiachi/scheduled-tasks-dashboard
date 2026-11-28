@@ -1,5 +1,16 @@
 [
   {
+    "id": "run_20261128_085416_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "Morning 晨間心流與要事簡報",
+    "status": "warning",
+    "timestamp": "2026-11-28T08:54:16.984091+08:00",
+    "formatted_time": "2026-11-28 08:54:16",
+    "duration": "1m 48s",
+    "summary": "早安，主理人。今日的晨間心流與要事簡報已為您靜心整理並寄出，請安心開啟這一天。 📬 寄送完成確認 收件信箱**：`jianchiachi@gmail.com` 郵件主旨**：`🌿 晨間心流與要事簡報 ｜ 2026-11-28 ｜ 大道至簡` 郵件 ID**：`1a21fa47fa399799` 檢索範圍**： Google 日曆**：今日（11/28 週六）無任何預排會議；明日（11/29 週日）`08:15` 將迎來 *Harmony Begins at Home* 平裝本...",
+    "details": "早安，主理人。今日的晨間心流與要事簡報已為您靜心整理並寄出，請安心開啟這一天。\n\n### 📬 寄送完成確認\n* **收件信箱**：`jianchiachi@gmail.com`\n* **郵件主旨**：`🌿 晨間心流與要事簡報 ｜ 2026-11-28 ｜ 大道至簡`\n* **郵件 ID**：`1a21fa47fa399799`\n* **檢索範圍**：\n  * **Google 日曆**：今日（11/28 週六）無任何預排會議；明日（11/29 週日）`08:15` 將迎來 *Harmony Begins at Home* 平裝本 KDP 每週上限重置送審窗口。\n  * **Obsidian 知識庫**：核對 `Daily Notes/2026-11-28.md`（尚未建立）、昨日 `Daily Notes/2026-11-27.md`、以及 `02_日常心流與演化日誌/每日對話評估/2026-11-27_每日對話深度評估.md` 與 `2026-11-27_第二心智演化日誌.md`。\n\n### 🌿 今日心流核心（摘要）\n* **唯一要事**：只用清醒的前 30 分鐘收清門口三件「最後一哩」交付（`B0H3VZ1JH2` 調價／CA A+ 確認、《AI 新物種 II：同住》封面拍板、Kobo Day 1《大道至簡的 21 日》手動上架），不開新視覺或程式生成。\n* **減負與接地**：一分鐘關掉吃記憶體的 Chrome 重分頁並授權修復 `tasks-dashboard-watcher` 同步衝突；收完門口三件事後合上螢幕，把週六還給南投冬陽與「無產出的走路禪」。\n\n工作已交接完畢，祝您今日從容、心流澄澈。\n\n=== 執行過程異常日誌 ===\nCreated At: 2026-11-28T08:52:06+08:00\nCompleted At: 2026-11-28T08:52:16+08:00\nEncountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: Tasks\",\"details\":{\"path\":\"Tasks\"}}\nCreated At: 2026-11-28T08:52:38+08:00\nCompleted At: 2026-11-28T08:52:42+08:00\nEncountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Note not found: 02_日常心流與演化日誌/Daily Notes/2026-11-28.md\",\"details\":{\"path\":\"02_日常心流與演化日誌/Daily Notes/2026-11-28.md\"}}"
+  },
+  {
     "id": "run_20261127_170521_weekly-backup",
     "task_id": "weekly-backup",
     "task_name": "Backup 週五資產歸檔與雙保險同步",
