@@ -1,5 +1,16 @@
 [
   {
+    "id": "run_20261128_112653_conversation-renamer",
+    "task_id": "conversation-renamer",
+    "task_name": "Renamer 對話名稱每週巡檢",
+    "status": "success",
+    "timestamp": "2026-11-28T11:26:53.898713+08:00",
+    "formatted_time": "2026-11-28 11:26:53",
+    "duration": "3m 8s",
+    "summary": "已完成本週（2026-11-22 15:00 UTC 至 2026-11-28）歷史對話自動巡檢與標題重命名作業，向主理人匯報如下： 一、 巡檢與多層同步摘要 掃描總數**：執行 [rename_conversations.py](file:///Users/chienchiachi/.gemini/antigravity/scratch/conversation-renamer/rename_conversations.py) `--scan`，共掃描全域歷史對話 **47...",
+    "details": "已完成本週（2026-11-22 15:00 UTC 至 2026-11-28）歷史對話自動巡檢與標題重命名作業，向主理人匯報如下：\n\n---\n\n### 一、 巡檢與多層同步摘要\n\n* **掃描總數**：執行 [rename_conversations.py](file:///Users/chienchiachi/.gemini/antigravity/scratch/conversation-renamer/rename_conversations.py) `--scan`，共掃描全域歷史對話 **476 筆**（其中 2026-11-22 15:00 UTC 後之使用者頂層／排程對話共 **59 筆**，另有 7 筆未命名項目為瀏覽器／背景子代理對話，依例不予干擾）。\n* **更新筆數（合計 40 筆）**：\n  * **本週新增與有新進展對話（29 筆）**：針對空標題、英文預設標題、字數未達 10 字，或對話後續已推進至新交付成果（如排程優化落地、Remotion 動效應用、Kobo 三書上架作戰包、《AI 新物種 III：平視》雙母本完稿、雙 Obsidian 庫合併封存）者，依「大道至簡、10–25 字」標準提煉並更新標題。\n  * **歷史 DB 回退復原同步（11 筆）**：巡檢發現上週（2026-11-16–2026-11-21）已命名對話中，有 11 筆的 `annotations/*.pbtxt` 雖仍保有中文標題，但 [conversation_summaries.db](file:///Users/chienchiachi/.gemini/antigravity/conversation_summaries.db) 回退為英文或空字串，本次已一併同步修復。\n* **多層同步狀態實況**：\n  * **持久化三層已驗證生效（40/40）**：已透過 `--update` 寫入 `annotations/*.pbtxt`、[conversation_summaries.db](file:///Users/chienchiachi/.gemini/antigravity/conversation_summaries.db) 與 [agyhub_summaries_proto.pb](file:///Users/chienchiachi/.gemini/antigravity/agyhub_summaries_proto.pb)，並經再次 `--scan` 與 `.pbtxt` 檢查確認 **DB 40/40、PBTXT 40/40** 全數一致。\n  * **Connect-RPC 說明**：目前執行的 Antigravity 2.36.0 `language_server`（PID 13746）改以 `--read_host_bridge_token_from_stdin` 啟動，命令列不帶 `--csrf_token`，因此 `--update` 內的 `get_language_server_info()` 無法自動探測連線埠與\n<truncated 3460 bytes>\n圓滿完結 | 24 |\n| 28 | `30b86991` | 執行負熵巡檢哨兵 | 負熵巡檢哨兵執行與待辦債務清單匯報 | 17 |\n| 29 | `41408eaf` | Obsidian 資料夾合併方法與建議 | 雙Obsidian庫合併為一與1.4G封存驗證完成 | 25 |\n\n*(註：其餘 30 筆本週對話如 `執行每日社群流量自動巡檢`、`Google 雲端硬碟自動整理任務`、`簡家旗晚間防斷線守護任務`、`執行週五雙保險自動備份`、`電腦效能全面健檢與優化`、`YouTube 短影音排程與戰報執行` 等原有標題已準確反映交付成果且符合 10–25 字規範，故維持原名。)*\n\n---\n\n### 三、 上週已命名項目 DB 回退復原同步清單（11 筆）\n\n| # | 對話 ID（前 8 碼） | DB 原回退值 | 復原同步後標題 | 字數 |\n| :-: | :--- | :--- | :--- | :-: |\n| 1 | `1b9ccc4c` | Generate Chapter Illustration Prompts | 和諧始於家全書十章插畫生成與嵌入定稿 | 18 |\n| 2 | `77530c6a` | Daily Dialogue Review And Backup | 每日對話沉澱與簡家旗視角深度覆盤 | 16 |\n| 3 | `857aa194` | Daily Dialogue Review And Backup | 每日對話沉澱與雙向鏈結雙端備份歸檔 | 17 |\n| 4 | `d416226b` | Second Brain Daily Evolution Sync | 第二大腦每日演化日誌與雙基地同步 | 16 |\n| 5 | `42871a1e` | GCP Proxy Muse.ai Business Strategy | Telegram個人AI助理美國市場變現策略 | 22 |\n| 6 | `4fcbcb2e` | Local Computer Performance Health Check | 本機電腦效能全面健檢與雙重資源瓶頸報告 | 19 |\n| 7 | `6302a250` | Advanced Layout And Visual Design | 雲端硬碟未美化簡報全域掃描與視覺美化 | 18 |\n| 8 | `cec101bd` | Second Brain Evolution Log | 第二大腦每日演化日誌與雙基地同步 | 16 |\n| 9 | `8c562e54` | Daily Dialogue Review Automation | 每日對話沉澱與五大象限深度覆盤 | 15 |\n| 10 | `a9a91f1f` | Missing Chat History Recovery | Antigravity封存對話尋回教學與資料庫排查 | 25 |\n| 11 | `b99229d4` | （空字串） | 每日對話沉澱深度評估與雙端備份歸檔 | 17 |"
+  },
+  {
     "id": "run_20261128_085925_daily-gardener",
     "task_id": "daily-gardener",
     "task_name": "Daily 第二心智園丁與雙基地同步",

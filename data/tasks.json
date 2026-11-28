@@ -18,11 +18,11 @@
     "cron": "CRON_TZ=Asia/Taipei 0 11 * * 6",
     "schedule": "每週六 11:00",
     "status": "success",
-    "last_run": "2026-11-22 23:38:01",
-    "last_duration": "3m 51s",
-    "last_summary": "已完成本週（2026-11-16 至 2026-11-22）歷史對話自動巡檢與標題重命名作業，結果彙報如下： 一、 巡檢與同步摘要 掃描總數**：調用 [rename_conversations.py](file:///Users/chienchiachi/.gemini/antigravity/scratch/conversation-renamer/rename_conversations.py) `--scan` 共掃描 **414** 筆對話紀錄（其中 2026-11...",
-    "total_runs": 2,
-    "success_count": 2,
+    "last_run": "2026-11-28 11:26:53",
+    "last_duration": "3m 8s",
+    "last_summary": "已完成本週（2026-11-22 15:00 UTC 至 2026-11-28）歷史對話自動巡檢與標題重命名作業，向主理人匯報如下： 一、 巡檢與多層同步摘要 掃描總數**：執行 [rename_conversations.py](file:///Users/chienchiachi/.gemini/antigravity/scratch/conversation-renamer/rename_conversations.py) `--scan`，共掃描全域歷史對話 **47...",
+    "total_runs": 3,
+    "success_count": 3,
     "description": "每週歷史對話自動巡檢與重命名：1. 執行 python3 /Users/chienchiachi/.gemini/antigravity/scratch/conversation-renamer/rename_conversations.py --scan 掃描所有歷史對話與當週新增對話；2. 依據各對話「最終結束時之核心任務與實際交付成果」，若有新進展或為暫定名稱，依「大道至簡、精準反映最終交付..."
   },
   {
