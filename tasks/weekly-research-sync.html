@@ -442,7 +442,7 @@
         <div class="hero-meta-top">
           <span class="badge badge-success">正常運行中</span>
           <span class="badge badge-idle tabular">ID: weekly-research-sync</span>
-          <span class="badge badge-idle tabular">週期: 每週日 20:00</span>
+          <span class="badge badge-idle tabular">週期: 每週日 16:30</span>
         </div>
         <h1 class="hero-title">每週生活熱點雲端同步與網頁更新</h1>
         <div class="hero-desc">
@@ -469,7 +469,7 @@
           </div>
           <div class="stat-item">
             <div class="stat-label">Cron 表達式</div>
-            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">0 20 * * 0</div>
+            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">CRON_TZ=Asia/Taipei 30 16 * * 0</div>
           </div>
         </div>
       </div>
@@ -549,8 +549,8 @@ Git 自動發布: 已推送至 main 與 feature/frontend-optimization-and-decoup
       const taskName = "每週生活熱點雲端同步與網頁更新";
       const totalRuns = "1";
       const taskId = "weekly-research-sync";
-      const cron = "0 20 * * 0";
-      const schedule = "每週日 20:00";
+      const cron = "CRON_TZ=Asia/Taipei 30 16 * * 0";
+      const schedule = "每週日 16:30";
 
       let md = `# ${taskName} · 任務歷史成果累積檔案庫\n\n`;
       md += `- **任務標識**: ${taskId}\n`;

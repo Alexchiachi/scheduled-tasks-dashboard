@@ -442,7 +442,7 @@
         <div class="hero-meta-top">
           <span class="badge badge-success">正常運行中</span>
           <span class="badge badge-idle tabular">ID: weekly-dialogue-distillation</span>
-          <span class="badge badge-idle tabular">週期: 每週日 22:00</span>
+          <span class="badge badge-idle tabular">週期: 每週日 15:00</span>
         </div>
         <h1 class="hero-title">Weekly 對話主題蒸餾（簡家旗標準・雲端本機雙存檔）</h1>
         <div class="hero-desc">
@@ -467,7 +467,7 @@
           </div>
           <div class="stat-item">
             <div class="stat-label">Cron 表達式</div>
-            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">0 22 * * 0</div>
+            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">CRON_TZ=Asia/Taipei 0 15 * * 0</div>
           </div>
         </div>
       </div>
@@ -752,8 +752,8 @@ request to https://www.googleapis.com/upload/drive/v3/files?fields=id%!C(MISSING
       const taskName = "Weekly 對話主題蒸餾（簡家旗標準・雲端本機雙存檔）";
       const totalRuns = "4";
       const taskId = "weekly-dialogue-distillation";
-      const cron = "0 22 * * 0";
-      const schedule = "每週日 22:00";
+      const cron = "CRON_TZ=Asia/Taipei 0 15 * * 0";
+      const schedule = "每週日 15:00";
 
       let md = `# ${taskName} · 任務歷史成果累積檔案庫\n\n`;
       md += `- **任務標識**: ${taskId}\n`;

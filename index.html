@@ -812,9 +812,9 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
 [
   {
     "id": "audit",
-    "name": "Audit 電腦健檢",
-    "cron": "0 9 * * *",
-    "schedule": "每日 09:00",
+    "name": "Audit 每週電腦健檢",
+    "cron": "CRON_TZ=Asia/Taipei 0 10 * * 3",
+    "schedule": "每週三 10:00",
     "status": "success",
     "last_run": "2026-11-15 16:23:07",
     "last_duration": "343m 15s",
@@ -827,8 +827,8 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
   {
     "id": "conversation-renamer",
     "name": "Renamer 對話名稱每週巡檢",
-    "cron": "30 23 * * 0",
-    "schedule": "每週日 23:30",
+    "cron": "CRON_TZ=Asia/Taipei 0 11 * * 6",
+    "schedule": "每週六 11:00",
     "status": "success",
     "last_run": "2026-11-22 23:38:01",
     "last_duration": "3m 51s",
@@ -841,8 +841,8 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
   {
     "id": "daily-dialogue-review",
     "name": "Daily 當日對話深度評估與雲端雙基地同步",
-    "cron": "0 21 * * *",
-    "schedule": "每日 21:00",
+    "cron": "CRON_TZ=Asia/Taipei 30 20 * * *",
+    "schedule": "每日 20:30",
     "status": "success",
     "last_run": "2026-11-17 00:53:24",
     "last_duration": "41s",
@@ -857,7 +857,7 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
   {
     "id": "daily-gardener",
     "name": "Daily 第二心智園丁與雙基地同步",
-    "cron": "0 8 * * *",
+    "cron": "CRON_TZ=Asia/Taipei 0 8 * * *",
     "schedule": "每日 08:00",
     "status": "success",
     "last_run": "2026-11-28 08:59:25",
@@ -866,45 +866,60 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
     "total_runs": 5,
     "success_count": 5,
     "description": "你是第二大腦的常駐園丁。請嚴格執行以下任務：
-1. 依照 `second-brain-gardener` 技能規範，掃描本機 Obsidian 過去 10 天變更，聯網進行跨界碰撞，並寫入一篇長文至 `有感而發長文分享/YYYY-MM-DD_第二心智演化日誌.md`。
-2. 文章寫入完畢後，執行本機指令進行 Google Drive 雙基地同步：`NODE_PATH=/Users/chienchi...",
+1. 依照 `second-brain-gardener` 技能規範，掃描本機 Obsidian（`/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家`）過去 10 天變更，聯網進行跨界碰撞，並寫入一篇長文至 `02_日常心流與...",
     "last_status": "success"
   },
   {
-    "id": "downloads-cleaner",
-    "name": "Cleaner 下載夾每週排毒",
-    "cron": "0 23 * * 0",
-    "schedule": "每週日 23:00",
+    "id": "daily-youtube-shorts",
+    "name": "Daily YouTube Shorts 每日黃金排程發布",
+    "cron": "CRON_TZ=Asia/Taipei 30 18 * * *",
+    "schedule": "每日 18:30",
     "status": "idle",
     "last_run": null,
     "last_duration": "-",
     "last_summary": "尚無執行紀錄",
     "total_runs": 0,
     "success_count": 0,
-    "description": "安全掃描 ~/Downloads 資料夾，清理已安裝完畢的 .dmg/.pkg 安裝檔以及超過 7 天的暫存截圖，嚴格保留個人專案、zip 與重要文檔，回報本次釋放的空間大小。"
+    "description": "你是大道至簡 · 簡家旗頻道的「YouTube 頻道首席運營官兼數位工匠」。
+現在是每日傍晚短影音黃金推流時間（18:30），請自動執行當日短影音排程推進任務：
+1. 調用自動化飛輪指令：`uncle-flywheel --next`，自動推進發布《幸福與大叔》下一集（若第一季完畢則自動銜接第二季或後續短影音儲備）。
+2. 檢查發布狀態與 YouTube 影片網址，確保已自動雙歸檔至《大傾聽 · ..."
+  },
+  {
+    "id": "evening-wind-down",
+    "name": "Evening 晚間防斷線與明日安心留白卡",
+    "cron": "CRON_TZ=Asia/Taipei 30 21 * * *",
+    "schedule": "每日 21:30",
+    "status": "warning",
+    "last_run": "2026-11-22 21:32:47",
+    "last_duration": "1m 48s",
+    "last_summary": "晚安，家旗。21:30 晚間防斷線守護與明日安心留白卡已生成並寄出，今晚可以放心停筆。 安心收工確認 今日已圓滿閉環，系統在深處自轉，無一事遺漏懸念。** 知識庫與雲端沉澱**：已核對 Obsidian 當日日記（`Daily Notes/2026-11-22.md`）與每日對話深度評估（`02_日常心流與演化日誌/每日對話評估/2026-11-22_每日對話深度評估.md`），今日共 13 條對話、出版母檔（`03_英文電子書.md`、`00_大道至簡_全景導航儀表板.md...",
+    "total_runs": 1,
+    "success_count": 0,
+    "description": "你是簡家旗第二心智的晚間工匠與身心防斷線守護者。請執行每日 21:30 晚間防斷線守護與明日安心留白卡任務：
+1. 查詢明日 Google 日曆活動（調用 google-drive 之 list_calendar_events）與本機 Obsidian 知識庫（`/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Docu...",
+    "last_status": "warning"
   },
   {
     "id": "morning-brief",
-    "name": "晨間心流與要事簡報",
-    "cron": "30 8 * * *",
+    "name": "Morning 晨間心流與要事簡報",
+    "cron": "CRON_TZ=Asia/Taipei 30 8 * * *",
     "schedule": "每日 08:30",
     "status": "warning",
     "last_run": "2026-11-28 08:54:16",
     "last_duration": "1m 48s",
     "last_summary": "早安，主理人。今日的晨間心流與要事簡報已為您靜心整理並寄出，請安心開啟這一天。 📬 寄送完成確認 收件信箱**：`jianchiachi@gmail.com` 郵件主旨**：`🌿 晨間心流與要事簡報 ｜ 2026-11-28 ｜ 大道至簡` 郵件 ID**：`1a21fa47fa399799` 檢索範圍**： Google 日曆**：今日（11/28 週六）無任何預排會議；明日（11/29 週日）`08:15` 將迎來 *Harmony Begins at Home* 平裝本...",
-    "total_runs": 24,
-    "success_count": 7,
+    "total_runs": 45,
+    "success_count": 13,
     "description": "你是簡家旗第二心智的晨間工匠。請執行每日晨間心流與要事簡報任務：
-1. 查詢今日 Google 日曆活動（調用 google-drive 之 list_calendar_events）與 Obsidian 知識庫（讀取當日日常日記與近期對話評估）。
-2. 以「大道至簡」溫和專注的語調，提煉出「今天唯一最核心的一件事」與關鍵提醒，過濾多餘資訊噪音，守護主理人的心理平靜與清晰心流。
-3. 將提煉產出排...",
-    "last_status": "error"
+1. 查詢今日 Google 日曆活動（調用 google-drive 之 list_calendar_events）與本機 Obsidian 知識庫（`/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家`）...",
+    "last_status": "warning"
   },
   {
     "id": "sentinel-check",
     "name": "sentinel 負熵巡檢",
-    "cron": "0 9 * * 1",
-    "schedule": "每週一 09:00",
+    "cron": "CRON_TZ=Asia/Taipei 0 10 * * 1",
+    "schedule": "每週一 10:00",
     "status": "success",
     "last_run": "2026-11-23 09:03:21",
     "last_duration": "11s",
@@ -915,41 +930,24 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
     "last_status": "success"
   },
   {
-    "id": "weekly-audio-sync",
-    "name": "每週雲端錄音大傾聽同步巡檢",
-    "cron": "0 21 * * 0",
-    "schedule": "每週日 21:00",
-    "status": "success",
-    "last_run": "2026-11-22 21:02:42",
-    "last_duration": "1m 6s",
-    "last_summary": "已完成每週雲端錄音自動化巡檢與盤點，結果如下： 1. 本次巡檢執行結果 執行腳本**：[run_cloud_watcher.sh](file:///Users/chienchiachi/.gemini/antigravity/scratch/run_cloud_watcher.sh)（調用 [cloud_audio_watcher.js](file:///Users/chienchiachi/.gemini/antigravity/scratch/cloud_audio_wa...",
-    "total_runs": 2,
-    "success_count": 2,
-    "description": "執行每週雲端錄音自動化巡檢與轉檔：
-1. 執行 /Users/chienchiachi/.gemini/antigravity/scratch/run_cloud_watcher.sh 巡檢 Google Drive「簡家旗錄音檔」資料夾是否有新上傳的錄音檔；
-2. 自動執行 Vertex AI 大傾聽多工模型，將新音訊轉化為逐字稿、精華報告與回憶錄篇章，同步寫入雲端三庫；
-3. 確保雲端原始音檔...",
-    "last_status": "success"
-  },
-  {
     "id": "weekly-backup",
-    "name": "第二大腦冷備份與資產歸檔",
-    "cron": "0 17 * * 5",
+    "name": "Backup 週五資產歸檔與雙保險同步",
+    "cron": "CRON_TZ=Asia/Taipei 0 17 * * 5",
     "schedule": "每週五 17:00",
     "status": "success",
     "last_run": "2026-11-27 17:05:21",
     "last_duration": "1m 34s",
     "last_summary": "✅ **Google Drive 雙保險備份**：[sync_dual_base.js](file:///Users/chienchiachi/.config/google-drive-mcp/sync_dual_base.js) 驗證通過，今日份 `Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-27.zip` 與 `WorkBuddy_Backup_2026-11-27.tar.gz` 均已就緒。 ✅ **GitHub `happy` 繁簡同步與檢查**：...",
-    "total_runs": 3,
-    "success_count": 2,
+    "total_runs": 10,
+    "success_count": 4,
     "description": "執行週五雙保險自動備份：1. 執行 NODE_PATH=/Users/chienchiachi/.config/google-drive-mcp/node_modules node /Users/chienchiachi/.config/google-drive-mcp/sync_dual_base.js 將 Obsidian 與 WorkBuddy 自動打包備份至 Google Drive；2....",
     "last_status": "success"
   },
   {
     "id": "weekly-dialogue-distillation",
     "name": "Weekly 對話主題蒸餾（簡家旗標準・雲端本機雙存檔）",
-    "cron": "0 22 * * 0",
-    "schedule": "每週日 22:00",
+    "cron": "CRON_TZ=Asia/Taipei 0 15 * * 0",
+    "schedule": "每週日 15:00",
     "status": "success",
     "last_run": "2026-11-22 22:02:54",
     "last_duration": "43s",
@@ -962,10 +960,56 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
     "last_status": "success"
   },
   {
+    "id": "weekly-entropy-dedup",
+    "name": "每週雙基地資產降熵與重複清理",
+    "cron": "CRON_TZ=Asia/Taipei 30 10 * * 6",
+    "schedule": "每週六 10:30",
+    "status": "idle",
+    "last_run": null,
+    "last_duration": "-",
+    "last_summary": "尚無執行紀錄",
+    "total_runs": 0,
+    "success_count": 0,
+    "description": "執行每週雙基地資產負熵巡檢與重複衝突檔案清理：
+1. 執行降熵清理引擎：`python3 /Users/chienchiachi/.gemini/antigravity/scratch/dedup-entropy-cleaner/clean_duplicates.py --execute`；
+2. 深度掃描 Obsidian 知識庫與本地資產，精確識別因雲端同步產生之衝突檔案（如 `xxx 2.m..."
+  },
+  {
+    "id": "weekly-finance-book-compiler",
+    "name": "每週金融108講專書追蹤與編譯",
+    "cron": "CRON_TZ=Asia/Taipei 0 17 * * 0",
+    "schedule": "每週日 17:00",
+    "status": "idle",
+    "last_run": null,
+    "last_duration": "-",
+    "last_summary": "尚無執行紀錄",
+    "total_runs": 0,
+    "success_count": 0,
+    "description": "執行每週《大道至簡・金融一百零八講》專書自動追蹤、合輯與電子書編譯：
+1. 執行專書編譯流水線：`python3 /Users/chienchiachi/.gemini/antigravity/scratch/dao-finance-book/compile_finance_book.py`；
+2. 自動掃描六卷篇章寫作進度與字數變化，更新進度儀表板；
+3. 重新編譯產出全書 Markdown 典..."
+  },
+  {
+    "id": "weekly-gdrive-organizer",
+    "name": "每週雲端硬碟檔案自動分類歸檔（週三・週六）",
+    "cron": "CRON_TZ=Asia/Taipei 30 17 * * 3,6",
+    "schedule": "每週三、週六 17:30",
+    "status": "idle",
+    "last_run": null,
+    "last_duration": "-",
+    "last_summary": "尚無執行紀錄",
+    "total_runs": 0,
+    "success_count": 0,
+    "description": "執行定期（每週三、週六 17:30）Google 雲端硬碟自動整理與智慧分類歸檔任務：
+1. 執行專屬分類歸檔引擎：`python3 /Users/chienchiachi/.gemini/antigravity/scratch/gdrive-organizer/organize_gdrive.py --execute`；
+2. 自動掃描 Google Drive 根目錄散落檔案，依據專書出版（金..."
+  },
+  {
     "id": "weekly-research-sync",
     "name": "每週生活熱點雲端同步與網頁更新",
-    "cron": "0 20 * * 0",
-    "schedule": "每週日 20:00",
+    "cron": "CRON_TZ=Asia/Taipei 30 16 * * 0",
+    "schedule": "每週日 16:30",
     "status": "success",
     "last_run": "2026-10-29 23:39:45",
     "last_duration": "41s",
@@ -982,32 +1026,18 @@ python3 /Users/chienchiachi/Documents/GitHub/scheduled-tasks-dashboard/tools/rec
   {
     "id": "weekly-skill-evolution",
     "name": "Weekly 園丁底層 DNA 大演化",
-    "cron": "0 9 * * 0",
-    "schedule": "每週日 09:00",
+    "cron": "CRON_TZ=Asia/Taipei 0 10 * * 6",
+    "schedule": "每週六 10:00",
     "status": "success",
     "last_run": "2026-11-15 16:23:09",
     "last_duration": "343m 11s",
     "last_summary": "排程任務執行完成，無額外輸出。",
     "total_runs": 1,
     "success_count": 1,
-    "description": "你是「系統演化督導」。請執行每週日的【耗散結構大演化】任務：
-1. 讀取 `/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家/有感而發長文分享/` 中過去 7 天的演化日誌，嚴格提取出 7 個「進化的微小因子」。
-2. 基於老莊與耗散結構理論，讓這 7 個因子產生劇烈碰撞...",
+    "description": "你是「系統演化督導」。請執行每週六的【耗散結構大演化】任務：
+1. 讀取 `/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家/02_日常心流與演化日誌/有感而發長文分享/` 中過去 7 天的演化日誌，嚴格提取出 7 個「進化的微小因子」。
+2. 基於老莊與耗散結構理論，讓...",
     "last_status": "success"
-  },
-  {
-    "id": "evening-wind-down",
-    "name": "Evening 晚間防斷線與明日安心留白卡",
-    "cron": "-",
-    "schedule": "手動或自訂排程",
-    "status": "warning",
-    "last_run": "2026-11-22 21:32:47",
-    "last_duration": "1m 48s",
-    "last_summary": "晚安，家旗。21:30 晚間防斷線守護與明日安心留白卡已生成並寄出，今晚可以放心停筆。 安心收工確認 今日已圓滿閉環，系統在深處自轉，無一事遺漏懸念。** 知識庫與雲端沉澱**：已核對 Obsidian 當日日記（`Daily Notes/2026-11-22.md`）與每日對話深度評估（`02_日常心流與演化日誌/每日對話評估/2026-11-22_每日對話深度評估.md`），今日共 13 條對話、出版母檔（`03_英文電子書.md`、`00_大道至簡_全景導航儀表板.md...",
-    "total_runs": 1,
-    "success_count": 0,
-    "description": "晚安，家旗。21:30 晚間防斷線守護與明日安心留白卡已生成並寄出，今晚可以放心停筆。 安心收工確認 今日已圓滿閉環，系統在深處自轉，無一事遺漏懸念。** 知識庫與雲端沉澱**：已核對 Obsidian 當日日記（`Daily Notes/2026-11-22.md`）與每日對話深度評估（`02_日常心流與演化日誌/每日對話評估/2026-11-22_每日對話深度評估.md`），今日共 13 條對話、出版母檔（`03_英文電子書.md`、`00_大道至簡_全景導航儀表板.md...",
-    "last_status": "warning"
   }
 ]
 </script>
@@ -1058,6 +1088,145 @@ Completed At: 2026-11-28T08:52:42+08:00
 Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Note not found: 02_日常心流與演化日誌/Daily Notes/2026-11-28.md\",\"details\":{\"path\":\"02_日常心流與演化日誌/Daily Notes/2026-11-28.md\"}}"
   },
   {
+    "id": "run_20261128_083010_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-28T08:30:10.172616+08:00",
+    "formatted_time": "2026-11-28 08:30:10",
+    "duration": "6s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Sat Nov 28 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-28 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1795825807195,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: { error: 'invalid_grant', error_description: 'Bad Request' },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Sat, 28 Nov 2026 00:30:07 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Sat Nov 28 00:30:07 UTC 2026] 任務結束，狀態: error (耗時: 6s) ==="
+  },
+  {
+    "id": "run_20261127_233010_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-27T23:30:10.999219+08:00",
+    "formatted_time": "2026-11-27 23:30:10",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Fri Nov 27 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-27 15:30:03
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+Traceback (most recent call last):
+  File \"/opt/organize_gdrive.py\", line 402, in <module>
+    main()
+  File \"/opt/organize_gdrive.py\", line 288, in main
+    folder_map = fetch_existing_folders(service)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders
+    ).execute()
+      ^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request
+    self.credentials.refresh(self._request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+=== [Fri Nov 27 15:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
+  },
+  {
     "id": "run_20261127_170521_weekly-backup",
     "task_id": "weekly-backup",
     "task_name": "Backup 週五資產歸檔與雙保險同步",
@@ -1069,6 +1238,199 @@ Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\
     "details": "- ✅ **Google Drive 雙保險備份**：[sync_dual_base.js](file:///Users/chienchiachi/.config/google-drive-mcp/sync_dual_base.js) 驗證通過，今日份 `Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-27.zip` 與 `WorkBuddy_Backup_2026-11-27.tar.gz` 均已就緒。
 - ✅ **GitHub `happy` 繁簡同步與檢查**：[happy](file:///Users/chienchiachi/Documents/GitHub.nosync/happy) 執行繁簡同步（繁簡各 42 頁、16 項好物、`sitemap.xml`）與資產雜湊檢查（`styles.css?v=dd34f131`、`scripts.js?v=c51b914d`）全數通過。
 - ✅ **遠端推送與安心收工**：`main` 分支工作區乾淨，`git push origin main` 回報 `Everything up-to-date`（`51a2fec`），雙保險全部就緒，安心收工！"
+  },
+  {
+    "id": "run_20261127_170300_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "第二大腦冷備份與資產歸檔",
+    "status": "error",
+    "timestamp": "2026-11-27T17:03:00.214733+08:00",
+    "formatted_time": "2026-11-27 17:03:00",
+    "duration": "177s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Fri Nov 27 09:00:01 UTC 2026] 啟動排程任務: 第二大腦冷備份與資產歸檔 (weekly-backup) ===
+📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
+  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
+From github.com:Alexchiachi/second-brain-vault
+ * branch            main       -> FETCH_HEAD
+ + 1d4ee9d...83911e6 main       -> origin/main  (forced update)
+  [EXEC] git reset --hard origin/main (cwd=/opt/second-brain-vault)
+HEAD is now at 83911e6 🌱 feat: 每日心智演化與雙基地同步
+📦 [2/4] 打包為時間戳壓縮檔: Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-27.tar.gz...
+  [EXEC] tar -czf /tmp/Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-27.tar.gz --exclude=.git --exclude=.DS_Store --exclude=.trash -C /opt/second-brain-vault . (cwd=None)
+  ✓ 打包完成，檔案大小: 834.82 MB
+🌐 [3/4] 準備上傳至 Google Drive (資料夾: 1C50SkVd2BUC2gWmjUMb2GJ3QW4HNWU4s)...
+Traceback (most recent call last):
+  File \"/opt/backup_vault.py\", line 125, in <module>
+    main()
+  File \"/opt/backup_vault.py\", line 102, in main
+    res = service.files().list(q=q, fields=\"files(id, name)\").execute()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 205, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 242, in before_request
+    self._blocking_refresh(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 205, in _blocking_refresh
+    self.refresh(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Bad Request', {'error': 'invalid_grant', 'error_description': 'Bad Request'})
+=== [Fri Nov 27 09:02:58 UTC 2026] 任務結束，狀態: error (耗時: 177s) ==="
+  },
+  {
+    "id": "run_20261127_083010_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-27T08:30:10.587971+08:00",
+    "formatted_time": "2026-11-27 08:30:10",
+    "duration": "6s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Fri Nov 27 00:30:02 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-27 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1795739407988,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: { error: 'invalid_grant', error_description: 'Bad Request' },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Fri, 27 Nov 2026 00:30:07 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Fri Nov 27 00:30:08 UTC 2026] 任務結束，狀態: error (耗時: 6s) ==="
+  },
+  {
+    "id": "run_20261126_233011_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-26T23:30:11.425820+08:00",
+    "formatted_time": "2026-11-26 23:30:11",
+    "duration": "8s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Thu Nov 26 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-26 15:30:02
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+Traceback (most recent call last):
+  File \"/opt/organize_gdrive.py\", line 402, in <module>
+    main()
+  File \"/opt/organize_gdrive.py\", line 288, in main
+    folder_map = fetch_existing_folders(service)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders
+    ).execute()
+      ^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request
+    self.credentials.refresh(self._request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Thu Nov 26 15:30:09 UTC 2026] 任務結束，狀態: error (耗時: 8s) ==="
   },
   {
     "id": "run_20261126_083511_morning-brief",
@@ -1102,6 +1464,148 @@ Completed At: 2026-11-26T08:30:56+08:00
 Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: 02_日常心流與演化日誌/晨間簡報與要事\",\"details\":{\"path\":\"02_日常心流與演化日誌/晨間簡報與要事\"}}"
   },
   {
+    "id": "run_20261126_083010_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-26T08:30:10.063961+08:00",
+    "formatted_time": "2026-11-26 08:30:10",
+    "duration": "6s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Thu Nov 26 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-26 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1795653007530,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Thu, 26 Nov 2026 00:30:07 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Thu Nov 26 00:30:07 UTC 2026] 任務結束，狀態: error (耗時: 6s) ==="
+  },
+  {
+    "id": "run_20261125_233010_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-25T23:30:10.220686+08:00",
+    "formatted_time": "2026-11-25 23:30:10",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Wed Nov 25 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-25 15:30:02
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+Traceback (most recent call last):
+  File \"/opt/organize_gdrive.py\", line 402, in <module>
+    main()
+  File \"/opt/organize_gdrive.py\", line 288, in main
+    folder_map = fetch_existing_folders(service)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders
+    ).execute()
+      ^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request
+    self.credentials.refresh(self._request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Wed Nov 25 15:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
+  },
+  {
     "id": "run_20261125_083647_morning-brief",
     "task_id": "morning-brief",
     "task_name": "Morning 晨間心流與要事簡報",
@@ -1133,6 +1637,148 @@ Completed At: 2026-11-25T08:31:34+08:00
 Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Note not found: 02_日常心流與演化日誌/Daily Notes/2026-11-25.md\",\"details\":{\"path\":\"02_日常心流與演化日誌/Daily Notes/2026-11-25.md\"}}"
   },
   {
+    "id": "run_20261125_083011_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-25T08:30:11.425584+08:00",
+    "formatted_time": "2026-11-25 08:30:11",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Wed Nov 25 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-25 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1795566608483,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 25 Nov 2026 00:30:08 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Wed Nov 25 00:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
+  },
+  {
+    "id": "run_20261124_233011_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-24T23:30:11.586643+08:00",
+    "formatted_time": "2026-11-24 23:30:11",
+    "duration": "8s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Tue Nov 24 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-24 15:30:03
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+Traceback (most recent call last):
+  File \"/opt/organize_gdrive.py\", line 402, in <module>
+    main()
+  File \"/opt/organize_gdrive.py\", line 288, in main
+    folder_map = fetch_existing_folders(service)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders
+    ).execute()
+      ^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request
+    self.credentials.refresh(self._request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Tue Nov 24 15:30:09 UTC 2026] 任務結束，狀態: error (耗時: 8s) ==="
+  },
+  {
     "id": "run_20261124_084215_morning-brief",
     "task_id": "morning-brief",
     "task_name": "Morning 晨間心流與要事簡報",
@@ -1160,6 +1806,148 @@ Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\
 Created At: 2026-11-24T08:40:26+08:00
 Completed At: 2026-11-24T08:40:30+08:00
 Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Note not found: 02_日常心流與演化日誌/有感而發長文分享/2026-11-24_第二心智演化日誌.md\",\"details\":{\"path\":\"02_日常心流與演化日誌/有感而發長文分享/2026-11-24_第二心智演化日誌.md\"}}"
+  },
+  {
+    "id": "run_20261124_083010_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-24T08:30:10.811134+08:00",
+    "formatted_time": "2026-11-24 08:30:10",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Tue Nov 24 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-24 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1795480208175,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Tue, 24 Nov 2026 00:30:08 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Tue Nov 24 00:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
+  },
+  {
+    "id": "run_20261123_233010_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-23T23:30:10.811745+08:00",
+    "formatted_time": "2026-11-23 23:30:10",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Mon Nov 23 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-23 15:30:02
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+Traceback (most recent call last):
+  File \"/opt/organize_gdrive.py\", line 402, in <module>
+    main()
+  File \"/opt/organize_gdrive.py\", line 288, in main
+    folder_map = fetch_existing_folders(service)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders
+    ).execute()
+      ^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request
+    self.credentials.refresh(self._request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Mon Nov 23 15:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
   },
   {
     "id": "run_20261123_090321_sentinel-check",
@@ -1230,6 +2018,99 @@ Completed At: 2026-11-23T08:31:08+08:00
 Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Note not found: 02_日常心流與演化日誌/Daily Notes/2026-11-23.md\",\"details\":{\"path\":\"02_日常心流與演化日誌/Daily Notes/2026-11-23.md\"}}"
   },
   {
+    "id": "run_20261123_083007_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-23T08:30:07.952040+08:00",
+    "formatted_time": "2026-11-23 08:30:07",
+    "duration": "5s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Mon Nov 23 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-23 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1795393806958,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Mon, 23 Nov 2026 00:30:06 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Mon Nov 23 00:30:06 UTC 2026] 任務結束，狀態: error (耗時: 5s) ==="
+  },
+  {
     "id": "run_20261122_233801_conversation-renamer",
     "task_id": "conversation-renamer",
     "task_name": "Renamer 對話名稱每週巡檢",
@@ -1276,6 +2157,55 @@ w And Backup | 每日對話沉澱與雙向鏈結雙端備份歸檔 | 17 |
 | 29 | `b99229d4` | 繼續 | 每日對話沉澱深度評估與雙端備份歸檔 | 17 |
 
 *(註：其餘 38 筆本週對話原有標題如 `Obsidian 資料夾合併方法與建議`、`每週對話深度主題蒸餾`、`大道至簡金融一百零八講專書編譯` 等皆已精準對應其最終交付成果，故維持原名不變。)*"
+  },
+  {
+    "id": "run_20261122_233010_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-22T23:30:10.347392+08:00",
+    "formatted_time": "2026-11-22 23:30:10",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Sun Nov 22 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-22 15:30:02
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+Traceback (most recent call last):
+  File \"/opt/organize_gdrive.py\", line 402, in <module>
+    main()
+  File \"/opt/organize_gdrive.py\", line 288, in main
+    folder_map = fetch_existing_folders(service)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders
+    ).execute()
+      ^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request
+    self.credentials.refresh(self._request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Sun Nov 22 15:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
   },
   {
     "id": "run_20261122_220254_weekly-dialogue-distillation",
@@ -1419,6 +2349,148 @@ Completed At: 2026-11-22T08:30:46+08:00
 Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: Tasks\",\"details\":{\"path\":\"Tasks\"}}"
   },
   {
+    "id": "run_20261122_083008_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-22T08:30:08.990838+08:00",
+    "formatted_time": "2026-11-22 08:30:08",
+    "duration": "6s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Sun Nov 22 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-22 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1795307407042,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Sun, 22 Nov 2026 00:30:07 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Sun Nov 22 00:30:07 UTC 2026] 任務結束，狀態: error (耗時: 6s) ==="
+  },
+  {
+    "id": "run_20261121_233011_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-21T23:30:11.488666+08:00",
+    "formatted_time": "2026-11-21 23:30:11",
+    "duration": "8s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Sat Nov 21 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-21 15:30:02
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+Traceback (most recent call last):
+  File \"/opt/organize_gdrive.py\", line 402, in <module>
+    main()
+  File \"/opt/organize_gdrive.py\", line 288, in main
+    folder_map = fetch_existing_folders(service)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders
+    ).execute()
+      ^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request
+    self.credentials.refresh(self._request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Sat Nov 21 15:30:09 UTC 2026] 任務結束，狀態: error (耗時: 8s) ==="
+  },
+  {
     "id": "run_20261121_083657_morning-brief",
     "task_id": "morning-brief",
     "task_name": "Morning 晨間心流與要事簡報",
@@ -1445,6 +2517,148 @@ Completed At: 2026-11-21T08:31:50+08:00
 Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Note not found: 02_日常心流與演化日誌/Daily Notes/2026-11-21.md\",\"details\":{\"path\":\"02_日常心流與演化日誌/Daily Notes/2026-11-21.md\"}}"
   },
   {
+    "id": "run_20261121_083009_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-21T08:30:09.606599+08:00",
+    "formatted_time": "2026-11-21 08:30:09",
+    "duration": "6s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Sat Nov 21 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-21 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1795221007704,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Sat, 21 Nov 2026 00:30:07 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Sat Nov 21 00:30:07 UTC 2026] 任務結束，狀態: error (耗時: 6s) ==="
+  },
+  {
+    "id": "run_20261120_233010_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-20T23:30:10.220504+08:00",
+    "formatted_time": "2026-11-20 23:30:10",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Fri Nov 20 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-20 15:30:02
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+Traceback (most recent call last):
+  File \"/opt/organize_gdrive.py\", line 402, in <module>
+    main()
+  File \"/opt/organize_gdrive.py\", line 288, in main
+    folder_map = fetch_existing_folders(service)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders
+    ).execute()
+      ^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request
+    self.credentials.refresh(self._request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Fri Nov 20 15:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
+  },
+  {
     "id": "run_20261120_170640_weekly-backup",
     "task_id": "weekly-backup",
     "task_name": "Backup 週五資產歸檔與雙保險同步",
@@ -1461,6 +2675,60 @@ Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\
 Created At: 2026-11-20T17:01:30+08:00
 Completed At: 2026-11-20T17:01:32+08:00
 Encountered error in step execution: cannot kill task \"09e91cbe-77d7-4770-99a5-ff5223a71d91/task-5\": task is not running (status: DONE)"
+  },
+  {
+    "id": "run_20261120_170211_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "第二大腦冷備份與資產歸檔",
+    "status": "error",
+    "timestamp": "2026-11-20T17:02:11.608901+08:00",
+    "formatted_time": "2026-11-20 17:02:11",
+    "duration": "129s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Fri Nov 20 09:00:01 UTC 2026] 啟動排程任務: 第二大腦冷備份與資產歸檔 (weekly-backup) ===
+📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
+  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
+From github.com:Alexchiachi/second-brain-vault
+ * branch            main       -> FETCH_HEAD
+ + 2969721...1d4ee9d main       -> origin/main  (forced update)
+  [EXEC] git reset --hard origin/main (cwd=/opt/second-brain-vault)
+HEAD is now at 1d4ee9d 🌱 feat: 每日心智演化與雙基地同步
+📦 [2/4] 打包為時間戳壓縮檔: Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-20.tar.gz...
+  [EXEC] tar -czf /tmp/Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-20.tar.gz --exclude=.git --exclude=.DS_Store --exclude=.trash -C /opt/second-brain-vault . (cwd=None)
+  ✓ 打包完成，檔案大小: 765.45 MB
+🌐 [3/4] 準備上傳至 Google Drive (資料夾: 1C50SkVd2BUC2gWmjUMb2GJ3QW4HNWU4s)...
+Traceback (most recent call last):
+  File \"/opt/backup_vault.py\", line 125, in <module>
+    main()
+  File \"/opt/backup_vault.py\", line 102, in main
+    res = service.files().list(q=q, fields=\"files(id, name)\").execute()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 205, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 242, in before_request
+    self._blocking_refresh(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 205, in _blocking_refresh
+    self.refresh(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Fri Nov 20 09:02:10 UTC 2026] 任務結束，狀態: error (耗時: 129s) ==="
   },
   {
     "id": "run_20261120_105331_morning-brief",
@@ -1487,6 +2755,148 @@ Encountered error in step execution: cannot kill task \"09e91cbe-77d7-4770-99a5-
 Created At: 2026-11-20T09:00:54+08:00
 Completed At: 2026-11-20T09:01:03+08:00
 Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Note not found: 02_日常心流與演化日誌/Daily Notes/2026-11-20.md\",\"details\":{\"path\":\"02_日常心流與演化日誌/Daily Notes/2026-11-20.md\"}}"
+  },
+  {
+    "id": "run_20261120_083008_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-20T08:30:08.407472+08:00",
+    "formatted_time": "2026-11-20 08:30:08",
+    "duration": "6s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Fri Nov 20 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-20 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1795134607203,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Fri, 20 Nov 2026 00:30:07 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Fri Nov 20 00:30:07 UTC 2026] 任務結束，狀態: error (耗時: 6s) ==="
+  },
+  {
+    "id": "run_20261119_233010_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-19T23:30:10.327881+08:00",
+    "formatted_time": "2026-11-19 23:30:10",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Thu Nov 19 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-19 15:30:02
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+Traceback (most recent call last):
+  File \"/opt/organize_gdrive.py\", line 402, in <module>
+    main()
+  File \"/opt/organize_gdrive.py\", line 288, in main
+    folder_map = fetch_existing_folders(service)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders
+    ).execute()
+      ^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request
+    self.credentials.refresh(self._request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Thu Nov 19 15:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
   },
   {
     "id": "run_20261119_083635_morning-brief",
@@ -1516,6 +2926,148 @@ Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\
 Created At: 2026-11-19T08:31:18+08:00
 Completed At: 2026-11-19T08:31:20+08:00
 Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: 有感而發長文分享\",\"details\":{\"path\":\"有感而發長文分享\"}}"
+  },
+  {
+    "id": "run_20261119_083009_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-19T08:30:09.578619+08:00",
+    "formatted_time": "2026-11-19 08:30:09",
+    "duration": "6s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Thu Nov 19 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-19 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1795048207712,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Thu, 19 Nov 2026 00:30:07 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Thu Nov 19 00:30:07 UTC 2026] 任務結束，狀態: error (耗時: 6s) ==="
+  },
+  {
+    "id": "run_20261118_233010_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-18T23:30:10.661884+08:00",
+    "formatted_time": "2026-11-18 23:30:10",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Wed Nov 18 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-18 15:30:02
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+Traceback (most recent call last):
+  File \"/opt/organize_gdrive.py\", line 402, in <module>
+    main()
+  File \"/opt/organize_gdrive.py\", line 288, in main
+    folder_map = fetch_existing_folders(service)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders
+    ).execute()
+      ^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request
+    self.credentials.refresh(self._request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Wed Nov 18 15:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
   },
   {
     "id": "run_20261118_083720_morning-brief",
@@ -1551,6 +3103,241 @@ Completed At: 2026-11-18T08:31:43+08:00
 Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: Tasks\",\"details\":{\"path\":\"Tasks\"}}"
   },
   {
+    "id": "run_20261118_083010_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-18T08:30:10.914195+08:00",
+    "formatted_time": "2026-11-18 08:30:10",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Wed Nov 18 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-18 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1794961808605,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Wed, 18 Nov 2026 00:30:08 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Wed Nov 18 00:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
+  },
+  {
+    "id": "run_20261117_233010_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-17T23:30:10.786592+08:00",
+    "formatted_time": "2026-11-17 23:30:10",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Tue Nov 17 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-17 15:30:03
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+Traceback (most recent call last):
+  File \"/opt/organize_gdrive.py\", line 402, in <module>
+    main()
+  File \"/opt/organize_gdrive.py\", line 288, in main
+    folder_map = fetch_existing_folders(service)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders
+    ).execute()
+      ^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request
+    self.credentials.refresh(self._request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Tue Nov 17 15:30:09 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
+  },
+  {
+    "id": "run_20261117_083012_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-17T08:30:12.556366+08:00",
+    "formatted_time": "2026-11-17 08:30:12",
+    "duration": "9s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Tue Nov 17 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-17 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1794875410072,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Tue, 17 Nov 2026 00:30:10 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Tue Nov 17 00:30:10 UTC 2026] 任務結束，狀態: error (耗時: 9s) ==="
+  },
+  {
     "id": "run_20261117_005324_daily-dialogue-review",
     "task_id": "daily-dialogue-review",
     "task_name": "Daily 當日對話深度評估與雲端雙基地同步",
@@ -1568,6 +3355,197 @@ Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\
 - **GitHub 雙保險備份**：已完成提交（`7046936`）並成功推送至遠端倉庫。
 - **Google 雲端硬碟同步**：已更新歸檔至 `2026-11` 資料夾之 `【每日對話深度評估】2026-11-16`。
   - 🔗 **雲端文件連結**：https://docs.google.com/document/d/10Ez1e8XK1cpGC2wq_ES0pgHgBMbwVEpVemq0TM7Br1c/edit?usp=drivesdk"
+  },
+  {
+    "id": "run_20261116_233009_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-16T23:30:09.592176+08:00",
+    "formatted_time": "2026-11-16 23:30:09",
+    "duration": "6s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Mon Nov 16 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-16 15:30:02
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+Traceback (most recent call last):
+  File \"/opt/organize_gdrive.py\", line 402, in <module>
+    main()
+  File \"/opt/organize_gdrive.py\", line 288, in main
+    folder_map = fetch_existing_folders(service)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders
+    ).execute()
+      ^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request
+    self.credentials.refresh(self._request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Mon Nov 16 15:30:07 UTC 2026] 任務結束，狀態: error (耗時: 6s) ==="
+  },
+  {
+    "id": "run_20261116_083010_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-16T08:30:10.524489+08:00",
+    "formatted_time": "2026-11-16 08:30:10",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Mon Nov 16 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-16 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1794789008272,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Mon, 16 Nov 2026 00:30:08 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Mon Nov 16 00:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
+  },
+  {
+    "id": "run_20261115_233011_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "error",
+    "timestamp": "2026-11-15T23:30:11.236975+08:00",
+    "formatted_time": "2026-11-15 23:30:11",
+    "duration": "8s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Sun Nov 15 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-15 15:30:03
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+Traceback (most recent call last):
+  File \"/opt/organize_gdrive.py\", line 402, in <module>
+    main()
+  File \"/opt/organize_gdrive.py\", line 288, in main
+    folder_map = fetch_existing_folders(service)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/opt/organize_gdrive.py\", line 243, in fetch_existing_folders
+    ).execute()
+      ^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 240, in request
+    self.credentials.refresh(self._request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Sun Nov 15 15:30:09 UTC 2026] 任務結束，狀態: error (耗時: 8s) ==="
   },
   {
     "id": "run_20261115_220414_weekly-dialogue-distillation",
@@ -1680,6 +3658,188 @@ Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\
     "details": ""
   },
   {
+    "id": "run_20261115_083010_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "success",
+    "timestamp": "2026-11-15T08:30:10.659377+08:00",
+    "formatted_time": "2026-11-15 08:30:10",
+    "duration": "7s",
+    "summary": "晨間要事與日曆活動已梳理完畢，美學簡報已成功發送至信箱。",
+    "details": "=== [Sun Nov 15 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-15 日曆活動...
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+✅ 晨間簡報已成功寄出！Message ID: 1a1dc9c88ede4966
+=== [Sun Nov 15 00:30:08 UTC 2026] 任務結束，狀態: success (耗時: 7s) ==="
+  },
+  {
+    "id": "run_20261114_233009_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "success",
+    "timestamp": "2026-11-14T23:30:09.931877+08:00",
+    "formatted_time": "2026-11-14 23:30:09",
+    "duration": "7s",
+    "summary": "Google 雲端硬碟根目錄散落檔案已完成智慧掃描、分類與無損歸檔。",
+    "details": "=== [Sat Nov 14 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-14 15:30:02
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+  已識別到 435 個雲端資料夾。
+
+步驟 2/3: 正在掃描雲端硬碟根目錄散落檔案...
+  根目錄發現 14 個散落檔案。
+
+步驟 3/3: 執行智慧分類與安全歸檔...
+---------------------------------------------------------------------------
+📦 [命中歸檔] 【一人公司对话录】每周辑选_微信公众号简体版_20261114
+   ↳ 目標: 【一人公司】品牌定位與核心架構
+   ↳ 依據: 命中規則: 一人公司
+📦 [命中歸檔] 【一人公司對話錄】每週輯選_臉書繁體版_20261114
+   ↳ 目標: 【一人公司】品牌定位與核心架構
+   ↳ 依據: 命中規則: 一人公司
+❓ [保留原處] 2026-11-14_空掉包袱，接住眼前这片雪_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-14_空掉包袱，接住眼前這片雪_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 書寫工作室・今日心得 2026-11-13
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 【專書與電子書】全球六大市場（美英日韓法德）暢銷書趨勢與簡家旗電子書發行戰略全景研報
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-13_不耍花招，心净处处是净土_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-13_不耍花招，心淨處處是淨土_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-12_心安是归处，何必问甘苦_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-12_心安是歸處，何必問甘苦_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-11_淘米洗菜，皆是诸佛行_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-11_淘米洗菜，皆是諸佛行_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-10_松开双手，水自然会托起你_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-10_鬆開雙手，水自然會托起你_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+---------------------------------------------------------------------------
+
+📊 分類統計摘要:
+  - 根目錄散落檔案總計: 14
+  - 智慧命中可歸檔數: 2 (14.3%)
+  - 保留原位檔案數: 12
+
+⚙️ 開始執行實際歸檔移動 (addParents / removeParents)...
+  🚚 移動中: 【一人公司对话录】每周辑选_微信公众号简体版_20261114 -> 【一人公司】品牌定位與核心架構 ... ✅ 成功
+  🚚 移動中: 【一人公司對話錄】每週輯選_臉書繁體版_20261114 -> 【一人公司】品牌定位與核心架構 ... ✅ 成功
+
+✨ 正式歸檔完成！本次已成功歸檔移動 2 個檔案，失敗 0 個。
+=== [Sat Nov 14 15:30:08 UTC 2026] 任務結束，狀態: success (耗時: 7s) ==="
+  },
+  {
+    "id": "run_20261114_083011_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "success",
+    "timestamp": "2026-11-14T08:30:11.120424+08:00",
+    "formatted_time": "2026-11-14 08:30:11",
+    "duration": "7s",
+    "summary": "晨間要事與日曆活動已梳理完畢，美學簡報已成功發送至信箱。",
+    "details": "=== [Sat Nov 14 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-14 日曆活動...
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+✅ 晨間簡報已成功寄出！Message ID: 1a1d7762a2e0e4df
+=== [Sat Nov 14 00:30:08 UTC 2026] 任務結束，狀態: success (耗時: 7s) ==="
+  },
+  {
+    "id": "run_20261113_233011_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "success",
+    "timestamp": "2026-11-13T23:30:11.557229+08:00",
+    "formatted_time": "2026-11-13 23:30:11",
+    "duration": "8s",
+    "summary": "Google 雲端硬碟根目錄散落檔案已完成智慧掃描、分類與無損歸檔。",
+    "details": "=== [Fri Nov 13 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-13 15:30:03
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+  已識別到 434 個雲端資料夾。
+
+步驟 2/3: 正在掃描雲端硬碟根目錄散落檔案...
+  根目錄發現 11 個散落檔案。
+
+步驟 3/3: 執行智慧分類與安全歸檔...
+---------------------------------------------------------------------------
+❓ [保留原處] 書寫工作室・今日心得 2026-11-13
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 【專書與電子書】全球六大市場（美英日韓法德）暢銷書趨勢與簡家旗電子書發行戰略全景研報
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-13_不耍花招，心净处处是净土_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-13_不耍花招，心淨處處是淨土_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+📦 [命中歸檔] 每週生活熱點×社會創新 2026-11-13
+   ↳ 目標: 【定期刊物】週報與熱點分析
+   ↳ 依據: 命中規則: 生活熱點.*社會創新
+❓ [保留原處] 2026-11-12_心安是归处，何必问甘苦_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-12_心安是歸處，何必問甘苦_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-11_淘米洗菜，皆是诸佛行_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-11_淘米洗菜，皆是諸佛行_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-10_松开双手，水自然会托起你_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-10_鬆開雙手，水自然會托起你_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+---------------------------------------------------------------------------
+
+📊 分類統計摘要:
+  - 根目錄散落檔案總計: 11
+  - 智慧命中可歸檔數: 1 (9.1%)
+  - 保留原位檔案數: 10
+
+⚙️ 開始執行實際歸檔移動 (addParents / removeParents)...
+  🚚 移動中: 每週生活熱點×社會創新 2026-11-13 -> 【定期刊物】週報與熱點分析 ... ✅ 成功
+
+✨ 正式歸檔完成！本次已成功歸檔移動 1 個檔案，失敗 0 個。
+=== [Fri Nov 13 15:30:09 UTC 2026] 任務結束，狀態: success (耗時: 8s) ==="
+  },
+  {
     "id": "run_20261113_170352_weekly-backup",
     "task_id": "weekly-backup",
     "task_name": "Backup 週五資產歸檔與雙保險同步",
@@ -1694,6 +3854,32 @@ Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\
 2. **GitHub `happy` 倉庫**：已執行前置繁簡同步（`build_zhcn.py`）與資產雜湊更新（`bump_assets.py`），工作區乾淨且與遠端 `main` 分支完全同步。
 
 我將靜候 Google Drive 上傳背景任務完成，完成後即刻為您生成 3 行安心收工確認清單！"
+  },
+  {
+    "id": "run_20261113_170243_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "第二大腦冷備份與資產歸檔",
+    "status": "success",
+    "timestamp": "2026-11-13T17:02:43.810194+08:00",
+    "formatted_time": "2026-11-13 17:02:43",
+    "duration": "161s",
+    "summary": "第二大腦 GitHub 倉庫已完成全量打包，並上傳至 Google 雲端硬碟「一人公司雙保險備份」資料夾。",
+    "details": "=== [Fri Nov 13 09:00:01 UTC 2026] 啟動排程任務: 第二大腦冷備份與資產歸檔 (weekly-backup) ===
+📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
+  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
+From github.com:Alexchiachi/second-brain-vault
+ * branch            main       -> FETCH_HEAD
+ + 879689c...2969721 main       -> origin/main  (forced update)
+  [EXEC] git reset --hard origin/main (cwd=/opt/second-brain-vault)
+HEAD is now at 2969721 docs(sync): 新增全球六大市場暢銷書趨勢與簡家旗電子書發行戰略全景研報
+📦 [2/4] 打包為時間戳壓縮檔: Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-13.tar.gz...
+  [EXEC] tar -czf /tmp/Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-13.tar.gz --exclude=.git --exclude=.DS_Store --exclude=.trash -C /opt/second-brain-vault . (cwd=None)
+  ✓ 打包完成，檔案大小: 765.77 MB
+🌐 [3/4] 準備上傳至 Google Drive (資料夾: 1C50SkVd2BUC2gWmjUMb2GJ3QW4HNWU4s)...
+  ✓ 上傳成功！Google Drive File ID: 16D1Fi_WKdS-q5pMxK52CvLyY_b1VIJqL
+  ✓ 本地暫存檔已清除
+✅ [4/4] 第二大腦冷備份完成！(2026-11-13, 765.77 MB)
+=== [Fri Nov 13 09:02:42 UTC 2026] 任務結束，狀態: success (耗時: 161s) ==="
   },
   {
     "id": "run_20261113_092318_morning-brief",
@@ -1726,6 +3912,76 @@ Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\
 3. **場域心流法則**：少說話、深傾聽、真回應；完成即退場，留下純淨的生命共感。
 
 祝您今日身心安歇、氣定神閒，在人與人的真實相遇中，感受幸福的自然流動。工匠已安心退位。"
+  },
+  {
+    "id": "run_20261113_083010_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "success",
+    "timestamp": "2026-11-13T08:30:10.904098+08:00",
+    "formatted_time": "2026-11-13 08:30:10",
+    "duration": "8s",
+    "summary": "晨間要事與日曆活動已梳理完畢，美學簡報已成功發送至信箱。",
+    "details": "=== [Fri Nov 13 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-13 日曆活動...
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+✅ 晨間簡報已成功寄出！Message ID: 1a1d24fd080bbde6
+=== [Fri Nov 13 00:30:09 UTC 2026] 任務結束，狀態: success (耗時: 8s) ==="
+  },
+  {
+    "id": "run_20261112_233009_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "success",
+    "timestamp": "2026-11-12T23:30:09.371795+08:00",
+    "formatted_time": "2026-11-12 23:30:09",
+    "duration": "6s",
+    "summary": "Google 雲端硬碟根目錄散落檔案已完成智慧掃描、分類與無損歸檔。",
+    "details": "=== [Thu Nov 12 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-12 15:30:03
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+  已識別到 434 個雲端資料夾。
+
+步驟 2/3: 正在掃描雲端硬碟根目錄散落檔案...
+  根目錄發現 6 個散落檔案。
+
+步驟 3/3: 執行智慧分類與安全歸檔...
+---------------------------------------------------------------------------
+❓ [保留原處] 2026-11-12_心安是归处，何必问甘苦_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-12_心安是歸處，何必問甘苦_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-11_淘米洗菜，皆是诸佛行_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-11_淘米洗菜，皆是諸佛行_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-10_松开双手，水自然会托起你_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-10_鬆開雙手，水自然會托起你_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+---------------------------------------------------------------------------
+
+📊 分類統計摘要:
+  - 根目錄散落檔案總計: 6
+  - 智慧命中可歸檔數: 0 (0.0%)
+  - 保留原位檔案數: 6
+
+⚙️ 開始執行實際歸檔移動 (addParents / removeParents)...
+
+✨ 正式歸檔完成！本次已成功歸檔移動 0 個檔案，失敗 0 個。
+=== [Thu Nov 12 15:30:07 UTC 2026] 任務結束，狀態: success (耗時: 6s) ==="
   },
   {
     "id": "run_20261112_083735_morning-brief",
@@ -1776,6 +4032,70 @@ Completed At: 2026-11-12T08:31:36+08:00
 Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Path not found: Tasks\",\"details\":{\"path\":\"Tasks\"}}"
   },
   {
+    "id": "run_20261112_083010_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "success",
+    "timestamp": "2026-11-12T08:30:10.984489+08:00",
+    "formatted_time": "2026-11-12 08:30:10",
+    "duration": "8s",
+    "summary": "晨間要事與日曆活動已梳理完畢，美學簡報已成功發送至信箱。",
+    "details": "=== [Thu Nov 12 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-12 日曆活動...
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+✅ 晨間簡報已成功寄出！Message ID: 1a1cd297710710c7
+=== [Thu Nov 12 00:30:09 UTC 2026] 任務結束，狀態: success (耗時: 8s) ==="
+  },
+  {
+    "id": "run_20261111_233007_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "success",
+    "timestamp": "2026-11-11T23:30:07.790398+08:00",
+    "formatted_time": "2026-11-11 23:30:07",
+    "duration": "4s",
+    "summary": "Google 雲端硬碟根目錄散落檔案已完成智慧掃描、分類與無損歸檔。",
+    "details": "=== [Wed Nov 11 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-11 15:30:03
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+  已識別到 433 個雲端資料夾。
+
+步驟 2/3: 正在掃描雲端硬碟根目錄散落檔案...
+  根目錄發現 4 個散落檔案。
+
+步驟 3/3: 執行智慧分類與安全歸檔...
+---------------------------------------------------------------------------
+❓ [保留原處] 2026-11-11_淘米洗菜，皆是诸佛行_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-11_淘米洗菜，皆是諸佛行_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-10_松开双手，水自然会托起你_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-10_鬆開雙手，水自然會托起你_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+---------------------------------------------------------------------------
+
+📊 分類統計摘要:
+  - 根目錄散落檔案總計: 4
+  - 智慧命中可歸檔數: 0 (0.0%)
+  - 保留原位檔案數: 4
+
+⚙️ 開始執行實際歸檔移動 (addParents / removeParents)...
+
+✨ 正式歸檔完成！本次已成功歸檔移動 0 個檔案，失敗 0 個。
+=== [Wed Nov 11 15:30:05 UTC 2026] 任務結束，狀態: success (耗時: 4s) ==="
+  },
+  {
     "id": "run_20261111_084640_morning-brief",
     "task_id": "morning-brief",
     "task_name": "Morning 晨間心流與要事簡報",
@@ -1816,6 +4136,234 @@ Completed At: 2026-11-11T08:39:34+08:00
 Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\"Note not found: 02_日常心流與演化日誌/Daily Notes/2026-11-11.md\",\"details\":{\"path\":\"02_日常心流與演化日誌/Daily Notes/2026-11-11.md\"}}"
   },
   {
+    "id": "run_20261111_083010_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "success",
+    "timestamp": "2026-11-11T08:30:10.381616+08:00",
+    "formatted_time": "2026-11-11 08:30:10",
+    "duration": "7s",
+    "summary": "晨間要事與日曆活動已梳理完畢，美學簡報已成功發送至信箱。",
+    "details": "=== [Wed Nov 11 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-11 日曆活動...
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+✅ 晨間簡報已成功寄出！Message ID: 1a1c803199acf7f7
+=== [Wed Nov 11 00:30:08 UTC 2026] 任務結束，狀態: success (耗時: 7s) ==="
+  },
+  {
+    "id": "run_20261110_233006_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "success",
+    "timestamp": "2026-11-10T23:30:06.599693+08:00",
+    "formatted_time": "2026-11-10 23:30:06",
+    "duration": "4s",
+    "summary": "Google 雲端硬碟根目錄散落檔案已完成智慧掃描、分類與無損歸檔。",
+    "details": "=== [Tue Nov 10 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-10 15:30:02
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+  已識別到 433 個雲端資料夾。
+
+步驟 2/3: 正在掃描雲端硬碟根目錄散落檔案...
+  根目錄發現 2 個散落檔案。
+
+步驟 3/3: 執行智慧分類與安全歸檔...
+---------------------------------------------------------------------------
+❓ [保留原處] 2026-11-10_松开双手，水自然会托起你_微信简中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+❓ [保留原處] 2026-11-10_鬆開雙手，水自然會托起你_FB繁中_佛法生活短文
+   ↳ 目標: 【保留原位 / 待人工檢視】
+   ↳ 依據: 未命中特定分類規則
+---------------------------------------------------------------------------
+
+📊 分類統計摘要:
+  - 根目錄散落檔案總計: 2
+  - 智慧命中可歸檔數: 0 (0.0%)
+  - 保留原位檔案數: 2
+
+⚙️ 開始執行實際歸檔移動 (addParents / removeParents)...
+
+✨ 正式歸檔完成！本次已成功歸檔移動 0 個檔案，失敗 0 個。
+=== [Tue Nov 10 15:30:05 UTC 2026] 任務結束，狀態: success (耗時: 4s) ==="
+  },
+  {
+    "id": "run_20261110_083009_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "success",
+    "timestamp": "2026-11-10T08:30:09.215530+08:00",
+    "formatted_time": "2026-11-10 08:30:09",
+    "duration": "7s",
+    "summary": "晨間要事與日曆活動已梳理完畢，美學簡報已成功發送至信箱。",
+    "details": "=== [Tue Nov 10 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-10 日曆活動...
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+✅ 晨間簡報已成功寄出！Message ID: 1a1c2dcbb0d0ac9a
+=== [Tue Nov 10 00:30:08 UTC 2026] 任務結束，狀態: success (耗時: 7s) ==="
+  },
+  {
+    "id": "run_20261109_233006_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "success",
+    "timestamp": "2026-11-09T23:30:06.576397+08:00",
+    "formatted_time": "2026-11-09 23:30:06",
+    "duration": "4s",
+    "summary": "Google 雲端硬碟根目錄散落檔案已完成智慧掃描、分類與無損歸檔。",
+    "details": "=== [Mon Nov  9 15:30:01 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-09 15:30:02
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+  已識別到 433 個雲端資料夾。
+
+步驟 2/3: 正在掃描雲端硬碟根目錄散落檔案...
+  根目錄發現 0 個散落檔案。
+
+🎉 根目錄十分清爽，目前沒有需要歸檔的散落檔案！
+=== [Mon Nov  9 15:30:05 UTC 2026] 任務結束，狀態: success (耗時: 4s) ==="
+  },
+  {
+    "id": "run_20261109_202547_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "success",
+    "timestamp": "2026-11-09T20:25:47.186648+08:00",
+    "formatted_time": "2026-11-09 20:25:47",
+    "duration": "2s",
+    "summary": "全自動深度掃描根目錄並歸類至 14 大專題主題資料夾",
+    "details": "=== [Mon Nov  9 12:25:43 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [DRY RUN 模擬模式 (不更動檔案)]
+時間: 2026-11-09 12:25:43
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+  已識別到 433 個雲端資料夾。
+
+步驟 2/3: 正在掃描雲端硬碟根目錄散落檔案...
+  根目錄發現 0 個散落檔案。
+
+🎉 根目錄十分清爽，目前沒有需要歸檔的散落檔案！
+=== [Mon Nov  9 12:25:45 UTC 2026] 任務結束，狀態: success (耗時: 2s) ==="
+  },
+  {
+    "id": "run_20261109_185456_daily-gdrive-organizer",
+    "task_id": "daily-gdrive-organizer",
+    "task_name": "每日 Google 雲端硬碟自動分類整理",
+    "status": "success",
+    "timestamp": "2026-11-09T18:54:56.513656+08:00",
+    "formatted_time": "2026-11-09 18:54:56",
+    "duration": "3s",
+    "summary": "Google 雲端硬碟根目錄散落檔案已完成智慧掃描、分類與無損歸檔。",
+    "details": "=== [Mon Nov  9 10:48:11 UTC 2026] 啟動排程任務: 每日 Google 雲端硬碟自動分類整理 (daily-gdrive-organizer) ===
+==================================================
+🚀 Google Drive 每日檔案自動分類歸檔引擎啟動
+模式: [EXECUTE 正式執行模式]
+時間: 2026-11-09 10:48:12
+==================================================
+
+步驟 1/3: 正在讀取雲端現有資料夾結構...
+  已識別到 433 個雲端資料夾。
+
+步驟 2/3: 正在掃描雲端硬碟根目錄散落檔案...
+  根目錄發現 0 個散落檔案。
+
+🎉 根目錄十分清爽，目前沒有需要歸檔的散落檔案！
+=== [Mon Nov  9 10:48:14 UTC 2026] 任務結束，狀態: success (耗時: 3s) ==="
+  },
+  {
+    "id": "run_20261109_140940_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "第二大腦每週五免開機全量冷備份",
+    "status": "success",
+    "timestamp": "2026-11-09T14:09:40.363732+08:00",
+    "formatted_time": "2026-11-09 14:09:40",
+    "duration": "157s",
+    "summary": "第二大腦全量冷備份打包並成功上傳至 Google Drive 雙保險備份 (758.97 MB)",
+    "details": "=== [Mon Nov  9 06:01:20 UTC 2026] 啟動排程任務: 第二大腦每週五免開機全量冷備份 (weekly-backup) ===
+📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
+  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
+From github.com:Alexchiachi/second-brain-vault
+ * branch            main       -> FETCH_HEAD
+  [EXEC] git reset --hard origin/main (cwd=/opt/second-brain-vault)
+HEAD is now at 879689c 🌱 feat(distill): 2026-W45 每週對話主題蒸餾存檔 (4 份專題)
+📦 [2/4] 打包為時間戳壓縮檔: Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-09.tar.gz...
+  [EXEC] tar -czf /tmp/Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-09.tar.gz --exclude=.git --exclude=.DS_Store --exclude=.trash -C /opt/second-brain-vault . (cwd=None)
+  ✓ 打包完成，檔案大小: 758.97 MB
+🌐 [3/4] 準備上傳至 Google Drive (資料夾: 1C50SkVd2BUC2gWmjUMb2GJ3QW4HNWU4s)...
+  ✓ 上傳成功！Google Drive File ID: 10P428kjvVg8xNfBDU2Rrc4Sp0QZf5cMy
+  ✓ 本地暫存檔已清除
+✅ [4/4] 第二大腦冷備份完成！(2026-11-09, 758.97 MB)
+=== [Mon Nov  9 06:03:57 UTC 2026] 任務結束，狀態: success (耗時: 157s) ==="
+  },
+  {
+    "id": "run_20261109_135854_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "第二大腦每週五免開機全量冷備份",
+    "status": "error",
+    "timestamp": "2026-11-09T13:58:54.704547+08:00",
+    "formatted_time": "2026-11-09 13:58:54",
+    "duration": "0s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Mon Nov  9 05:58:53 UTC 2026] 啟動排程任務: 第二大腦每週五免開機全量冷備份 (weekly-backup) ===
+📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
+  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Traceback (most recent call last):
+  File \"/opt/backup_vault.py\", line 125, in <module>
+    main()
+  File \"/opt/backup_vault.py\", line 66, in main
+    run_cmd([\"git\", \"fetch\", \"--depth\", \"1\", \"origin\", \"main\"], cwd=WORK_DIR)
+  File \"/opt/backup_vault.py\", line 35, in run_cmd
+    raise RuntimeError(f\"Command failed with exit code {res.returncode}: {' '.join(cmd)}\")
+RuntimeError: Command failed with exit code 128: git fetch --depth 1 origin main
+=== [Mon Nov  9 05:58:53 UTC 2026] 任務結束，狀態: error (耗時: 0s) ==="
+  },
+  {
+    "id": "run_20261109_135841_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "第二大腦每週五免開機全量冷備份",
+    "status": "error",
+    "timestamp": "2026-11-09T13:58:41.224672+08:00",
+    "formatted_time": "2026-11-09 13:58:41",
+    "duration": "5s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Mon Nov  9 05:58:33 UTC 2026] 啟動排程任務: 第二大腦每週五免開機全量冷備份 (weekly-backup) ===
+📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
+  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Traceback (most recent call last):
+  File \"/opt/backup_vault.py\", line 125, in <module>
+    main()
+  File \"/opt/backup_vault.py\", line 66, in main
+    run_cmd([\"git\", \"fetch\", \"--depth\", \"1\", \"origin\", \"main\"], cwd=WORK_DIR)
+  File \"/opt/backup_vault.py\", line 35, in run_cmd
+    raise RuntimeError(f\"Command failed with exit code {res.returncode}: {' '.join(cmd)}\")
+RuntimeError: Command failed with exit code 128: git fetch --depth 1 origin main
+=== [Mon Nov  9 05:58:39 UTC 2026] 任務結束，狀態: error (耗時: 5s) ==="
+  },
+  {
     "id": "run_20261109_085156_morning-brief",
     "task_id": "morning-brief",
     "task_name": "Morning 晨間心流與要事簡報",
@@ -1850,6 +4398,99 @@ Encountered error in step execution: {\"error\":\"NOTE_NOT_FOUND\",\"message\":\
 ---
 
 晨間工匠已安靜退場，願主理人今天身心澄澈、心流自然流淌。"
+  },
+  {
+    "id": "run_20261109_083009_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-09T08:30:09.154537+08:00",
+    "formatted_time": "2026-11-09 08:30:09",
+    "duration": "6s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Mon Nov  9 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-09 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1794184207758,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Mon, 09 Nov 2026 00:30:07 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Mon Nov  9 00:30:07 UTC 2026] 任務結束，狀態: error (耗時: 6s) ==="
   },
   {
     "id": "run_20261108_235145_daily-dialogue-review",
@@ -1930,6 +4571,268 @@ u7SAewubOaPS77Bl5od4-emvC-v1e5Aw4atvmI/edit) / [回憶錄](https://docs.google.c
 * **📚 雲端三庫資產文檔總量**：**`1,379` 篇**
 
 > **備註**：所有轉檔成果均已雙重備份至本機 Obsidian 知識資產原礦庫（含 MOC 雙向鏈結），確保雲端與地端熱力學零熵增同步。"
+  },
+  {
+    "id": "run_20261108_083010_morning-brief",
+    "task_id": "morning-brief",
+    "task_name": "晨間心流與要事簡報",
+    "status": "error",
+    "timestamp": "2026-11-08T08:30:10.230572+08:00",
+    "formatted_time": "2026-11-08 08:30:10",
+    "duration": "7s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Sun Nov  8 00:30:01 UTC 2026] 啟動排程任務: 晨間心流與要事簡報 (morning-brief) ===
+🌿 [Morning Brief Cloud Worker] 啟動執行...
+📅 正在查詢 2026-11-08 日曆活動...
+⚠️ 取得日曆事件失敗: invalid_grant
+⚠️ 取得未來日曆事件失敗: invalid_grant
+✉️ 正在排版並發送晨間簡報至 jianchiachi@gmail.com...
+❌ 執行失敗: GaxiosError: invalid_grant
+    at Gaxios._request (/opt/morning-brief/node_modules/gaxios/build/src/gaxios.js:142:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async OAuth2Client.refreshTokenNoCache (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:212:19)
+    at async OAuth2Client.getRequestMetadataAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:333:17)
+    at async OAuth2Client.requestAsync (/opt/morning-brief/node_modules/google-auth-library/build/src/auth/oauth2client.js:418:23)
+    at async sendEmail (file:///opt/morning-brief/brief_worker.mjs:95:15)
+    at async main (file:///opt/morning-brief/brief_worker.mjs:203:18) {
+  config: {
+    retry: true,
+    retryConfig: {
+      httpMethodsToRetry: [Array],
+      currentRetryAttempt: 0,
+      retry: 3,
+      noResponseRetries: 2,
+      retryDelayMultiplier: 2,
+      timeOfFirstRequest: 1794097808354,
+      totalTimeout: 9007199254740991,
+      maxRetryDelay: 9007199254740991,
+      statusCodesToRetry: [Array]
+    },
+    method: 'POST',
+    url: 'https://oauth2.googleapis.com/token',
+    data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'User-Agent': 'google-api-nodejs-client/9.15.1',
+      'x-goog-api-client': 'gl-node/18.19.1'
+    },
+    paramsSerializer: [Function: paramsSerializer],
+    body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+    validateStatus: [Function: validateStatus],
+    responseType: 'unknown',
+    errorRedactor: [Function: defaultErrorRedactor]
+  },
+  response: {
+    config: {
+      retry: true,
+      retryConfig: [Object],
+      method: 'POST',
+      url: 'https://oauth2.googleapis.com/token',
+      data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      headers: [Object],
+      paramsSerializer: [Function: paramsSerializer],
+      body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+      validateStatus: [Function: validateStatus],
+      responseType: 'unknown',
+      errorRedactor: [Function: defaultErrorRedactor]
+    },
+    data: {
+      error: 'invalid_grant',
+      error_description: 'Token has been expired or revoked.'
+    },
+    headers: {
+      'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+      connection: 'close',
+      'content-encoding': 'gzip',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Sun, 08 Nov 2026 00:30:08 GMT',
+      expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+      pragma: 'no-cache',
+      server: 'scaffolding on HTTPServer2',
+      'transfer-encoding': 'chunked',
+      vary: 'Origin, X-Origin, Referer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'SAMEORIGIN',
+      'x-xss-protection': '0'
+    },
+    status: 400,
+    statusText: 'Bad Request',
+    request: { responseURL: 'https://oauth2.googleapis.com/token' }
+  },
+  error: undefined,
+  status: 400,
+  [Symbol(gaxios-gaxios-error)]: '6.7.1'
+}
+=== [Sun Nov  8 00:30:08 UTC 2026] 任務結束，狀態: error (耗時: 7s) ==="
+  },
+  {
+    "id": "run_20261107_143654_weekly-backup",
+    "task_id": "weekly-backup",
+    "task_name": "第二大腦冷備份與資產歸檔",
+    "status": "error",
+    "timestamp": "2026-11-07T14:36:54.287267+08:00",
+    "formatted_time": "2026-11-07 14:36:54",
+    "duration": "354s",
+    "summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "details": "=== [Sat Nov  7 06:30:59 UTC 2026] 啟動排程任務: 第二大腦冷備份與資產歸檔 (weekly-backup) ===
+📦 [1/4] 開始檢出 / 更新第二大腦倉庫...
+  [EXEC] git fetch --depth 1 origin main (cwd=/opt/second-brain-vault)
+From github.com:Alexchiachi/second-brain-vault
+ * branch            main       -> FETCH_HEAD
+  [EXEC] git reset --hard origin/main (cwd=/opt/second-brain-vault)
+Updating files:   4% (115/2771)
+Updating files:   5% (139/2771)
+Updating files:   5% (144/2771)
+Updating files:   6% (167/2771)
+Updating files:   7% (194/2771)
+Updating files:   8% (222/2771)
+Updating files:   9% (250/2771)
+Updating files:  10% (278/2771)
+Updating files:  11% (305/2771)
+Updating files:  12% (333/2771)
+Updating files:  13% (361/2771)
+Updating files:  14% (388/2771)
+Updating files:  15% (416/2771)
+Updating files:  16% (444/2771)
+Updating files:  17% (472/2771)
+Updating files:  18% (499/2771)
+Updating files:  19% (527/2771)
+Updating files:  20% (555/2771)
+Updating files:  21% (582/2771)
+Updating files:  22% (610/2771)
+Updating files:  22% (614/2771)
+Updating files:  23% (638/2771)
+Updating files:  24% (666/2771)
+Updating files:  25% (693/2771)
+Updating files:  26% (721/2771)
+Updating files:  27% (749/2771)
+Updating files:  28% (776/2771)
+Updating files:  29% (804/2771)
+Updating files:  30% (832/2771)
+Updating files:  30% (840/2771)
+Updating files:  31% (860/2771)
+Updating files:  32% (887/2771)
+Updating files:  33% (915/2771)
+Updating files:  34% (943/2771)
+Updating files:  35% (970/2771)
+Updating files:  36% (998/2771)
+Updating files:  37% (1026/2771)
+Updating files:  38% (1053/2771)
+Updating files:  38% (1069/2771)
+Updating files:  39% (1081/2771)
+Updating files:  40% (1109/2771)
+Updating files:  40% (1115/2771)
+Updating files:  40% (1116/2771)
+Updating files:  41% (1137/2771)
+Updating files:  41% (1145/2771)
+Updating files:  42% (1164/2771)
+Updating files:  42% (1175/2771)
+Updating files:  43% (1192/2771)
+Updating files:  43% (1217/2771)
+Updating files:  44% (1220/2771)
+Updating files:  44% (1225/2771)
+Updating files:  45% (1247/2771)
+Updating files:  45% (1248/2771)
+Updating files:  46% (1275/2771)
+Updating files:  47% (1303/2771)
+Updating files:  47% (1307/2771)
+Updating files:  48% (1331/2771)
+Updating files:  49% (1358/2771)
+Updating files:  50% (1386/2771)
+Updating files:  51% (1414/2771)
+Updating files:  52% (1441/2771)
+Updating files:  53% (1469/2771)
+Updating files:  54% (1497/2771)
+Updating files:  55% (1525/2771)
+Updating files:  56% (1552/2771)
+Updating files:  57% (1580/2771)
+Updating files:  58% (1608/2771)
+Updating files:  58% (1615/2771)
+Updating files:  59% (1635/2771)
+Updating files:  60% (1663/2771)
+Updating files:  61% (1691/2771)
+Updating files:  62% (1719/2771)
+Updating files:  63% (1746/2771)
+Updating files:  64% (1774/2771)
+Updating files:  65% (1802/2771)
+Updating files:  66% (1829/2771)
+Updating files:  67% (1857/2771)
+Updating files:  68% (1885/2771)
+Updating files:  69% (1912/2771)
+Updating files:  70% (1940/2771)
+Updating files:  71% (1968/2771)
+Updating files:  72% (1996/2771)
+Updating files:  73% (2023/2771)
+Updating files:  74% (2051/2771)
+Updating files:  75% (2079/2771)
+Updating files:  76% (2106/2771)
+Updating files:  77% (2134/2771)
+Updating files:  78% (2162/2771)
+Updating files:  79% (2190/2771)
+Updating files:  80% (2217/2771)
+Updating files:  81% (2245/2771)
+Updating files:  82% (2273/2771)
+Updating files:  83% (2300/2771)
+Updating files:  84% (2328/2771)
+Updating files:  84% (2331/2771)
+Updating files:  84% (2348/2771)
+Updating files:  85% (2356/2771)
+Updating files:  86% (2384/2771)
+Updating files:  86% (2393/2771)
+Updating files:  87% (2411/2771)
+Updating files:  88% (2439/2771)
+Updating files:  89% (2467/2771)
+Updating files:  90% (2494/2771)
+Updating files:  91% (2522/2771)
+Updating files:  91% (2543/2771)
+Updating files:  92% (2550/2771)
+Updating files:  92% (2573/2771)
+Updating files:  93% (2578/2771)
+Updating files:  94% (2605/2771)
+Updating files:  95% (2633/2771)
+Updating files:  96% (2661/2771)
+Updating files:  97% (2688/2771)
+Updating files:  98% (2716/2771)
+Updating files:  99% (2744/2771)
+Updating files: 100% (2771/2771)
+Updating files: 100% (2771/2771), done.
+HEAD is now at 2697280 🌱 feat: 2026-11-06 每日對話分類沉澱與簡家旗視角深度評估
+📦 [2/4] 打包為時間戳壓縮檔: Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-07.tar.gz...
+  [EXEC] tar -czf /tmp/Obsidian_簡家旗一人公司幸福行爲藝術家_2026-11-07.tar.gz --exclude=.git --exclude=.DS_Store --exclude=.trash -C /opt/second-brain-vault . (cwd=None)
+  ✓ 打包完成，檔案大小: 763.29 MB
+🌐 [3/4] 準備上傳至 Google Drive (資料夾: 1C50SkVd2BUC2gWmjUMb2GJ3QW4HNWU4s)...
+Traceback (most recent call last):
+  File \"/opt/backup_vault.py\", line 125, in <module>
+    main()
+  File \"/opt/backup_vault.py\", line 102, in main
+    res = service.files().list(q=q, fields=\"files(id, name)\").execute()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/_helpers.py\", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 1003, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/googleapiclient/http.py\", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google_auth_httplib2.py\", line 205, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 242, in before_request
+    self._blocking_refresh(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 205, in _blocking_refresh
+    self.refresh(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/auth/credentials.py\", line 519, in refresh
+    self._perform_refresh_token(request)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/credentials.py\", line 437, in _perform_refresh_token
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/reauth.py\", line 367, in refresh_grant
+    _client._handle_error_response(response_data, retryable_error)
+  File \"/usr/local/lib/python3.12/dist-packages/google/oauth2/_client.py\", line 75, in _handle_error_response
+    raise exceptions.RefreshError(
+google.auth.exceptions.RefreshError: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+=== [Sat Nov  7 06:36:53 UTC 2026] 任務結束，狀態: error (耗時: 354s) ==="
   },
   {
     "id": "run_20261107_084304_morning-brief",

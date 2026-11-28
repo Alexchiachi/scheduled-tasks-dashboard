@@ -1,9 +1,9 @@
 [
   {
     "id": "audit",
-    "name": "Audit 電腦健檢",
-    "cron": "0 9 * * *",
-    "schedule": "每日 09:00",
+    "name": "Audit 每週電腦健檢",
+    "cron": "CRON_TZ=Asia/Taipei 0 10 * * 3",
+    "schedule": "每週三 10:00",
     "status": "success",
     "last_run": "2026-11-15 16:23:07",
     "last_duration": "343m 15s",
@@ -15,8 +15,8 @@
   {
     "id": "conversation-renamer",
     "name": "Renamer 對話名稱每週巡檢",
-    "cron": "30 23 * * 0",
-    "schedule": "每週日 23:30",
+    "cron": "CRON_TZ=Asia/Taipei 0 11 * * 6",
+    "schedule": "每週六 11:00",
     "status": "success",
     "last_run": "2026-11-22 23:38:01",
     "last_duration": "3m 51s",
@@ -28,8 +28,8 @@
   {
     "id": "daily-dialogue-review",
     "name": "Daily 當日對話深度評估與雲端雙基地同步",
-    "cron": "0 21 * * *",
-    "schedule": "每日 21:00",
+    "cron": "CRON_TZ=Asia/Taipei 30 20 * * *",
+    "schedule": "每日 20:30",
     "status": "success",
     "last_run": "2026-11-17 00:53:24",
     "last_duration": "41s",
@@ -41,7 +41,7 @@
   {
     "id": "daily-gardener",
     "name": "Daily 第二心智園丁與雙基地同步",
-    "cron": "0 8 * * *",
+    "cron": "CRON_TZ=Asia/Taipei 0 8 * * *",
     "schedule": "每日 08:00",
     "status": "success",
     "last_run": "2026-11-28 08:59:25",
@@ -49,25 +49,38 @@
     "last_summary": "`sync_dual_base.js` 已完成 Obsidian 知識庫打包上傳（925.0 MB，Drive ID: `17IVxyPmgbKGRgI2FcQ1xlK-o-MyvxSgh`），目前正進行 WorkBuddy 工作區打包與上傳，待 `sync_dual_base.js` 完整結束後即刻執行 Obsidian GitHub Push。",
     "total_runs": 5,
     "success_count": 5,
-    "description": "你是第二大腦的常駐園丁。請嚴格執行以下任務：\n1. 依照 `second-brain-gardener` 技能規範，掃描本機 Obsidian 過去 10 天變更，聯網進行跨界碰撞，並寫入一篇長文至 `有感而發長文分享/YYYY-MM-DD_第二心智演化日誌.md`。\n2. 文章寫入完畢後，執行本機指令進行 Google Drive 雙基地同步：`NODE_PATH=/Users/chienchi..."
+    "description": "你是第二大腦的常駐園丁。請嚴格執行以下任務：\n1. 依照 `second-brain-gardener` 技能規範，掃描本機 Obsidian（`/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家`）過去 10 天變更，聯網進行跨界碰撞，並寫入一篇長文至 `02_日常心流與..."
   },
   {
-    "id": "downloads-cleaner",
-    "name": "Cleaner 下載夾每週排毒",
-    "cron": "0 23 * * 0",
-    "schedule": "每週日 23:00",
+    "id": "daily-youtube-shorts",
+    "name": "Daily YouTube Shorts 每日黃金排程發布",
+    "cron": "CRON_TZ=Asia/Taipei 30 18 * * *",
+    "schedule": "每日 18:30",
     "status": "idle",
     "last_run": null,
     "last_duration": "-",
     "last_summary": "尚無執行紀錄",
     "total_runs": 0,
     "success_count": 0,
-    "description": "安全掃描 ~/Downloads 資料夾，清理已安裝完畢的 .dmg/.pkg 安裝檔以及超過 7 天的暫存截圖，嚴格保留個人專案、zip 與重要文檔，回報本次釋放的空間大小。"
+    "description": "你是大道至簡 · 簡家旗頻道的「YouTube 頻道首席運營官兼數位工匠」。\n現在是每日傍晚短影音黃金推流時間（18:30），請自動執行當日短影音排程推進任務：\n1. 調用自動化飛輪指令：`uncle-flywheel --next`，自動推進發布《幸福與大叔》下一集（若第一季完畢則自動銜接第二季或後續短影音儲備）。\n2. 檢查發布狀態與 YouTube 影片網址，確保已自動雙歸檔至《大傾聽 · ..."
+  },
+  {
+    "id": "evening-wind-down",
+    "name": "Evening 晚間防斷線與明日安心留白卡",
+    "cron": "CRON_TZ=Asia/Taipei 30 21 * * *",
+    "schedule": "每日 21:30",
+    "status": "warning",
+    "last_run": "2026-11-22 21:32:47",
+    "last_duration": "1m 48s",
+    "last_summary": "晚安，家旗。21:30 晚間防斷線守護與明日安心留白卡已生成並寄出，今晚可以放心停筆。 安心收工確認 今日已圓滿閉環，系統在深處自轉，無一事遺漏懸念。** 知識庫與雲端沉澱**：已核對 Obsidian 當日日記（`Daily Notes/2026-11-22.md`）與每日對話深度評估（`02_日常心流與演化日誌/每日對話評估/2026-11-22_每日對話深度評估.md`），今日共 13 條對話、出版母檔（`03_英文電子書.md`、`00_大道至簡_全景導航儀表板.md...",
+    "total_runs": 1,
+    "success_count": 0,
+    "description": "你是簡家旗第二心智的晚間工匠與身心防斷線守護者。請執行每日 21:30 晚間防斷線守護與明日安心留白卡任務：\n1. 查詢明日 Google 日曆活動（調用 google-drive 之 list_calendar_events）與本機 Obsidian 知識庫（`/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Docu..."
   },
   {
     "id": "morning-brief",
-    "name": "晨間心流與要事簡報",
-    "cron": "30 8 * * *",
+    "name": "Morning 晨間心流與要事簡報",
+    "cron": "CRON_TZ=Asia/Taipei 30 8 * * *",
     "schedule": "每日 08:30",
     "status": "warning",
     "last_run": "2026-11-28 08:54:16",
@@ -75,13 +88,13 @@
     "last_summary": "早安，主理人。今日的晨間心流與要事簡報已為您靜心整理並寄出，請安心開啟這一天。 📬 寄送完成確認 收件信箱**：`jianchiachi@gmail.com` 郵件主旨**：`🌿 晨間心流與要事簡報 ｜ 2026-11-28 ｜ 大道至簡` 郵件 ID**：`1a21fa47fa399799` 檢索範圍**： Google 日曆**：今日（11/28 週六）無任何預排會議；明日（11/29 週日）`08:15` 將迎來 *Harmony Begins at Home* 平裝本...",
     "total_runs": 24,
     "success_count": 7,
-    "description": "你是簡家旗第二心智的晨間工匠。請執行每日晨間心流與要事簡報任務：\n1. 查詢今日 Google 日曆活動（調用 google-drive 之 list_calendar_events）與 Obsidian 知識庫（讀取當日日常日記與近期對話評估）。\n2. 以「大道至簡」溫和專注的語調，提煉出「今天唯一最核心的一件事」與關鍵提醒，過濾多餘資訊噪音，守護主理人的心理平靜與清晰心流。\n3. 將提煉產出排..."
+    "description": "你是簡家旗第二心智的晨間工匠。請執行每日晨間心流與要事簡報任務：\n1. 查詢今日 Google 日曆活動（調用 google-drive 之 list_calendar_events）與本機 Obsidian 知識庫（`/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家`）..."
   },
   {
     "id": "sentinel-check",
     "name": "sentinel 負熵巡檢",
-    "cron": "0 9 * * 1",
-    "schedule": "每週一 09:00",
+    "cron": "CRON_TZ=Asia/Taipei 0 10 * * 1",
+    "schedule": "每週一 10:00",
     "status": "success",
     "last_run": "2026-11-23 09:03:21",
     "last_duration": "11s",
@@ -91,22 +104,9 @@
     "description": "執行負熵巡檢哨兵（python3 ~/.gemini/antigravity/scratch/touchstone-linter/sentinel.py），檢查待辦事項進度、WorkBuddy 文字純度債務、系統操作手冊同步狀態，並將需要更新的清單匯報給主理人。"
   },
   {
-    "id": "weekly-audio-sync",
-    "name": "每週雲端錄音大傾聽同步巡檢",
-    "cron": "0 21 * * 0",
-    "schedule": "每週日 21:00",
-    "status": "success",
-    "last_run": "2026-11-22 21:02:42",
-    "last_duration": "1m 6s",
-    "last_summary": "已完成每週雲端錄音自動化巡檢與盤點，結果如下： 1. 本次巡檢執行結果 執行腳本**：[run_cloud_watcher.sh](file:///Users/chienchiachi/.gemini/antigravity/scratch/run_cloud_watcher.sh)（調用 [cloud_audio_watcher.js](file:///Users/chienchiachi/.gemini/antigravity/scratch/cloud_audio_wa...",
-    "total_runs": 2,
-    "success_count": 2,
-    "description": "執行每週雲端錄音自動化巡檢與轉檔：\n1. 執行 /Users/chienchiachi/.gemini/antigravity/scratch/run_cloud_watcher.sh 巡檢 Google Drive「簡家旗錄音檔」資料夾是否有新上傳的錄音檔；\n2. 自動執行 Vertex AI 大傾聽多工模型，將新音訊轉化為逐字稿、精華報告與回憶錄篇章，同步寫入雲端三庫；\n3. 確保雲端原始音檔..."
-  },
-  {
     "id": "weekly-backup",
-    "name": "第二大腦冷備份與資產歸檔",
-    "cron": "0 17 * * 5",
+    "name": "Backup 週五資產歸檔與雙保險同步",
+    "cron": "CRON_TZ=Asia/Taipei 0 17 * * 5",
     "schedule": "每週五 17:00",
     "status": "success",
     "last_run": "2026-11-27 17:05:21",
@@ -119,8 +119,8 @@
   {
     "id": "weekly-dialogue-distillation",
     "name": "Weekly 對話主題蒸餾（簡家旗標準・雲端本機雙存檔）",
-    "cron": "0 22 * * 0",
-    "schedule": "每週日 22:00",
+    "cron": "CRON_TZ=Asia/Taipei 0 15 * * 0",
+    "schedule": "每週日 15:00",
     "status": "success",
     "last_run": "2026-11-22 22:02:54",
     "last_duration": "43s",
@@ -130,10 +130,49 @@
     "description": "你是簡家旗第二心智的沉靜工匠與冷酷校對員。請嚴格執行每週對話深度主題蒸餾與雲端本機雙存檔任務：\n1. 執行每週專屬蒸餾引擎：`python3 /Users/chienchiachi/.gemini/antigravity/scratch/weekly-dialogue-distillation/distill_weekly_dialogues.py --days 7`\n2. 系統將自動掃描過去 7..."
   },
   {
+    "id": "weekly-entropy-dedup",
+    "name": "每週雙基地資產降熵與重複清理",
+    "cron": "CRON_TZ=Asia/Taipei 30 10 * * 6",
+    "schedule": "每週六 10:30",
+    "status": "idle",
+    "last_run": null,
+    "last_duration": "-",
+    "last_summary": "尚無執行紀錄",
+    "total_runs": 0,
+    "success_count": 0,
+    "description": "執行每週雙基地資產負熵巡檢與重複衝突檔案清理：\n1. 執行降熵清理引擎：`python3 /Users/chienchiachi/.gemini/antigravity/scratch/dedup-entropy-cleaner/clean_duplicates.py --execute`；\n2. 深度掃描 Obsidian 知識庫與本地資產，精確識別因雲端同步產生之衝突檔案（如 `xxx 2.m..."
+  },
+  {
+    "id": "weekly-finance-book-compiler",
+    "name": "每週金融108講專書追蹤與編譯",
+    "cron": "CRON_TZ=Asia/Taipei 0 17 * * 0",
+    "schedule": "每週日 17:00",
+    "status": "idle",
+    "last_run": null,
+    "last_duration": "-",
+    "last_summary": "尚無執行紀錄",
+    "total_runs": 0,
+    "success_count": 0,
+    "description": "執行每週《大道至簡・金融一百零八講》專書自動追蹤、合輯與電子書編譯：\n1. 執行專書編譯流水線：`python3 /Users/chienchiachi/.gemini/antigravity/scratch/dao-finance-book/compile_finance_book.py`；\n2. 自動掃描六卷篇章寫作進度與字數變化，更新進度儀表板；\n3. 重新編譯產出全書 Markdown 典..."
+  },
+  {
+    "id": "weekly-gdrive-organizer",
+    "name": "每週雲端硬碟檔案自動分類歸檔（週三・週六）",
+    "cron": "CRON_TZ=Asia/Taipei 30 17 * * 3,6",
+    "schedule": "每週三、週六 17:30",
+    "status": "idle",
+    "last_run": null,
+    "last_duration": "-",
+    "last_summary": "尚無執行紀錄",
+    "total_runs": 0,
+    "success_count": 0,
+    "description": "執行定期（每週三、週六 17:30）Google 雲端硬碟自動整理與智慧分類歸檔任務：\n1. 執行專屬分類歸檔引擎：`python3 /Users/chienchiachi/.gemini/antigravity/scratch/gdrive-organizer/organize_gdrive.py --execute`；\n2. 自動掃描 Google Drive 根目錄散落檔案，依據專書出版（金..."
+  },
+  {
     "id": "weekly-research-sync",
     "name": "每週生活熱點雲端同步與網頁更新",
-    "cron": "0 20 * * 0",
-    "schedule": "每週日 20:00",
+    "cron": "CRON_TZ=Asia/Taipei 30 16 * * 0",
+    "schedule": "每週日 16:30",
     "status": "success",
     "last_run": "2026-10-29 23:39:45",
     "last_duration": "41s",
@@ -145,27 +184,14 @@
   {
     "id": "weekly-skill-evolution",
     "name": "Weekly 園丁底層 DNA 大演化",
-    "cron": "0 9 * * 0",
-    "schedule": "每週日 09:00",
+    "cron": "CRON_TZ=Asia/Taipei 0 10 * * 6",
+    "schedule": "每週六 10:00",
     "status": "success",
     "last_run": "2026-11-15 16:23:09",
     "last_duration": "343m 11s",
     "last_summary": "排程任務執行完成，無額外輸出。",
     "total_runs": 1,
     "success_count": 1,
-    "description": "你是「系統演化督導」。請執行每週日的【耗散結構大演化】任務：\n1. 讀取 `/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家/有感而發長文分享/` 中過去 7 天的演化日誌，嚴格提取出 7 個「進化的微小因子」。\n2. 基於老莊與耗散結構理論，讓這 7 個因子產生劇烈碰撞..."
-  },
-  {
-    "id": "evening-wind-down",
-    "name": "Evening 晚間防斷線與明日安心留白卡",
-    "cron": "-",
-    "schedule": "手動或自訂排程",
-    "status": "warning",
-    "last_run": "2026-11-22 21:32:47",
-    "last_duration": "1m 48s",
-    "last_summary": "晚安，家旗。21:30 晚間防斷線守護與明日安心留白卡已生成並寄出，今晚可以放心停筆。 安心收工確認 今日已圓滿閉環，系統在深處自轉，無一事遺漏懸念。** 知識庫與雲端沉澱**：已核對 Obsidian 當日日記（`Daily Notes/2026-11-22.md`）與每日對話深度評估（`02_日常心流與演化日誌/每日對話評估/2026-11-22_每日對話深度評估.md`），今日共 13 條對話、出版母檔（`03_英文電子書.md`、`00_大道至簡_全景導航儀表板.md...",
-    "total_runs": 1,
-    "success_count": 0,
-    "description": "晚安，家旗。21:30 晚間防斷線守護與明日安心留白卡已生成並寄出，今晚可以放心停筆。 安心收工確認 今日已圓滿閉環，系統在深處自轉，無一事遺漏懸念。** 知識庫與雲端沉澱**：已核對 Obsidian 當日日記（`Daily Notes/2026-11-22.md`）與每日對話深度評估（`02_日常心流與演化日誌/每日對話評估/2026-11-22_每日對話深度評估.md`），今日共 13 條對話、出版母檔（`03_英文電子書.md`、`00_大道至簡_全景導航儀表板.md..."
+    "description": "你是「系統演化督導」。請執行每週六的【耗散結構大演化】任務：\n1. 讀取 `/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家/02_日常心流與演化日誌/有感而發長文分享/` 中過去 7 天的演化日誌，嚴格提取出 7 個「進化的微小因子」。\n2. 基於老莊與耗散結構理論，讓..."
   }
 ]

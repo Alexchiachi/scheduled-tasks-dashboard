@@ -416,7 +416,7 @@
           </div>
           <div class="meta-item">
             <span>排程週期：</span>
-            <strong>每週日 21:00</strong>
+            <strong>常態排程</strong>
           </div>
           <div class="meta-item">
             <span>紀錄 ID：</span>
@@ -495,11 +495,8 @@ u7SAewubOaPS77Bl5od4-emvC-v1e5Aw4atvmI/edit) / [回憶錄](https://docs.google.c
       <div class="sidecar-box">
         <h4>⚙️ 任務所屬排程規格 (Sidecar Context)</h4>
         <p><strong>任務名稱：</strong>每週雲端錄音大傾聽同步巡檢 (<code>weekly-audio-sync</code>)</p>
-        <p><strong>Cron 表達式：</strong><code class="tabular">0 21 * * 0</code>（每週日 21:00）</p>
-        <p><strong>原始排程目標：</strong>執行每週雲端錄音自動化巡檢與轉檔：
-1. 執行 /Users/chienchiachi/.gemini/antigravity/scratch/run_cloud_watcher.sh 巡檢 Google Drive「簡家旗錄音檔」資料夾是否有新上傳的錄音檔；
-2. 自動執行 Vertex AI 大傾聽多工模型，將新音訊轉化為逐字稿、精華報告與回憶錄篇章，同步寫入雲端三庫；
-3. 確保雲端原始音檔...</p>
+        <p><strong>Cron 表達式：</strong><code class="tabular">-</code>（常態排程）</p>
+        <p><strong>原始排程目標：</strong>Antigravity 2.0 自動化背景任務</p>
         <p style="margin-top: 8px; font-size: 0.8rem; color: var(--ink-muted);">
           本報告由 Antigravity 2.0 自動化監測守護引擎於任務完成時捕獲生成，並自動同步至 GitHub Pages。
         </p>
@@ -546,7 +543,7 @@ u7SAewubOaPS77Bl5od4-emvC-v1e5Aw4atvmI/edit) / [回憶錄](https://docs.google.c
 - **執行狀態**: ${status}
 - **執行時間**: ${timeStr}
 - **任務標識**: weekly-audio-sync
-- **排程週期**: 每週日 21:00
+- **排程週期**: 常態排程
 - **紀錄 ID**: run_20261108_211639_weekly-audio-sync
 
 ## 成果說明摘要

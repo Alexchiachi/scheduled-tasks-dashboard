@@ -442,7 +442,7 @@
         <div class="hero-meta-top">
           <span class="badge badge-success">正常運行中</span>
           <span class="badge badge-idle tabular">ID: sentinel-check</span>
-          <span class="badge badge-idle tabular">週期: 每週一 09:00</span>
+          <span class="badge badge-idle tabular">週期: 每週一 10:00</span>
         </div>
         <h1 class="hero-title">sentinel 負熵巡檢</h1>
         <div class="hero-desc">
@@ -465,7 +465,7 @@
           </div>
           <div class="stat-item">
             <div class="stat-label">Cron 表達式</div>
-            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">0 9 * * 1</div>
+            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">CRON_TZ=Asia/Taipei 0 10 * * 1</div>
           </div>
         </div>
       </div>
@@ -601,8 +601,8 @@
       const taskName = "sentinel 負熵巡檢";
       const totalRuns = "2";
       const taskId = "sentinel-check";
-      const cron = "0 9 * * 1";
-      const schedule = "每週一 09:00";
+      const cron = "CRON_TZ=Asia/Taipei 0 10 * * 1";
+      const schedule = "每週一 10:00";
 
       let md = `# ${taskName} · 任務歷史成果累積檔案庫\n\n`;
       md += `- **任務標識**: ${taskId}\n`;

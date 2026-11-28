@@ -447,8 +447,7 @@
         <h1 class="hero-title">Daily 第二心智園丁與雙基地同步</h1>
         <div class="hero-desc">
           <strong>排程指示與目標：</strong>你是第二大腦的常駐園丁。請嚴格執行以下任務：
-1. 依照 `second-brain-gardener` 技能規範，掃描本機 Obsidian 過去 10 天變更，聯網進行跨界碰撞，並寫入一篇長文至 `有感而發長文分享/YYYY-MM-DD_第二心智演化日誌.md`。
-2. 文章寫入完畢後，執行本機指令進行 Google Drive 雙基地同步：`NODE_PATH=/Users/chienchi...
+1. 依照 `second-brain-gardener` 技能規範，掃描本機 Obsidian（`/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家`）過去 10 天變更，聯網進行跨界碰撞，並寫入一篇長文至 `02_日常心流與...
         </div>
 
         <!-- 累計指標四格 -->
@@ -467,7 +466,7 @@
           </div>
           <div class="stat-item">
             <div class="stat-label">Cron 表達式</div>
-            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">0 8 * * *</div>
+            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">CRON_TZ=Asia/Taipei 0 8 * * *</div>
           </div>
         </div>
       </div>
@@ -665,7 +664,7 @@ GitHub Push: commit 8df2a41 &#x27;🌱 feat: 每日心智演化與雙基地同�
       const taskName = "Daily 第二心智園丁與雙基地同步";
       const totalRuns = "5";
       const taskId = "daily-gardener";
-      const cron = "0 8 * * *";
+      const cron = "CRON_TZ=Asia/Taipei 0 8 * * *";
       const schedule = "每日 08:00";
 
       let md = `# ${taskName} · 任務歷史成果累積檔案庫\n\n`;

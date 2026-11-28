@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Audit 電腦健檢 · 任務歷史累積成果檔案庫 - 排程任務監測儀表板</title>
-  <meta name="description" content="Antigravity 2.0 排程任務 Audit 電腦健檢 之歷次執行成果說明、累計報告與健康度歷史時間軸。">
+  <title>Audit 每週電腦健檢 · 任務歷史累積成果檔案庫 - 排程任務監測儀表板</title>
+  <meta name="description" content="Antigravity 2.0 排程任務 Audit 每週電腦健檢 之歷次執行成果說明、累計報告與健康度歷史時間軸。">
   <meta name="theme-color" content="#FAF6EF">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="大道至簡 · 排程監測系統">
-  <meta property="og:title" content="Audit 電腦健檢 · 任務歷史累積成果檔案庫">
+  <meta property="og:title" content="Audit 每週電腦健檢 · 任務歷史累積成果檔案庫">
   <meta property="og:description" content="累計執行 3 次，包含完整執行成果說明與歷史演化紀錄。">
 
   <style>
@@ -425,7 +425,7 @@
         <span>/</span>
         <span>任務累積檔案庫</span>
         <span>/</span>
-        <span style="color: var(--ink);">Audit 電腦健檢</span>
+        <span style="color: var(--ink);">Audit 每週電腦健檢</span>
       </div>
       <div>
         <button class="btn btn-primary" onclick="exportCumulativeMarkdown()">📥 匯出此任務完整歷史 Markdown</button>
@@ -442,9 +442,9 @@
         <div class="hero-meta-top">
           <span class="badge badge-success">正常運行中</span>
           <span class="badge badge-idle tabular">ID: audit</span>
-          <span class="badge badge-idle tabular">週期: 每日 09:00</span>
+          <span class="badge badge-idle tabular">週期: 每週三 10:00</span>
         </div>
-        <h1 class="hero-title">Audit 電腦健檢</h1>
+        <h1 class="hero-title">Audit 每週電腦健檢</h1>
         <div class="hero-desc">
           <strong>排程指示與目標：</strong>全面檢查本機電腦效能（包含磁碟可用空間、記憶體壓力與 Swap 交換量、系統 CPU 負載、背景常駐進程與啟動項），產出健檢報告並提供可執行的優化建議。
         </div>
@@ -465,7 +465,7 @@
           </div>
           <div class="stat-item">
             <div class="stat-label">Cron 表達式</div>
-            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">0 9 * * *</div>
+            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">CRON_TZ=Asia/Taipei 0 10 * * 3</div>
           </div>
         </div>
       </div>
@@ -618,11 +618,11 @@ Disk: 494GB 容量, 312GB 已使用 (63%, 剩餘 182GB)
     }
 
     function exportCumulativeMarkdown() {
-      const taskName = "Audit 電腦健檢";
+      const taskName = "Audit 每週電腦健檢";
       const totalRuns = "3";
       const taskId = "audit";
-      const cron = "0 9 * * *";
-      const schedule = "每日 09:00";
+      const cron = "CRON_TZ=Asia/Taipei 0 10 * * 3";
+      const schedule = "每週三 10:00";
 
       let md = `# ${taskName} · 任務歷史成果累積檔案庫\n\n`;
       md += `- **任務標識**: ${taskId}\n`;

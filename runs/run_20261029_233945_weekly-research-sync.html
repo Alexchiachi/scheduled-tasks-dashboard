@@ -416,7 +416,7 @@
           </div>
           <div class="meta-item">
             <span>排程週期：</span>
-            <strong>每週日 20:00</strong>
+            <strong>每週日 16:30</strong>
           </div>
           <div class="meta-item">
             <span>紀錄 ID：</span>
@@ -452,7 +452,7 @@ Git 自動發布: 已推送至 main 與 feature/frontend-optimization-and-decoup
       <div class="sidecar-box">
         <h4>⚙️ 任務所屬排程規格 (Sidecar Context)</h4>
         <p><strong>任務名稱：</strong>每週生活熱點雲端同步與網頁更新 (<code>weekly-research-sync</code>)</p>
-        <p><strong>Cron 表達式：</strong><code class="tabular">0 20 * * 0</code>（每週日 20:00）</p>
+        <p><strong>Cron 表達式：</strong><code class="tabular">CRON_TZ=Asia/Taipei 30 16 * * 0</code>（每週日 16:30）</p>
         <p><strong>原始排程目標：</strong>執行「每週生活熱點 × 社會創新」雲端硬碟自動同步與網頁更新：
 1. 切換至倉庫目錄：cd /Users/chienchiachi/Documents/GitHub/research-dashboard
 2. 執行同步腳本：python3 sync_weekly.py
@@ -504,7 +504,7 @@ Git 自動發布: 已推送至 main 與 feature/frontend-optimization-and-decoup
 - **執行狀態**: ${status}
 - **執行時間**: ${timeStr}
 - **任務標識**: weekly-research-sync
-- **排程週期**: 每週日 20:00
+- **排程週期**: 每週日 16:30
 - **紀錄 ID**: run_20261029_233945_weekly-research-sync
 
 ## 成果說明摘要

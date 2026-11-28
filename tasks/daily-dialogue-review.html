@@ -442,7 +442,7 @@
         <div class="hero-meta-top">
           <span class="badge badge-success">正常運行中</span>
           <span class="badge badge-idle tabular">ID: daily-dialogue-review</span>
-          <span class="badge badge-idle tabular">週期: 每日 21:00</span>
+          <span class="badge badge-idle tabular">週期: 每日 20:30</span>
         </div>
         <h1 class="hero-title">Daily 當日對話深度評估與雲端雙基地同步</h1>
         <div class="hero-desc">
@@ -467,7 +467,7 @@
           </div>
           <div class="stat-item">
             <div class="stat-label">Cron 表達式</div>
-            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">0 21 * * *</div>
+            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">CRON_TZ=Asia/Taipei 30 20 * * *</div>
           </div>
         </div>
       </div>
@@ -635,8 +635,8 @@
       const taskName = "Daily 當日對話深度評估與雲端雙基地同步";
       const totalRuns = "4";
       const taskId = "daily-dialogue-review";
-      const cron = "0 21 * * *";
-      const schedule = "每日 21:00";
+      const cron = "CRON_TZ=Asia/Taipei 30 20 * * *";
+      const schedule = "每日 20:30";
 
       let md = `# ${taskName} · 任務歷史成果累積檔案庫\n\n`;
       md += `- **任務標識**: ${taskId}\n`;

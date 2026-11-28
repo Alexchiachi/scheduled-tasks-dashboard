@@ -442,11 +442,12 @@
         <div class="hero-meta-top">
           <span class="badge badge-warning">需留意</span>
           <span class="badge badge-idle tabular">ID: evening-wind-down</span>
-          <span class="badge badge-idle tabular">週期: 手動或自訂排程</span>
+          <span class="badge badge-idle tabular">週期: 每日 21:30</span>
         </div>
         <h1 class="hero-title">Evening 晚間防斷線與明日安心留白卡</h1>
         <div class="hero-desc">
-          <strong>排程指示與目標：</strong>晚安，家旗。21:30 晚間防斷線守護與明日安心留白卡已生成並寄出，今晚可以放心停筆。 安心收工確認 今日已圓滿閉環，系統在深處自轉，無一事遺漏懸念。** 知識庫與雲端沉澱**：已核對 Obsidian 當日日記（`Daily Notes/2026-11-22.md`）與每日對話深度評估（`02_日常心流與演化日誌/每日對話評估/2026-11-22_每日對話深度評估.md`），今日共 13 條對話、出版母檔（`03_英文電子書.md`、`00_大道至簡_全景導航儀表板.md...
+          <strong>排程指示與目標：</strong>你是簡家旗第二心智的晚間工匠與身心防斷線守護者。請執行每日 21:30 晚間防斷線守護與明日安心留白卡任務：
+1. 查詢明日 Google 日曆活動（調用 google-drive 之 list_calendar_events）與本機 Obsidian 知識庫（`/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Docu...
         </div>
 
         <!-- 累計指標四格 -->
@@ -465,7 +466,7 @@
           </div>
           <div class="stat-item">
             <div class="stat-label">Cron 表達式</div>
-            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">-</div>
+            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">CRON_TZ=Asia/Taipei 30 21 * * *</div>
           </div>
         </div>
       </div>
@@ -563,8 +564,8 @@ Encountered error in step execution: {&quot;error&quot;:&quot;NOTE_NOT_FOUND&quo
       const taskName = "Evening 晚間防斷線與明日安心留白卡";
       const totalRuns = "1";
       const taskId = "evening-wind-down";
-      const cron = "-";
-      const schedule = "手動或自訂排程";
+      const cron = "CRON_TZ=Asia/Taipei 30 21 * * *";
+      const schedule = "每日 21:30";
 
       let md = `# ${taskName} · 任務歷史成果累積檔案庫\n\n`;
       md += `- **任務標識**: ${taskId}\n`;

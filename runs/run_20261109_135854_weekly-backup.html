@@ -405,7 +405,7 @@
           <span class="badge badge-idle tabular">0s</span>
           <span class="badge badge-idle tabular">weekly-backup</span>
           <a href="../tasks/weekly-backup.html" class="btn" style="padding: 2px 8px; font-size: 0.75rem; background: var(--tea-bg); color: var(--tea); border-color: var(--line);">
-            📜 查看本任務累積歷史檔案庫 (7 期) ↗
+            📜 查看本任務累積歷史檔案庫 (10 期) ↗
           </a>
         </div>
         <h1 class="hero-title">第二大腦每週五免開機全量冷備份</h1>
@@ -464,7 +464,7 @@ RuntimeError: Command failed with exit code 128: git fetch --depth 1 origin main
       <div class="sidecar-box">
         <h4>⚙️ 任務所屬排程規格 (Sidecar Context)</h4>
         <p><strong>任務名稱：</strong>第二大腦每週五免開機全量冷備份 (<code>weekly-backup</code>)</p>
-        <p><strong>Cron 表達式：</strong><code class="tabular">0 17 * * 5</code>（每週五 17:00）</p>
+        <p><strong>Cron 表達式：</strong><code class="tabular">CRON_TZ=Asia/Taipei 0 17 * * 5</code>（每週五 17:00）</p>
         <p><strong>原始排程目標：</strong>執行週五雙保險自動備份：1. 執行 NODE_PATH=/Users/chienchiachi/.config/google-drive-mcp/node_modules node /Users/chienchiachi/.config/google-drive-mcp/sync_dual_base.js 將 Obsidian 與 WorkBuddy 自動打包備份至 Google Drive；2....</p>
         <p style="margin-top: 8px; font-size: 0.8rem; color: var(--ink-muted);">
           本報告由 Antigravity 2.0 自動化監測守護引擎於任務完成時捕獲生成，並自動同步至 GitHub Pages。

@@ -416,7 +416,7 @@
           </div>
           <div class="meta-item">
             <span>排程週期：</span>
-            <strong>每日 21:00</strong>
+            <strong>每日 20:30</strong>
           </div>
           <div class="meta-item">
             <span>紀錄 ID：</span>
@@ -448,7 +448,7 @@
       <div class="sidecar-box">
         <h4>⚙️ 任務所屬排程規格 (Sidecar Context)</h4>
         <p><strong>任務名稱：</strong>Daily 當日對話深度評估與雲端雙基地同步 (<code>daily-dialogue-review</code>)</p>
-        <p><strong>Cron 表達式：</strong><code class="tabular">0 21 * * *</code>（每日 21:00）</p>
+        <p><strong>Cron 表達式：</strong><code class="tabular">CRON_TZ=Asia/Taipei 30 20 * * *</code>（每日 20:30）</p>
         <p><strong>原始排程目標：</strong>你是簡家旗第二心智的沉靜工匠與冷酷校對員。請嚴格執行每日對話沉澱與簡家旗視角深度評估任務：
 1. 執行專屬提煉引擎：`python3 /Users/chienchiachi/.gemini/antigravity/scratch/daily-dialogue-review/review_daily_dialogues.py`
 2. 系統將自動抓取當天所有對話、依內容五大象限分類（一人公司商業閉環、...</p>
@@ -498,7 +498,7 @@
 - **執行狀態**: ${status}
 - **執行時間**: ${timeStr}
 - **任務標識**: daily-dialogue-review
-- **排程週期**: 每日 21:00
+- **排程週期**: 每日 20:30
 - **紀錄 ID**: run_20261030_001645_daily-dialogue-review
 
 ## 成果說明摘要

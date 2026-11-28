@@ -416,7 +416,7 @@
           </div>
           <div class="meta-item">
             <span>排程週期：</span>
-            <strong>手動或自訂排程</strong>
+            <strong>每日 21:30</strong>
           </div>
           <div class="meta-item">
             <span>紀錄 ID：</span>
@@ -470,8 +470,9 @@ Encountered error in step execution: {&quot;error&quot;:&quot;NOTE_NOT_FOUND&quo
       <div class="sidecar-box">
         <h4>⚙️ 任務所屬排程規格 (Sidecar Context)</h4>
         <p><strong>任務名稱：</strong>Evening 晚間防斷線與明日安心留白卡 (<code>evening-wind-down</code>)</p>
-        <p><strong>Cron 表達式：</strong><code class="tabular">-</code>（手動或自訂排程）</p>
-        <p><strong>原始排程目標：</strong>晚安，家旗。21:30 晚間防斷線守護與明日安心留白卡已生成並寄出，今晚可以放心停筆。 安心收工確認 今日已圓滿閉環，系統在深處自轉，無一事遺漏懸念。** 知識庫與雲端沉澱**：已核對 Obsidian 當日日記（`Daily Notes/2026-11-22.md`）與每日對話深度評估（`02_日常心流與演化日誌/每日對話評估/2026-11-22_每日對話深度評估.md`），今日共 13 條對話、出版母檔（`03_英文電子書.md`、`00_大道至簡_全景導航儀表板.md...</p>
+        <p><strong>Cron 表達式：</strong><code class="tabular">CRON_TZ=Asia/Taipei 30 21 * * *</code>（每日 21:30）</p>
+        <p><strong>原始排程目標：</strong>你是簡家旗第二心智的晚間工匠與身心防斷線守護者。請執行每日 21:30 晚間防斷線守護與明日安心留白卡任務：
+1. 查詢明日 Google 日曆活動（調用 google-drive 之 list_calendar_events）與本機 Obsidian 知識庫（`/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Docu...</p>
         <p style="margin-top: 8px; font-size: 0.8rem; color: var(--ink-muted);">
           本報告由 Antigravity 2.0 自動化監測守護引擎於任務完成時捕獲生成，並自動同步至 GitHub Pages。
         </p>
@@ -518,7 +519,7 @@ Encountered error in step execution: {&quot;error&quot;:&quot;NOTE_NOT_FOUND&quo
 - **執行狀態**: ${status}
 - **執行時間**: ${timeStr}
 - **任務標識**: evening-wind-down
-- **排程週期**: 手動或自訂排程
+- **排程週期**: 每日 21:30
 - **紀錄 ID**: run_20261122_213247_evening-wind-down
 
 ## 成果說明摘要

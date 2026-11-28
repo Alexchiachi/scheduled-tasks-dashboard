@@ -416,7 +416,7 @@
           </div>
           <div class="meta-item">
             <span>排程週期：</span>
-            <strong>每週一 09:00</strong>
+            <strong>每週一 10:00</strong>
           </div>
           <div class="meta-item">
             <span>紀錄 ID：</span>
@@ -451,7 +451,7 @@
       <div class="sidecar-box">
         <h4>⚙️ 任務所屬排程規格 (Sidecar Context)</h4>
         <p><strong>任務名稱：</strong>sentinel 負熵巡檢 (<code>sentinel-check</code>)</p>
-        <p><strong>Cron 表達式：</strong><code class="tabular">0 9 * * 1</code>（每週一 09:00）</p>
+        <p><strong>Cron 表達式：</strong><code class="tabular">CRON_TZ=Asia/Taipei 0 10 * * 1</code>（每週一 10:00）</p>
         <p><strong>原始排程目標：</strong>執行負熵巡檢哨兵（python3 ~/.gemini/antigravity/scratch/touchstone-linter/sentinel.py），檢查待辦事項進度、WorkBuddy 文字純度債務、系統操作手冊同步狀態，並將需要更新的清單匯報給主理人。</p>
         <p style="margin-top: 8px; font-size: 0.8rem; color: var(--ink-muted);">
           本報告由 Antigravity 2.0 自動化監測守護引擎於任務完成時捕獲生成，並自動同步至 GitHub Pages。
@@ -499,7 +499,7 @@
 - **執行狀態**: ${status}
 - **執行時間**: ${timeStr}
 - **任務標識**: sentinel-check
-- **排程週期**: 每週一 09:00
+- **排程週期**: 每週一 10:00
 - **紀錄 ID**: run_20261029_235759_sentinel-check
 
 ## 成果說明摘要

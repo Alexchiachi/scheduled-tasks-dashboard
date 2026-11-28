@@ -442,13 +442,13 @@
         <div class="hero-meta-top">
           <span class="badge badge-success">正常運行中</span>
           <span class="badge badge-idle tabular">ID: weekly-skill-evolution</span>
-          <span class="badge badge-idle tabular">週期: 每週日 09:00</span>
+          <span class="badge badge-idle tabular">週期: 每週六 10:00</span>
         </div>
         <h1 class="hero-title">Weekly 園丁底層 DNA 大演化</h1>
         <div class="hero-desc">
-          <strong>排程指示與目標：</strong>你是「系統演化督導」。請執行每週日的【耗散結構大演化】任務：
-1. 讀取 `/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家/有感而發長文分享/` 中過去 7 天的演化日誌，嚴格提取出 7 個「進化的微小因子」。
-2. 基於老莊與耗散結構理論，讓這 7 個因子產生劇烈碰撞...
+          <strong>排程指示與目標：</strong>你是「系統演化督導」。請執行每週六的【耗散結構大演化】任務：
+1. 讀取 `/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家/02_日常心流與演化日誌/有感而發長文分享/` 中過去 7 天的演化日誌，嚴格提取出 7 個「進化的微小因子」。
+2. 基於老莊與耗散結構理論，讓...
         </div>
 
         <!-- 累計指標四格 -->
@@ -467,7 +467,7 @@
           </div>
           <div class="stat-item">
             <div class="stat-label">Cron 表達式</div>
-            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">0 9 * * 0</div>
+            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">CRON_TZ=Asia/Taipei 0 10 * * 6</div>
           </div>
         </div>
       </div>
@@ -543,8 +543,8 @@
       const taskName = "Weekly 園丁底層 DNA 大演化";
       const totalRuns = "1";
       const taskId = "weekly-skill-evolution";
-      const cron = "0 9 * * 0";
-      const schedule = "每週日 09:00";
+      const cron = "CRON_TZ=Asia/Taipei 0 10 * * 6";
+      const schedule = "每週六 10:00";
 
       let md = `# ${taskName} · 任務歷史成果累積檔案庫\n\n`;
       md += `- **任務標識**: ${taskId}\n`;

@@ -442,7 +442,7 @@
         <div class="hero-meta-top">
           <span class="badge badge-success">正常運行中</span>
           <span class="badge badge-idle tabular">ID: conversation-renamer</span>
-          <span class="badge badge-idle tabular">週期: 每週日 23:30</span>
+          <span class="badge badge-idle tabular">週期: 每週六 11:00</span>
         </div>
         <h1 class="hero-title">Renamer 對話名稱每週巡檢</h1>
         <div class="hero-desc">
@@ -465,7 +465,7 @@
           </div>
           <div class="stat-item">
             <div class="stat-label">Cron 表達式</div>
-            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">30 23 * * 0</div>
+            <div class="stat-value tabular" style="font-size: 1.25rem; padding-top: 4px;">CRON_TZ=Asia/Taipei 0 11 * * 6</div>
           </div>
         </div>
       </div>
@@ -648,8 +648,8 @@ w And Backup | 每日對話沉澱與雙向鏈結雙端備份歸檔 | 17 |
       const taskName = "Renamer 對話名稱每週巡檢";
       const totalRuns = "2";
       const taskId = "conversation-renamer";
-      const cron = "30 23 * * 0";
-      const schedule = "每週日 23:30";
+      const cron = "CRON_TZ=Asia/Taipei 0 11 * * 6";
+      const schedule = "每週六 11:00";
 
       let md = `# ${taskName} · 任務歷史成果累積檔案庫\n\n`;
       md += `- **任務標識**: ${taskId}\n`;
