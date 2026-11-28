@@ -21,8 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 PROCESSED_FILE = BASE_DIR / "data" / ".processed_conversations"
 
 
-def log(msg):
-    print(msg, flush=True)
+def run_cmd(cmd, cwd=None):
     env = os.environ.copy()
     env["GIT_TERMINAL_PROMPT"] = "0"
     res = subprocess.run(

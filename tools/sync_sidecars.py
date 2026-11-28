@@ -11,8 +11,10 @@ from pathlib import Path
 
 
 def parse_cron_to_human(cron_str: str) -> str:
-    """將標準 5 欄位 Cron 轉為人性化中文說明"""
+    """將標準 5 欄位 Cron 轉為人性化中文說明（支援前綴 CRON_TZ=/TZ=）"""
     parts = cron_str.strip().split()
+    if parts and ("=" in parts[0]):
+        parts = parts[1:]
     if len(parts) != 5:
         return cron_str
     
