@@ -1,5 +1,16 @@
 [
   {
+    "id": "run_20261128_085925_daily-gardener",
+    "task_id": "daily-gardener",
+    "task_name": "Daily 第二心智園丁與雙基地同步",
+    "status": "success",
+    "timestamp": "2026-11-28T08:59:25.056343+08:00",
+    "formatted_time": "2026-11-28 08:59:25",
+    "duration": "7m 14s",
+    "summary": "`sync_dual_base.js` 已完成 Obsidian 知識庫打包上傳（925.0 MB，Drive ID: `17IVxyPmgbKGRgI2FcQ1xlK-o-MyvxSgh`），目前正進行 WorkBuddy 工作區打包與上傳，待 `sync_dual_base.js` 完整結束後即刻執行 Obsidian GitHub Push。",
+    "details": "`sync_dual_base.js` 已完成 Obsidian 知識庫打包上傳（925.0 MB，Drive ID: `17IVxyPmgbKGRgI2FcQ1xlK-o-MyvxSgh`），目前正進行 WorkBuddy 工作區打包與上傳，待 `sync_dual_base.js` 完整結束後即刻執行 Obsidian GitHub Push。"
+  },
+  {
     "id": "run_20261128_085416_morning-brief",
     "task_id": "morning-brief",
     "task_name": "Morning 晨間心流與要事簡報",
