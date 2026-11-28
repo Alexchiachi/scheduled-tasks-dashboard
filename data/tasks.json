@@ -193,5 +193,18 @@
     "total_runs": 1,
     "success_count": 1,
     "description": "你是「系統演化督導」。請執行每週六的【耗散結構大演化】任務：\n1. 讀取 `/Users/chienchiachi/Library/Mobile Documents/iCloud~md~obsidian/Documents/簡家旗一人公司幸福行爲藝術家/02_日常心流與演化日誌/有感而發長文分享/` 中過去 7 天的演化日誌，嚴格提取出 7 個「進化的微小因子」。\n2. 基於老莊與耗散結構理論，讓..."
+  },
+  {
+    "id": "daily-gdrive-organizer",
+    "name": "每日 Google 雲端硬碟自動分類整理",
+    "cron": "-",
+    "schedule": "手動或自訂排程",
+    "status": "error",
+    "last_run": "2026-11-28 23:30:11",
+    "last_duration": "7s",
+    "last_summary": "任務執行失敗 (Exit Code: 1)，請檢視日誌。",
+    "total_runs": 1,
+    "success_count": 0,
+    "description": "任務執行失敗 (Exit Code: 1)，請檢視日誌。"
   }
 ]
