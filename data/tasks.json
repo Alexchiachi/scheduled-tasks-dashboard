@@ -66,7 +66,7 @@
   },
   {
     "id": "morning-brief",
-    "name": "Morning 晨間心流與要事簡報",
+    "name": "晨間心流與要事簡報",
     "cron": "30 8 * * *",
     "schedule": "每日 08:30",
     "status": "warning",
@@ -105,7 +105,7 @@
   },
   {
     "id": "weekly-backup",
-    "name": "Backup 週五資產歸檔與雙保險同步",
+    "name": "第二大腦冷備份與資產歸檔",
     "cron": "0 17 * * 5",
     "schedule": "每週五 17:00",
     "status": "success",
